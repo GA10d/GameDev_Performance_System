@@ -1,0 +1,28 @@
+PASS: start enters exactly one beat
+PASS: lead does not reveal text early
+PASS: pause freezes clock and ignores advance
+PASS: first advance completes text only
+PASS: skip emits no burst of sound or duplicate cue
+PASS: rapid second advance cannot bypass required hold
+PASS: hold reaches ready
+PASS: terminal node completes
+PASS: automatic playback waits for choice indefinitely
+PASS: out of range choice is ignored
+PASS: paused choice is ignored
+PASS: name reply branch routes correctly
+PASS: a choice cannot be submitted twice
+PASS: log reply branch routes correctly
+PASS: cancel releases session state
+PASS: replay clears previous reply
+PASS: unicode surrogate pairs and combining marks remain intact
+PASS: typing is stable across 30 and 144 Hz
+PASS: large frame catches up without dropping characters
+PASS: duplicate IDs rejected
+PASS: dangling edges rejected
+PASS: zero text speed rejected
+PASS: nonfinite timing rejected
+PASS: serialized sequence has a valid Unity script binding
+PASS: shipping sequence traverses all three cast members and completes
+PASS: shipping subtitles fit the two-line writing budget
+PASS: all shipping rigs contain required bones
+PASS: FBX characters face the archive camera

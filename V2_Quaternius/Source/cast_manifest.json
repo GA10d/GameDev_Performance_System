@@ -1,0 +1,118 @@
+[
+  {
+    "id": "Lin",
+    "species": "human",
+    "parts": [
+      "Casual_Head",
+      "SpaceSuit_Body",
+      "SpaceSuit_Legs",
+      "SpaceSuit_Feet"
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "coat": [
+      0.48,
+      0.46,
+      0.35
+    ],
+    "skin": [
+      0.52,
+      0.34,
+      0.22
+    ],
+    "triangles": 6823,
+    "bones": 51,
+    "source": "Quaternius Ultimate Modular Men CC0",
+    "edits": "palette, modular outfit, species mesh edits, weighted accessories, proportional skeleton"
+  },
+  {
+    "id": "Echo",
+    "species": "alien",
+    "parts": [
+      "Casual2_Head",
+      "SpaceSuit_Body",
+      "SpaceSuit_Legs",
+      "SpaceSuit_Feet"
+    ],
+    "scale": [
+      0.87,
+      0.9,
+      1.06
+    ],
+    "coat": [
+      0.22,
+      0.32,
+      0.3
+    ],
+    "skin": [
+      0.32,
+      0.47,
+      0.43
+    ],
+    "triangles": 6127,
+    "bones": 51,
+    "source": "Quaternius Ultimate Modular Men CC0",
+    "edits": "palette, modular outfit, species mesh edits, weighted accessories, proportional skeleton"
+  },
+  {
+    "id": "Ruk",
+    "species": "half-orc",
+    "parts": [
+      "Casual2_Head",
+      "Worker_Body",
+      "Swat_Legs",
+      "SpaceSuit_Feet"
+    ],
+    "scale": [
+      1.23,
+      1.14,
+      1.08
+    ],
+    "coat": [
+      0.35,
+      0.23,
+      0.17
+    ],
+    "skin": [
+      0.34,
+      0.38,
+      0.2
+    ],
+    "triangles": 5652,
+    "bones": 51,
+    "source": "Quaternius Ultimate Modular Men CC0",
+    "edits": "palette, modular outfit, species mesh edits, weighted accessories, proportional skeleton"
+  },
+  {
+    "id": "Voss",
+    "species": "human",
+    "parts": [
+      "Worker_Head",
+      "Farmer_Body",
+      "Worker_Legs",
+      "Worker_Feet"
+    ],
+    "scale": [
+      1.04,
+      1.04,
+      0.98
+    ],
+    "coat": [
+      0.37,
+      0.41,
+      0.3
+    ],
+    "skin": [
+      0.43,
+      0.27,
+      0.17
+    ],
+    "triangles": 5009,
+    "bones": 51,
+    "source": "Quaternius Ultimate Modular Men CC0",
+    "edits": "palette, modular outfit, species mesh edits, weighted accessories, proportional skeleton"
+  }
+]

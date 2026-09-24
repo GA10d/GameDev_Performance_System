@@ -1,0 +1,334 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5cea4266b80ee0428e9f601ae520fc3, type: 3}
+  m_Name: RelayArchive
+  m_EditorClassIdentifier: 
+  reviewRevision: 2
+  beats:
+  - id: arrival
+    chapter: "01 \xB7 \u4E00\u4EFD\u8FDF\u5230\u7684\u8BB0\u5F55"
+    subtitle: "\u4E2D\u7EE7\u7AD9 07\u3002\u5F55\u5236\u65F6\u95F4\u65E9\u4E8E\u4F60\u7684\u51FA\u751F\u65E5\u671F\u3002"
+    action: Idle_Loop
+    actor: 0
+    listener: -1
+    shot: 0
+    accent: 0
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 0
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: lin
+    chapter: "02 \xB7 \u540D\u5B57"
+    subtitle: "\u6211\u53EB\u6797\u3002\u7CFB\u7EDF\u53EA\u8BA4\u7F16\u53F7\uFF0C\u4F46\u8FD9\u6BB5\u5F55\u50CF\u7531\u6211\u4FDD\u7BA1\u3002"
+    action: Idle_Talking_Loop
+    actor: 0
+    listener: 1
+    shot: 1
+    accent: 1
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 0
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: echo
+    chapter: "03 \xB7 \u5F02\u4E61\u7684\u58F0\u97F3"
+    subtitle: "\u4F60\u4EEC\u7528\u540D\u5B57\u8BB0\u4F4F\u5F7C\u6B64\u3002\u6211\u4EEC\u7528\u4E00\u6BB5\u58F0\u97F3\u3002"
+    action: Idle_Talking_Loop
+    actor: 1
+    listener: 0
+    shot: 2
+    accent: 3
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: listen
+    chapter: "04 \xB7 \u503E\u542C"
+    subtitle: "\u3014\u6797\u542C\u5B8C\u7FFB\u8BD1\uFF0C\u6CA1\u6709\u7ACB\u523B\u56DE\u7B54\u3002\u3015"
+    action: Idle_Loop
+    actor: 0
+    listener: 1
+    shot: 4
+    accent: 3
+    duration: 4
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: ruk
+    chapter: "05 \xB7 \u7EF4\u4FEE\u5458"
+    subtitle: "\u58F0\u97F3\u4E5F\u4F1A\u574F\u3002\u6211\u4FEE\u4E86\u4E09\u5929\uFF0C\u624D\u8BA9\u8FD9\u53F0\u673A\u5668\u80AF\u5F00\u53E3\u3002"
+    action: Idle_Talking_Loop
+    actor: 2
+    listener: 1
+    shot: 6
+    accent: 1
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: repair
+    chapter: "06 \xB7 \u7559\u4E0B\u75D5\u8FF9"
+    subtitle: "\u5B83\u7F3A\u7684\u4E0D\u662F\u96F6\u4EF6\uFF0C\u662F\u4E00\u9897\u4E0D\u5728\u6E05\u5355\u4E0A\u7684\u87BA\u9489\u3002"
+    action: Fixing_Kneeling
+    actor: 2
+    listener: -1
+    shot: 8
+    accent: 4
+    duration: 6
+    lead: 0.6
+    speed: 1
+    cut: 0
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: voss
+    chapter: "07 \xB7 \u503C\u5B88\u6280\u5E08"
+    subtitle: "\u7535\u538B\u7A33\u5B9A\u3002\u4F60\u4EEC\u8FD8\u6709\u4E5D\u5341\u79D2\u3002"
+    action: Interact
+    actor: 3
+    listener: -1
+    shot: 1
+    accent: 5
+    duration: 5
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: relay
+    chapter: "08 \xB7 \u673A\u5668\u7684\u65F6\u95F4"
+    subtitle: "\u78C1\u5E26\u4ECD\u5728\u8F6C\u52A8\u3002\u53D1\u9001\u961F\u5217\uFF1A\u5341\u4E03\u5E74\u3002"
+    action: Idle_Loop
+    actor: 3
+    listener: -1
+    shot: 7
+    accent: 0
+    duration: 4
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: pair
+    chapter: "09 \xB7 \u4E24\u79CD\u8BB0\u5FC6"
+    subtitle: "\u5982\u679C\u5341\u4E03\u5E74\u540E\u6709\u4EBA\u542C\u5230\uFF0C\u58F0\u97F3\u7684\u4E3B\u4EBA\u8FD8\u7B97\u5728\u8FD9\u91CC\u5417\uFF1F"
+    action: Idle_Talking_Loop
+    actor: 1
+    listener: 0
+    shot: 3
+    accent: 3
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: answer
+    chapter: "10 \xB7 \u4E00\u4E2A\u56DE\u7B54"
+    subtitle: "\u6211\u4E0D\u77E5\u9053\u3002\u6240\u4EE5\u522B\u5220\u6389\u5F00\u5934\u90A3\u4E00\u6BB5\u547C\u5438\u58F0\u3002"
+    action: Idle_Talking_Loop
+    actor: 0
+    listener: 1
+    shot: 2
+    accent: 2
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: sit
+    chapter: "11 \xB7 \u77ED\u6682\u4F11\u606F"
+    subtitle: "\u3014\u9C81\u514B\u7EC8\u4E8E\u5750\u4E0B\u3002\u673A\u5668\u7EE7\u7EED\u4F4E\u9E23\u3002\u3015"
+    action: Sitting_Enter
+    actor: 2
+    listener: -1
+    shot: 8
+    accent: 0
+    duration: 2.1
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: seated
+    chapter: "12 \xB7 \u6545\u4E61"
+    subtitle: "\u6211\u6BCD\u4EB2\u8BF4\uFF0C\u80FD\u542C\u89C1\u522B\u4EBA\u547C\u5438\u7684\u5730\u65B9\uFF0C\u5C31\u7B97\u4E00\u95F4\u5C4B\u5B50\u3002"
+    action: Sitting_Talking_Loop
+    actor: 2
+    listener: 0
+    shot: 5
+    accent: 1
+    duration: 7
+    lead: 0.6
+    speed: 1
+    cut: 0
+    move: 0
+    seated: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: stand
+    chapter: "13 \xB7 \u7EE7\u7EED\u5DE5\u4F5C"
+    subtitle: "\u597D\u4E86\u3002\u628A\u5B83\u9001\u51FA\u53BB\u3002"
+    action: Sitting_Exit
+    actor: 2
+    listener: -1
+    shot: 8
+    accent: 0
+    duration: 2
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 1
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: walk
+    chapter: "14 \xB7 \u8D70\u5411\u8BB0\u5F55"
+    subtitle: "\u3014\u6797\u8D70\u8FD1\u5F55\u5236\u955C\u5934\u3002\u3015"
+    action: Walk_Loop
+    actor: 0
+    listener: -1
+    shot: 8
+    accent: 0
+    duration: 2.8
+    lead: 0.6
+    speed: 0.72
+    cut: 0
+    move: 1
+    seated: 0
+    start: {x: -1.25, y: 0, z: 0.25}
+    end: {x: -1.25, y: 0, z: -1.3}
+  - id: last
+    chapter: "15 \xB7 \u7ED9\u672A\u6765\u7684\u4EBA"
+    subtitle: "\u964C\u751F\u4EBA\uFF0C\u5982\u679C\u4F60\u7684\u98CE\u6247\u8FD8\u5728\u54CD\uFF0C\u5C31\u66FF\u6211\u4EEC\u518D\u542C\u4E00\u4F1A\u513F\u3002"
+    action: Idle_Talking_Loop
+    actor: 0
+    listener: -1
+    shot: 2
+    accent: 1
+    duration: 8
+    lead: 0.6
+    speed: 1
+    cut: 1
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  - id: end
+    chapter: "16 \xB7 \u7A7A\u767D\u4E5F\u662F\u8BB0\u5F55"
+    subtitle: "\u5F55\u50CF\u5DF2\u7ED3\u675F\u3002\u5B83\u66FE\u7ECF\u88C5\u4E0B\u56DB\u4E2A\u4EBA\uFF0C\u73B0\u5728\u88C5\u4E0B\u5341\u4E03\u5E74\u3002"
+    action: Idle_Loop
+    actor: 1
+    listener: -1
+    shot: 0
+    accent: 4
+    duration: 6
+    lead: 0.6
+    speed: 1
+    cut: 0
+    move: 0
+    seated: 0
+    start: {x: 0, y: 0, z: 0}
+    end: {x: 0, y: 0, z: 0}
+  clips:
+  - {fileID: -8815886378510225334, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -8534173349268677819, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -7993625790543202706, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -7342238307180667810, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -7321412271681594418, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -7003542030617561338, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -6676812269523803463, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -6540212038565268958, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -5346644375087571879, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -5255406209399062677, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -5068084590534580200, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -4950333804767787469, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -4708846537797790282, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -4636811812070406142, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -4628965742493065687, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -3659967873887649963, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -3042448386402017758, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -2807887025256620907, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -2328835098782832033, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -1862932125039169580, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -718454725414175808, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: -245273357908900549, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 497093190674883199, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 1532177651469301551, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 1705686167135224321, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 2564068224262579217, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 2857599376137209812, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 2931362099718132477, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 3031411921458128146, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 3532616527226485280, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 3659977189094709723, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 3732886095724451988, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 4366774653929184976, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 4525242936183261023, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 4832780573735333345, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 4996995007976980875, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 5539243244057379418, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 6426452042675443912, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 6476497563760123848, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 7860179187555574969, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 7994627924475153551, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 8324860437086164814, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  - {fileID: 8800687838965813479, guid: 797b0dd199d960340be7a2b529aa7fd5, type: 3}
+  galleryActions:
+  - Idle_Loop
+  - Idle_Talking_Loop
+  - Walk_Loop
+  - Walk_Formal_Loop
+  - PickUp_Table
+  - Interact
+  - Fixing_Kneeling
+  - Sitting_Enter
+  - Sitting_Idle_Loop
+  - Sitting_Talking_Loop
+  - Sitting_Exit
+  - Push_Loop
+  - Crouch_Idle_Loop
+  - Hit_Chest
+  - Hit_Head
+  - Jog_Fwd_Loop
+  - Dance_Loop

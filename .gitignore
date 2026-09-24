@@ -1,0 +1,55 @@
+# Unity-generated state (applies to both UnityProject directories).
+**/UnityProject/[Ll]ibrary/
+**/UnityProject/[Tt]emp/
+**/UnityProject/[Oo]bj/
+**/UnityProject/[Ll]ogs/
+**/UnityProject/[Uu]ser[Ss]ettings/
+**/UnityProject/[Mm]emoryCaptures/
+**/UnityProject/[Rr]ecordings/
+**/UnityProject/[Ee]xported[Oo]bj/
+**/UnityProject/*_BurstDebugInformation_DoNotShip/
+**/UnityProject/*_BackUpThisFolder_ButDontShipItWithYourGame/
+
+# Rebuildable players. Keep build scripts and Assets/** in version control.
+/[Bb]uild/
+/[Bb]uilds/
+/V2_Quaternius/[Bb]uild/
+/V2_Quaternius/[Bb]uilds/
+**/UnityProject/[Bb]uild/
+**/UnityProject/[Bb]uilds/
+
+# IDE-generated projects and per-user state.
+.vs/
+.idea/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.opendb
+*.VC.db
+
+# Python caches, Blender backups, and local logs.
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.blend[0-9]*
+*.blend@
+*.log
+
+# Local QA backups and machine-specific delivery inventories.
+**/QA/backups/
+**/QA/delivery-manifest.json
+# Keep audit JSON and documented QA/runtime screenshots and reports.
+/QA/AssetPreparation/**/*.blend
+/QA/AssetPreparation/**/*.fbx
+
+# OS-generated files.
+.DS_Store
+Thumbs.db
+Desktop.ini

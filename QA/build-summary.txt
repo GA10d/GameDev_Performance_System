@@ -1,0 +1,19 @@
+ASTRA Performance Study / 2026-09-23
+Unity: 2022.3.62f1 (4af31df58517)
+Target: StandaloneWindows64 / Built-in / Mono
+Result: BuildPipeline.BuildPlayer = Succeeded
+Build reported bytes: 92436078
+Core assertions: 28 PASS
+Player assertions: 23 PASS
+Rendered captures: 10 PNG files at 1440 x 900
+GPU: NVIDIA GeForce RTX 4070 Laptop GPU
+
+Resolved during verification:
+- Unity ScriptableObject filename / serialized script reference.
+- Binding inactive actors before the first channel disables them.
+- FBX facing direction and generated closed-mesh normals.
+- Bone-local lid axis and jaw displacement conversion.
+- Hidden-player black captures replaced by visible-player captures.
+
+These are automated functional/render checks plus image inspection.
+They are not a physical mouse/keyboard acceptance test or low-end GPU benchmark.

@@ -1,0 +1,118 @@
+PASS: sequence validated at runtime
+PASS: four actors across three species
+PASS: 43 real Quaternius humanoid clips imported (includes T pose)
+PASS: story exercises nine shot types
+PASS: pause freezes sequence, retargeted skeleton and camera
+PASS: Lin valid humanoid avatar and graph
+PASS: Lin imported talking clip changes hand pose
+PASS: Lin / Idle_Loop evaluates without invalid skinning
+PASS: Lin / Idle_Talking_Loop evaluates without invalid skinning
+PASS: Lin / Walk_Loop evaluates without invalid skinning
+PASS: Lin / Walk_Formal_Loop evaluates without invalid skinning
+PASS: Lin / PickUp_Table evaluates without invalid skinning
+PASS: Lin / Interact evaluates without invalid skinning
+PASS: Lin / Fixing_Kneeling evaluates without invalid skinning
+PASS: Lin / Sitting_Enter evaluates without invalid skinning
+PASS: Lin / Sitting_Idle_Loop evaluates without invalid skinning
+PASS: Lin / Sitting_Talking_Loop evaluates without invalid skinning
+PASS: Lin / Sitting_Exit evaluates without invalid skinning
+PASS: Lin / Push_Loop evaluates without invalid skinning
+PASS: Lin / Crouch_Idle_Loop evaluates without invalid skinning
+PASS: Lin / Hit_Chest evaluates without invalid skinning
+PASS: Lin / Hit_Head evaluates without invalid skinning
+PASS: Lin / Jog_Fwd_Loop evaluates without invalid skinning
+PASS: Lin / Dance_Loop evaluates without invalid skinning
+PASS: Echo valid humanoid avatar and graph
+PASS: Echo imported talking clip changes hand pose
+PASS: Echo / Idle_Loop evaluates without invalid skinning
+PASS: Echo / Idle_Talking_Loop evaluates without invalid skinning
+PASS: Echo / Walk_Loop evaluates without invalid skinning
+PASS: Echo / Walk_Formal_Loop evaluates without invalid skinning
+PASS: Echo / PickUp_Table evaluates without invalid skinning
+PASS: Echo / Interact evaluates without invalid skinning
+PASS: Echo / Fixing_Kneeling evaluates without invalid skinning
+PASS: Echo / Sitting_Enter evaluates without invalid skinning
+PASS: Echo / Sitting_Idle_Loop evaluates without invalid skinning
+PASS: Echo / Sitting_Talking_Loop evaluates without invalid skinning
+PASS: Echo / Sitting_Exit evaluates without invalid skinning
+PASS: Echo / Push_Loop evaluates without invalid skinning
+PASS: Echo / Crouch_Idle_Loop evaluates without invalid skinning
+PASS: Echo / Hit_Chest evaluates without invalid skinning
+PASS: Echo / Hit_Head evaluates without invalid skinning
+PASS: Echo / Jog_Fwd_Loop evaluates without invalid skinning
+PASS: Echo / Dance_Loop evaluates without invalid skinning
+PASS: Ruk valid humanoid avatar and graph
+PASS: Ruk imported talking clip changes hand pose
+PASS: Ruk / Idle_Loop evaluates without invalid skinning
+PASS: Ruk / Idle_Talking_Loop evaluates without invalid skinning
+PASS: Ruk / Walk_Loop evaluates without invalid skinning
+PASS: Ruk / Walk_Formal_Loop evaluates without invalid skinning
+PASS: Ruk / PickUp_Table evaluates without invalid skinning
+PASS: Ruk / Interact evaluates without invalid skinning
+PASS: Ruk / Fixing_Kneeling evaluates without invalid skinning
+PASS: Ruk / Sitting_Enter evaluates without invalid skinning
+PASS: Ruk / Sitting_Idle_Loop evaluates without invalid skinning
+PASS: Ruk / Sitting_Talking_Loop evaluates without invalid skinning
+PASS: Ruk / Sitting_Exit evaluates without invalid skinning
+PASS: Ruk / Push_Loop evaluates without invalid skinning
+PASS: Ruk / Crouch_Idle_Loop evaluates without invalid skinning
+PASS: Ruk / Hit_Chest evaluates without invalid skinning
+PASS: Ruk / Hit_Head evaluates without invalid skinning
+PASS: Ruk / Jog_Fwd_Loop evaluates without invalid skinning
+PASS: Ruk / Dance_Loop evaluates without invalid skinning
+PASS: Voss valid humanoid avatar and graph
+PASS: Voss imported talking clip changes hand pose
+PASS: Voss / Idle_Loop evaluates without invalid skinning
+PASS: Voss / Idle_Talking_Loop evaluates without invalid skinning
+PASS: Voss / Walk_Loop evaluates without invalid skinning
+PASS: Voss / Walk_Formal_Loop evaluates without invalid skinning
+PASS: Voss / PickUp_Table evaluates without invalid skinning
+PASS: Voss / Interact evaluates without invalid skinning
+PASS: Voss / Fixing_Kneeling evaluates without invalid skinning
+PASS: Voss / Sitting_Enter evaluates without invalid skinning
+PASS: Voss / Sitting_Idle_Loop evaluates without invalid skinning
+PASS: Voss / Sitting_Talking_Loop evaluates without invalid skinning
+PASS: Voss / Sitting_Exit evaluates without invalid skinning
+PASS: Voss / Push_Loop evaluates without invalid skinning
+PASS: Voss / Crouch_Idle_Loop evaluates without invalid skinning
+PASS: Voss / Hit_Chest evaluates without invalid skinning
+PASS: Voss / Hit_Head evaluates without invalid skinning
+PASS: Voss / Jog_Fwd_Loop evaluates without invalid skinning
+PASS: Voss / Dance_Loop evaluates without invalid skinning
+PASS: rapid action interruption keeps graph bounded
+PASS: camera settles / Establishing
+PASS: camera settles / Medium
+PASS: camera settles / Close
+PASS: camera settles / TwoShot
+PASS: camera settles / OverShoulder
+PASS: camera settles / Profile
+PASS: camera settles / LowAngle
+PASS: camera settles / Insert
+PASS: camera settles / Tracking
+PASS: 01_establishing contains rendered scene pixels
+PASS: 02_human_talking contains rendered scene pixels
+PASS: 03_alien_close contains rendered scene pixels
+PASS: 04_over_shoulder contains rendered scene pixels
+PASS: 05_orc_low_angle contains rendered scene pixels
+PASS: 06_repair contains rendered scene pixels
+PASS: 07_relay_insert contains rendered scene pixels
+PASS: 08_two_shot contains rendered scene pixels
+PASS: 09_human_close contains rendered scene pixels
+PASS: 10_orc_seated contains rendered scene pixels
+PASS: 11_tracking contains rendered scene pixels
+PASS: 12_final_close contains rendered scene pixels
+PASS: 13_gallery_voss contains rendered scene pixels
+PASS: solo gallery shots hide other actors to prevent occlusion
+PASS: 14_alien_retro contains rendered scene pixels
+PASS: 15_alien_clear contains rendered scene pixels
+PASS: 16_seat_full_body contains rendered scene pixels
+PASS: reduced motion reaches camera and all actors
+PASS: return to archive restores cast visibility
+PASS: archive reaches end
+PASS: replay resets completion
+PASS: character shaders supported
+PASS: posed mesh bounds update for seated heads and facial accessories
+PASS: portrait framing is independent of animated head bones
+PASS: walking endpoint survives automatic cut into final portrait
+PASS: manual seek reconstructs prior blocking
+PASS: no runtime exceptions or errors

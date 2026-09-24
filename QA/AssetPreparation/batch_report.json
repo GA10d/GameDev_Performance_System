@@ -1,0 +1,25 @@
+[
+  {
+    "id": "astra_lin_validation",
+    "path": "../UnityProject/Assets/Performance/Models/Lin047.fbx",
+    "author": "Original geometry generated for Project Astra",
+    "source_url": "local:Tools/build_characters.py",
+    "license": "Project-owned original; no third-party character mesh",
+    "ratio": 0.65,
+    "flat_normals": true,
+    "sha256": "d57722bc19db88602315b72ba05c64c6f0e63523fa0b48c138ea4ad6e7a95368",
+    "meshes": [
+      {
+        "name": "Lin047_Mesh",
+        "triangles_before": 2682,
+        "triangles_after": 2682,
+        "material_slots": 14,
+        "skinned": true,
+        "notes": [
+          "Decimation skipped: shape keys or protected skinned mesh."
+        ]
+      }
+    ],
+    "notes": "No auto-retopology, texture baking, rig retarget or artistic approval. Animation export is off; keep original animation files."
+  }
+]

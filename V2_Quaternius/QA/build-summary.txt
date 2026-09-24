@@ -1,0 +1,4 @@
+Succeeded
+Unity 2022.3.62f1
+Bytes 76771350
+Errors 0
