@@ -1,0 +1,102 @@
+PASS: six actors and valid session
+PASS: all six V1 semantic rigs bind
+PASS: feed aspect matches visible window without cropping
+PASS: channel 0 activates exactly its subject
+PASS: visible rendered frame / actor_0_portrait
+PASS: visible rendered frame / actor_0_full
+PASS: full-body framing contains posed bounds / 0
+PASS: channel 1 activates exactly its subject
+PASS: visible rendered frame / actor_1_portrait
+PASS: visible rendered frame / actor_1_full
+PASS: full-body framing contains posed bounds / 1
+PASS: channel 2 activates exactly its subject
+PASS: visible rendered frame / actor_2_portrait
+PASS: visible rendered frame / actor_2_full
+PASS: full-body framing contains posed bounds / 2
+PASS: channel 3 activates exactly its subject
+PASS: visible rendered frame / actor_3_portrait
+PASS: visible rendered frame / actor_3_full
+PASS: full-body framing contains posed bounds / 3
+PASS: channel 4 activates exactly its subject
+PASS: visible rendered frame / actor_4_portrait
+PASS: visible rendered frame / actor_4_full
+PASS: full-body framing contains posed bounds / 4
+PASS: channel 5 activates exactly its subject
+PASS: visible rendered frame / actor_5_portrait
+PASS: visible rendered frame / actor_5_full
+PASS: full-body framing contains posed bounds / 5
+PASS: visible rendered frame / xian01_0
+PASS: visible rendered frame / xian01_1
+PASS: visible rendered frame / xian01_2
+PASS: visible rendered frame / xian01_3
+PASS: visible rendered frame / xian02_0
+PASS: visible rendered frame / xian02_1
+PASS: visible rendered frame / xian02_2
+PASS: visible rendered frame / xian02_3
+PASS: visible rendered frame / xian03_0
+PASS: visible rendered frame / xian03_1
+PASS: visible rendered frame / xian03_2
+PASS: visible rendered frame / xian03_3
+PASS: visible rendered frame / ruk01_0
+PASS: visible rendered frame / ruk01_1
+PASS: visible rendered frame / ruk01_2
+PASS: visible rendered frame / ruk01_3
+PASS: visible rendered frame / ruk02_0
+PASS: visible rendered frame / ruk02_1
+PASS: visible rendered frame / ruk02_2
+PASS: visible rendered frame / ruk02_3
+PASS: visible rendered frame / ruk03_0
+PASS: visible rendered frame / ruk03_1
+PASS: visible rendered frame / ruk03_2
+PASS: visible rendered frame / ruk03_3
+PASS: visible rendered frame / fu01_0
+PASS: visible rendered frame / fu01_1
+PASS: visible rendered frame / fu01_2
+PASS: visible rendered frame / fu01_3
+PASS: visible rendered frame / fu02_0
+PASS: visible rendered frame / fu02_1
+PASS: visible rendered frame / fu02_2
+PASS: visible rendered frame / fu02_3
+PASS: visible rendered frame / fu03_0
+PASS: visible rendered frame / fu03_1
+PASS: visible rendered frame / fu03_2
+PASS: visible rendered frame / fu03_3
+PASS: visible rendered frame / crawl_00
+PASS: visible rendered frame / crawl_01
+PASS: visible rendered frame / crawl_02
+PASS: visible rendered frame / crawl_03
+PASS: visible rendered frame / crawl_04
+PASS: visible rendered frame / crawl_05
+PASS: visible rendered frame / crawl_06
+PASS: visible rendered frame / crawl_07
+PASS: visible rendered frame / crawl_08
+PASS: visible rendered frame / crawl_09
+PASS: visible rendered frame / crawl_10
+PASS: visible rendered frame / crawl_11
+PASS: visible rendered frame / crawl_12
+PASS: visible rendered frame / crawl_13
+PASS: visible rendered frame / crawl_14
+PASS: visible rendered frame / crawl_15
+PASS: visible rendered frame / crawl_16
+PASS: visible rendered frame / crawl_17
+PASS: visible rendered frame / crawl_18
+PASS: visible rendered frame / crawl_19
+PASS: visible rendered frame / crawl_20
+PASS: visible rendered frame / crawl_21
+PASS: visible rendered frame / crawl_22
+PASS: visible rendered frame / crawl_23
+PASS: crawler changes limb contacts through a complete gait cycle
+PASS: crawler retains at least three floor contacts throughout sampled gait
+PASS: crawler IK reaches targets (max error 0.0000 m)
+PASS: crawler endpoints remain above floor (minimum 0.0550 m)
+PASS: pause freezes crawler, camera and captions
+PASS: visible rendered frame / crawler_paused
+PASS: stop mode returns four supports to rest
+PASS: visible rendered frame / crawler_rest
+PASS: reduced-motion crawler retains contact solution
+PASS: visible rendered frame / crawler_clear
+PASS: species channel completes / 3
+PASS: species channel completes / 4
+PASS: species channel completes / 5
+PASS: original human archive remains accessible
+PASS: no runtime errors or exceptions

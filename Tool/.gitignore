@@ -1,0 +1,12 @@
+/UnityProject/Library/
+/UnityProject/Temp/
+/UnityProject/Obj/
+/UnityProject/Logs/
+/UnityProject/UserSettings/
+/Build/
+/QA/ImportTest/
+/QA/ImportTestClean/
+/QA/*.log
+*.csproj
+*.sln
+*.slnx

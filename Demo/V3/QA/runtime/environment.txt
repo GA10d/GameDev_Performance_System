@@ -1,0 +1,4 @@
+NVIDIA GeForce RTX 4070 Laptop GPU
+Windows 11  (10.0.26200) 64bit
+1440 x 900
+Unity 2022.3.62f1

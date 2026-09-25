@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddce116d1b03da419e92b5c5c8d7df4, type: 3}
+  m_Name: Character_fu
+  m_EditorClassIdentifier: 
+  id: fu
+  displayName: "\u4F0F"
+  species: 3
+  sourceModel: {fileID: 919132149155446097, guid: f1b7d9fdd482ac74c9c1b1a595e86cd5, type: 3}
+  v3Materials:
+  - {fileID: 2100000, guid: 1fd9803188746da4a8563f8f256428ed, type: 2}
+  - {fileID: 2100000, guid: 3e18aff7f4292b14c860817e726d1410, type: 2}
+  - {fileID: 2100000, guid: 97502591cde035a4a92b22dd9c073703, type: 2}
+  - {fileID: 2100000, guid: 7989e537e24ea84449297d2612b37cde, type: 2}
+  - {fileID: 2100000, guid: 6bdf6b46e60ce1c418f4ace9d3c9b2cc, type: 2}
+  - {fileID: 2100000, guid: cbb015c4b274082418828e4dfd07afba, type: 2}
+  - {fileID: 2100000, guid: 9da318336257ff64e96cc666c590e24f, type: 2}
+  accessoryMaterial: {fileID: 2100000, guid: 39f17dec7b766914b84779ba4ee01f39, type: 2}
+  look:
+    faceWidth: 1
+    bodyScale: 1
+    hairOrHeadgear: 0
+    accessory: 0
+    skin: {r: 0.46, g: 0.55, b: 0.41, a: 1}
+    suit: {r: 0.37, g: 0.41, b: 0.34, a: 1}
+    hair: {r: 0.18, g: 0.15, b: 0.12, a: 1}

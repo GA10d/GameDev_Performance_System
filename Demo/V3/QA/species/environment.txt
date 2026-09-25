@@ -1,0 +1,3 @@
+NVIDIA GeForce RTX 4070 Laptop GPU
+1440 x 900
+Unity 2022.3.62f1

@@ -1,0 +1,23 @@
+PASS: runtime session constructed
+PASS: all cast rig adapters bound
+PASS: remote camera renders into owned RT
+PASS: 01_lin_signal rendered nonblack frame
+PASS: pause freezes actor and sequence
+PASS: pause silences speech and ambient
+PASS: 02_stillness rendered nonblack frame
+PASS: 03_he_point rendered nonblack frame
+PASS: 04_yu_guarded rendered nonblack frame
+PASS: 05_rig_inspector rendered nonblack frame
+PASS: live choice reached
+PASS: 06_reply_choice rendered nonblack frame
+PASS: live log branch selected
+PASS: live selected branch completes
+PASS: 07_queued_reply rendered nonblack frame
+PASS: 08_clear_comparison rendered nonblack frame
+PASS: style switch reaches both cameras
+PASS: 09_style_retro_matched rendered nonblack frame
+PASS: 10_style_clear_matched rendered nonblack frame
+PASS: interrupt clears mouth and session
+PASS: replay clears reply
+PASS: actor shaders supported
+PASS: no runtime error or exception

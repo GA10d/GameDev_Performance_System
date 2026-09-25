@@ -1,0 +1,50 @@
+[
+  {
+    "id": "Lin047",
+    "triangles": 2682,
+    "bones": 13,
+    "height_m": 1.775,
+    "origin": "generated original geometry",
+    "rig": "rigid single-bone weights; no production smooth deformation"
+  },
+  {
+    "id": "He112",
+    "triangles": 2482,
+    "bones": 13,
+    "height_m": 1.775,
+    "origin": "generated original geometry",
+    "rig": "rigid single-bone weights; no production smooth deformation"
+  },
+  {
+    "id": "Yu203",
+    "triangles": 2630,
+    "bones": 13,
+    "height_m": 1.795,
+    "origin": "generated original geometry",
+    "rig": "rigid single-bone weights; no production smooth deformation"
+  },
+  {
+    "id": "Xian318",
+    "triangles": 1600,
+    "bones": 13,
+    "height_m": 2.01,
+    "origin": "original V1-style geometry",
+    "rig": "V1 semantic pose rig"
+  },
+  {
+    "id": "Ruk509",
+    "triangles": 1604,
+    "bones": 13,
+    "height_m": 1.764,
+    "origin": "original V1-style geometry",
+    "rig": "V1 semantic pose rig"
+  },
+  {
+    "id": "Fu640",
+    "triangles": 1984,
+    "bones": 19,
+    "height_m": 0.898,
+    "origin": "original V1-style geometry",
+    "rig": "named rigid bones; crawler uses four contact IK chains"
+  }
+]

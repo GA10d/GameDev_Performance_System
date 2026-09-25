@@ -1,4 +1,4 @@
-# Unity-generated state (applies to both UnityProject directories).
+# Unity-generated state for Demo/V1, Demo/V2, and Demo/V3.
 **/UnityProject/[Ll]ibrary/
 **/UnityProject/[Tt]emp/
 **/UnityProject/[Oo]bj/
@@ -11,10 +11,8 @@
 **/UnityProject/*_BackUpThisFolder_ButDontShipItWithYourGame/
 
 # Rebuildable players. Keep build scripts and Assets/** in version control.
-/[Bb]uild/
-/[Bb]uilds/
-/V2_Quaternius/[Bb]uild/
-/V2_Quaternius/[Bb]uilds/
+/Demo/*/[Bb]uild/
+/Demo/*/[Bb]uilds/
 **/UnityProject/[Bb]uild/
 **/UnityProject/[Bb]uilds/
 
@@ -46,8 +44,8 @@ __pycache__/
 **/QA/backups/
 **/QA/delivery-manifest.json
 # Keep audit JSON and documented QA/runtime screenshots and reports.
-/QA/AssetPreparation/**/*.blend
-/QA/AssetPreparation/**/*.fbx
+/Demo/*/QA/AssetPreparation/**/*.blend
+/Demo/*/QA/AssetPreparation/**/*.fbx
 
 # OS-generated files.
 .DS_Store

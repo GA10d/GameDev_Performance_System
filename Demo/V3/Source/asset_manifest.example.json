@@ -1,0 +1,11 @@
+[
+  {
+    "id": "astra_lin_validation",
+    "path": "../UnityProject/Assets/Performance/Models/Lin047.fbx",
+    "author": "Original geometry generated for Project Astra",
+    "source_url": "local:Tools/build_characters.py",
+    "license": "Project-owned original; no third-party character mesh",
+    "ratio": 0.65,
+    "flat_normals": true
+  }
+]

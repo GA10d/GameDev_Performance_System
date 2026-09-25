@@ -1,0 +1,352 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d482fc5e85d586747af9b13c1248bea9, type: 3}
+  m_Name: SignalArchive
+  m_EditorClassIdentifier: Assembly-CSharp:Astra.Performance:PerformanceSequence
+  entryId: lin01
+  beats:
+  - id: lin01
+    actor: 0
+    text: "\u5982\u679C\u8FD9\u6BB5\u5F71\u50CF\u5230\u4E86\uFF0C\u4F60\u7684\u98CE\u6247\u5E94\u8BE5\u8FD8\u5728\u54CD\u3002"
+    pose: 1
+    gaze: 1
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.7
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: lin02
+    choices: []
+  - id: lin02
+    actor: 0
+    text: "\u6211\u7684\u505C\u8FC7\u4E00\u6B21\u3002\u6211\u7528\u914D\u7ED9\u5238\u57AB\u4F4F\u4E86\u8F74\u627F\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 1
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.7
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: lin03
+    choices: []
+  - id: lin03
+    actor: 0
+    text: "\u7CFB\u7EDF\u628A\u5B83\u8BB0\u4F5C\uFF1A\u6D88\u8017\u54C1\u81EA\u884C\u4FEE\u590D\u3002"
+    pose: 1
+    gaze: 2
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.8
+    closeUp: 0.7
+    alarm: 1
+    stillness: 1
+    systemLine: 0
+    next: lin04
+    choices: []
+  - id: lin04
+    actor: 0
+    text: "\u5982\u679C\u4F60\u4E5F\u542C\u89C1\u90A3\u79CD\u58F0\u97F3\uFF0C\u5148\u522B\u5173\u6389\u5B83\u3002\u542C\u542C\u8FD9\u4EFD\u65E7\u8BB0\u5F55\u3002"
+    pose: 2
+    gaze: 0
+    gesture: 3
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.7
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: he01
+    choices: []
+  - id: he01
+    actor: 1
+    text: "\u7F16\u53F7\u5199\u53CD\u4E86\u3002\u5148\u62E7\u84DD\u7EBF\u4E0B\u9762\u90A3\u9897\u87BA\u9489\u3002"
+    pose: 3
+    gaze: 1
+    gesture: 2
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.7
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: he02
+    choices: []
+  - id: he02
+    actor: 1
+    text: "\u522B\u7B11\u3002\u6211\u4E5F\u82B1\u4E86\u4E03\u5E74\uFF0C\u624D\u53D1\u73B0\u8BF4\u660E\u4E66\u88C5\u5012\u4E86\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 5
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.7
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: he03
+    choices: []
+  - id: he03
+    actor: 1
+    text: "\u6709\u4E2A\u4EBA\u4F20\u7ED9\u6211\u53E6\u4E00\u4E2A\u540D\u5B57\u3002\u4E0D\u662F\u96F6\u4EF6\u7684\u540D\u5B57\u3002"
+    pose: 1
+    gaze: 3
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.1
+    closeUp: 0.35
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: yu01
+    choices: []
+  - id: yu01
+    actor: 2
+    text: "\u522B\u544A\u8BC9\u5B83\uFF0C\u4F60\u8FD8\u8BB0\u5F97\u81EA\u5DF1\u7684\u540D\u5B57\u3002"
+    pose: 2
+    gaze: 3
+    gesture: 4
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.2
+    closeUp: 0.65
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: yu02
+    choices: []
+  - id: yu02
+    actor: 2
+    text: "\u6211\u628A\u6211\u7684\u5199\u5728\u4E86\u8231\u58C1\u80CC\u9762\u3002\u90A3\u91CC\u4E0D\u5728\u68C0\u67E5\u6E05\u5355\u4E0A\u3002"
+    pose: 2
+    gaze: 0
+    gesture: 3
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.8
+    closeUp: 0.3
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: reply
+    choices: []
+  - id: reply
+    actor: 2
+    text: "\u8F6E\u5230\u4F60\u4E86\u3002\u4F60\u60F3\u7559\u4E0B\u4EC0\u4E48\uFF1F"
+    pose: 0
+    gaze: 0
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 0.6
+    closeUp: 0.7
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: 
+    choices:
+    - text: "\u7559\u4E0B\u6211\u7684\u540D\u5B57"
+      next: end_name
+      payload: "\u6211\u7684\u540D\u5B57\u8FD8\u5728\u3002\u98CE\u6247\u4E5F\u8FD8\u5728\u3002"
+    - text: "\u53EA\u53D1\u9001\u7EF4\u4FEE\u8BB0\u5F55"
+      next: end_log
+      payload: "047 \u578B\u8F74\u627F\u4FEE\u590D\u65B9\u6CD5\uFF1B\u59D3\u540D\u5B57\u6BB5\u7559\u7A7A\u3002"
+  - id: end_name
+    actor: 0
+    text: "\u3014\u5F71\u50CF\u7ED3\u675F\u3015\u56DE\u4FE1\u5DF2\u6392\u961F\uFF1A\u4E00\u4E2A\u540D\u5B57\uFF0C\u548C\u4E00\u6BB5\u98CE\u6247\u7684\u58F0\u97F3\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.35
+    alarm: 0
+    stillness: 0
+    systemLine: 1
+    next: 
+    choices: []
+  - id: end_log
+    actor: 1
+    text: "\u3014\u5F71\u50CF\u7ED3\u675F\u3015\u56DE\u4FE1\u5DF2\u6392\u961F\uFF1A\u7EF4\u4FEE\u8BB0\u5F55\u3002\u59D3\u540D\u5B57\u6BB5\u7559\u7A7A\u3002"
+    pose: 0
+    gaze: 1
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.2
+    alarm: 0
+    stillness: 0
+    systemLine: 1
+    next: 
+    choices: []
+  - id: xian01
+    actor: 3
+    text: "\u7FFB\u8BD1\u5668\u628A\u6211\u7684\u540D\u5B57\u5199\u6210\u4E86\u5F26\u3002\u8FD9\u4E2A\u5B57\uFF0C\u6BD4\u7F16\u53F7\u5BB9\u6613\u8BB0\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 5
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.2
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: xian02
+    choices: []
+  - id: xian02
+    actor: 3
+    text: "\u8FD9\u8EAB\u8863\u670D\u5C11\u4E86\u4E24\u5904\u5F00\u53E3\u3002\u6211\u628A\u9886\u5B50\u62C6\u6389\uFF0C\u624D\u542C\u6E05\u673A\u5668\u3002"
+    pose: 1
+    gaze: 1
+    gesture: 1
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.1
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: xian03
+    choices: []
+  - id: xian03
+    actor: 3
+    text: "\u7B49\u5341\u4E03\u5E74\u540E\u7684\u56DE\u58F0\u5230\u4E86\uFF0C\u8BF7\u544A\u8BC9\u5B83\uFF1A\u6211\u66FE\u5728\u8FD9\u91CC\u505C\u8FC7\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 3
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.5
+    closeUp: 0.55
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: species_end
+    choices: []
+  - id: ruk01
+    actor: 4
+    text: "\u8231\u95E8\u6309\u4F60\u4EEC\u7684\u80A9\u5BBD\u505A\u7684\u3002\u6211\u5148\u8FDB\u53BB\uFF0C\u5DE5\u5177\u6700\u540E\u518D\u9012\u8FC7\u6765\u3002"
+    pose: 3
+    gaze: 0
+    gesture: 1
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.1
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: ruk02
+    choices: []
+  - id: ruk02
+    actor: 4
+    text: "\u7259\u9F7F\u4E0D\u662F\u7528\u6765\u62E7\u87BA\u6BCD\u7684\u3002\u8FD9\u4E00\u9897\uFF0C\u662F\u524D\u4EFB\u7EF4\u4FEE\u5458\u6559\u6211\u7684\u3002"
+    pose: 0
+    gaze: 1
+    gesture: 4
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0.35
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: ruk03
+    choices: []
+  - id: ruk03
+    actor: 4
+    text: "\u522B\u53EA\u8BB0\u4E0B\u4FEE\u597D\u4E86\u4EC0\u4E48\u3002\u4E5F\u8BB0\u4E0B\u662F\u8C01\uFF0C\u628A\u673A\u5668\u591A\u6491\u4E86\u4E00\u665A\u3002"
+    pose: 1
+    gaze: 0
+    gesture: 3
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.5
+    closeUp: 0.55
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: species_end
+    choices: []
+  - id: fu01
+    actor: 5
+    text: "\u3014\u4F4E\u4F4D\u8BB0\u5F55\u3015\u56DB\u5904\u63A5\u89E6\u70B9\u4F9D\u6B21\u79FB\u52A8\u3002\u5B83\u628A\u63A5\u6536\u5668\u62D6\u5230\u4E86\u706F\u4E0B\u3002"
+    pose: 0
+    gaze: 1
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.8
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: fu02
+    choices: []
+  - id: fu02
+    actor: 5
+    text: "\u3014\u8282\u5F8B\u8BD1\u6587\u3015\u5730\u677F\u5148\u544A\u8BC9\u6211\uFF0C\u8FDC\u5904\u7684\u673A\u5668\u8FD8\u6D3B\u7740\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 5
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1.4
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 0
+    next: fu03
+    choices: []
+  - id: fu03
+    actor: 5
+    text: "\u3014\u505C\u9A7B\u3015\u5B83\u4F0F\u4F4E\u8EAB\u4F53\uFF0C\u7B49\u4E0B\u4E00\u6B21\u632F\u52A8\u7A7F\u8FC7\u8231\u58C1\u3002"
+    pose: 1
+    gaze: 0
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 2
+    closeUp: 0
+    alarm: 0
+    stillness: 1
+    systemLine: 0
+    next: species_end
+    choices: []
+  - id: species_end
+    actor: 3
+    text: "\u3014\u5F71\u50CF\u7ED3\u675F\u3015\u5F02\u79CD\u8BB0\u5F55\u5DF2\u5B58\u5165\u7F13\u5B58\u3002"
+    pose: 0
+    gaze: 0
+    gesture: 0
+    lead: 0.35
+    charactersPerSecond: 18
+    hold: 1
+    closeUp: 0
+    alarm: 0
+    stillness: 0
+    systemLine: 1
+    next: 
+    choices: []

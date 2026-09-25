@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddce116d1b03da419e92b5c5c8d7df4, type: 3}
+  m_Name: Character_ruk
+  m_EditorClassIdentifier: 
+  id: ruk
+  displayName: "\u783E"
+  species: 2
+  sourceModel: {fileID: 919132149155446097, guid: 3435e471f695307468f3a115fd7bde05, type: 3}
+  v3Materials:
+  - {fileID: 2100000, guid: 71010a6df5d051e4ca17d03fbe537814, type: 2}
+  - {fileID: 2100000, guid: fcc199012660cad418264ab73b5c98ce, type: 2}
+  - {fileID: 2100000, guid: fc3c040c8662ed444a869964d0345f89, type: 2}
+  - {fileID: 2100000, guid: f911d633c7c226d47ab9624811c6e55c, type: 2}
+  - {fileID: 2100000, guid: 62e38cea10b7ff1429c043c12e34e46f, type: 2}
+  - {fileID: 2100000, guid: ac1329fec5d35e64d879cd6f12c7450d, type: 2}
+  - {fileID: 2100000, guid: c00d47cc7e796a841953cdb0e7d56107, type: 2}
+  - {fileID: 2100000, guid: b7d713cafa7356944b76437a2c5b106e, type: 2}
+  - {fileID: 2100000, guid: 7eb995697b04a5e429c1ec2a94468480, type: 2}
+  - {fileID: 2100000, guid: 644f8424007d4a84493788c16069a3c1, type: 2}
+  accessoryMaterial: {fileID: 2100000, guid: 39f17dec7b766914b84779ba4ee01f39, type: 2}
+  look:
+    faceWidth: 1
+    bodyScale: 1
+    hairOrHeadgear: 0
+    accessory: 0
+    skin: {r: 0.48, g: 0.5, b: 0.3, a: 1}
+    suit: {r: 0.48, g: 0.33, b: 0.23, a: 1}
+    hair: {r: 0.18, g: 0.15, b: 0.12, a: 1}

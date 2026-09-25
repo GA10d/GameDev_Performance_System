@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "QA/core-verification.txt": 28,
+    "QA/runtime/runtime-verification.txt": 23,
+    "QA/species/checks.txt": 102
+  },
+  "screenshots": 75,
+  "image_sources": "actual Unity player, 1440x900"
+}

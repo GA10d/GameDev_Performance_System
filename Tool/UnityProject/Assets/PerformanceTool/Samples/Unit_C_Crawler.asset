@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16df8a0133ac45c4da155095945f6eba, type: 3}
+  m_Name: Unit_C_Crawler
+  m_EditorClassIdentifier: 
+  id: crawler
+  duration: 6
+  actors:
+  - id: speaker
+    character: {fileID: 11400000, guid: f0d328a7fbfd6ed4a8f1c8c2cc5bec9d, type: 2}
+    start: 0
+    duration: 6
+  actions:
+  - actorId: speaker
+    actionId: Walk_Loop
+    start: 0
+    duration: 3.5
+    speed: 1
+  - actorId: speaker
+    actionId: Crouch_Idle_Loop
+    start: 3.5
+    duration: 2.5
+    speed: 1
+  dialogue:
+  - actorId: speaker
+    kind: 0
+    text: "\u3014\u8282\u5F8B\u8BD1\u6587\u3015\u5730\u677F\u8BF4\uFF0C\u8FDC\u5904\u4ECD\u6709\u56DE\u5E94\u3002"
+    start: 0.6
+    charactersPerSecond: 14
+    hold: 1
+    patienceSeconds: 6
+    choices: []
+  scenes:
+  - sceneId: alarm
+    start: 0
+    duration: 6
+  cameras:
+  - shot: 8
+    fx: 0
+    actorId: speaker
+    partnerId: 
+    start: 0
+    duration: 3
+    customPosition: {x: 0.2, y: 1.6, z: -2.6}
+    customEuler: {x: 3, y: 0, z: 0}
+    customFov: 36
+  - shot: 5
+    fx: 3
+    actorId: speaker
+    partnerId: 
+    start: 3
+    duration: 3
+    customPosition: {x: 0.2, y: 1.6, z: -2.6}
+    customEuler: {x: 3, y: 0, z: 0}
+    customFov: 36

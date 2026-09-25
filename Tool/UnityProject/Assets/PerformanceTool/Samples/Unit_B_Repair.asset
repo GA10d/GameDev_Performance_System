@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16df8a0133ac45c4da155095945f6eba, type: 3}
+  m_Name: Unit_B_Repair
+  m_EditorClassIdentifier: 
+  id: repair
+  duration: 6
+  actors:
+  - id: speaker
+    character: {fileID: 11400000, guid: 22345894066ebcf4492086fc03084984, type: 2}
+    start: 0
+    duration: 6
+  actions:
+  - actorId: speaker
+    actionId: Fixing_Kneeling
+    start: 0.5
+    duration: 2.4
+    speed: 1
+  - actorId: speaker
+    actionId: Idle_Talking_Loop
+    start: 3
+    duration: 3
+    speed: 1
+  dialogue:
+  - actorId: speaker
+    kind: 0
+    text: "\u673A\u5668\u8FD8\u6D3B\u7740\u3002\u6211\u4EEC\u628A\u4FE1\u53F7\u9001\u51FA\u53BB\u3002"
+    start: 0.7
+    charactersPerSecond: 14
+    hold: 1
+    patienceSeconds: 6
+    choices: []
+  scenes:
+  - sceneId: relay
+    start: 0
+    duration: 6
+  cameras:
+  - shot: 8
+    fx: 0
+    actorId: speaker
+    partnerId: 
+    start: 0
+    duration: 3
+    customPosition: {x: 0.2, y: 1.6, z: -2.6}
+    customEuler: {x: 3, y: 0, z: 0}
+    customFov: 36
+  - shot: 6
+    fx: 0
+    actorId: speaker
+    partnerId: 
+    start: 3
+    duration: 3
+    customPosition: {x: 0.2, y: 1.6, z: -2.6}
+    customEuler: {x: 3, y: 0, z: 0}
+    customFov: 36
