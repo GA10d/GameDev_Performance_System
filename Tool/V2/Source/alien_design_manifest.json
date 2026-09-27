@@ -1,0 +1,28 @@
+{
+  "heads": {
+    "0": "灰裔",
+    "1": "阔吻鳃族",
+    "2": "裂颚甲族",
+    "3": "穹壳独眼",
+    "4": "横翼四目",
+    "5": "菌伞胞族",
+    "6": "晶面硅族",
+    "7": "喙面翼族",
+    "8": "纵颅深潜者",
+    "9": "花萼共生体"
+  },
+  "crests": [
+    "none",
+    "gill fan",
+    "ram horn",
+    "sagittal sail",
+    "lunar arch",
+    "hanging lobes",
+    "fungal umbrella",
+    "crystal spires",
+    "sensory antennae",
+    "carapace",
+    "leaf crown",
+    "bony bridge"
+  ]
+}

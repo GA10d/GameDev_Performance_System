@@ -1,0 +1,5 @@
+Runtime errors: 0
+Camera captures: 166
+Wardrobe pose samples: 16128
+Skinned vertices checked: 174121920
+12 outfits x 2 species x 8 body types x 42 clips x 2 times; 22 mixed outfits; 2 JSON roundtrips; four menu ID partitions. Numerical checks are not a guarantee of zero cloth intersections.

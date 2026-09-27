@@ -1,0 +1,16 @@
+Git tracking audit — 2026-09-25
+Repository: F:\Documents\GitHub\GameDev_Performance_System
+Branch: main
+Base commit (unchanged, no commit/push performed): 7e6fce9
+Staged file statuses before this report: {"A": 651, "D": 3, "M": 2, "R": 349}
+Tracked files: 1795
+Largest tracked file bytes: 36583096
+PASS no tracked ignored files; no old flat Tool paths; no generated players/caches/download archives in Tool index
+PASS Unity Assets all have tracked .meta files; both Tool projects include Assets/Packages/ProjectSettings
+PASS original Quaternius Blend, 5 UBC hair FBX, animation FBX, licences and production scripts tracked
+PASS original 128968391-byte download ZIP remains on disk and is ignored
+PASS no tracked file reaches 100 MiB; no LFS dependency introduced
+PASS 408 delivered files checked against staging SHA-256 (QA/delivery-manifest.json, local only)
+Unstaged paths before report: 0
+Untracked paths before report: 0
+This report itself is added after these counts. Staging is reversible and is not a remote backup.

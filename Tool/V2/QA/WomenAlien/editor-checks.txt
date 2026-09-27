@@ -1,0 +1,1 @@
+PASS: 10 female presets; common Humanoid; female hair menu coverage; hat restore and JSON; legacy male JSON; geometric mouths; obsolete UV mouth textures removed; full UAL pose suite; 140 female mixed wardrobe/hair/extreme poses. User sample QA ran on disposable copies.

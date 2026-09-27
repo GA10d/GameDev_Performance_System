@@ -1,0 +1,13 @@
+UnityProject/Library/
+UnityProject/Temp/
+UnityProject/Obj/
+UnityProject/Logs/
+UnityProject/UserSettings/
+UnityProject/.vs/
+UnityProject/*.csproj
+UnityProject/*.sln
+Source/*.blend1
+Build/
+Export/*.unitypackage
+QA/*.log
+QA/Runtime/player.log

@@ -1,0 +1,46 @@
+PASS: six original V3 character models retained
+PASS: 17 V2 semantic actions
+PASS: nine V2 camera presets and custom camera
+PASS: three scene presets
+PASS: sample graph validates
+PASS: rig, creator parts and 17 actions lin
+PASS: rig, creator parts and 17 actions he
+PASS: rig, creator parts and 17 actions yu
+PASS: rig, creator parts and 17 actions xian
+PASS: rig, creator parts and 17 actions ruk
+PASS: rig, creator parts and 17 actions fu
+PASS: rig, creator parts and 17 actions creator_h01
+PASS: rig, creator parts and 17 actions creator_h02
+PASS: rig, creator parts and 17 actions creator_h03
+PASS: rig, creator parts and 17 actions creator_h04
+PASS: rig, creator parts and 17 actions creator_h05
+PASS: rig, creator parts and 17 actions creator_h06
+PASS: rig, creator parts and 17 actions creator_h07
+PASS: rig, creator parts and 17 actions creator_h08
+PASS: rig, creator parts and 17 actions creator_h09
+PASS: rig, creator parts and 17 actions creator_h10
+PASS: rig, creator parts and 17 actions creator_h11
+PASS: rig, creator parts and 17 actions creator_h12
+PASS: rig, creator parts and 17 actions creator_h13
+PASS: rig, creator parts and 17 actions creator_h14
+PASS: rig, creator parts and 17 actions creator_h15
+PASS: rig, creator parts and 17 actions creator_h16
+PASS: rig, creator parts and 17 actions creator_a01
+PASS: rig, creator parts and 17 actions creator_a02
+PASS: rig, creator parts and 17 actions creator_a03
+PASS: rig, creator parts and 17 actions creator_a04
+PASS: rig, creator parts and 17 actions creator_a05
+PASS: rig, creator parts and 17 actions creator_a06
+PASS: rig, creator parts and 17 actions creator_a07
+PASS: rig, creator parts and 17 actions creator_a08
+PASS: rig, creator parts and 17 actions creator_a09
+PASS: rig, creator parts and 17 actions creator_a10
+PASS: rig, creator parts and 17 actions creator_a11
+PASS: rig, creator parts and 17 actions creator_a12
+PASS: rig, creator parts and 17 actions creator_a13
+PASS: rig, creator parts and 17 actions creator_a14
+PASS: rig, creator parts and 17 actions creator_a15
+PASS: rig, creator parts and 17 actions creator_a16
+PASS: uncovered action rejected
+PASS: choice conditions and resource deltas
+PASS: silence and conditional routing

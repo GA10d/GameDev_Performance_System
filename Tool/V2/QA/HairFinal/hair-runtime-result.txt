@@ -1,0 +1,2 @@
+Runtime errors: 0
+19 styles x 3 angles; 12 short-crop face/extreme top views; 35 action views; new hair ID 29 JSON roundtrip

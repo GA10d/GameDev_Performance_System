@@ -1,0 +1,16 @@
+# Binary art assets must not undergo line-ending conversion.
+*.blend -text
+*.fbx -text
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.unitypackage -text
+# Unity scenes, prefabs, metadata and scripts remain diffable text.
+*.cs text
+*.shader text
+*.asset text
+*.prefab text
+*.unity text
+*.meta text
+*.md text
+*.py text

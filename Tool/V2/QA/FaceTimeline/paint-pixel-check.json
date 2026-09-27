@@ -1,0 +1,280 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "species": "Human",
+      "angle": 0,
+      "mark": 1,
+      "changedBounds": [
+        348,
+        512,
+        414,
+        534
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 0,
+      "mark": 2,
+      "changedBounds": [
+        632,
+        506,
+        665,
+        530
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 0,
+      "mark": 3,
+      "changedBounds": [
+        348,
+        506,
+        665,
+        534
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 0,
+      "mark": 4,
+      "changedBounds": [
+        347,
+        504,
+        414,
+        541
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 0,
+      "mark": 5,
+      "changedBounds": [
+        347,
+        500,
+        665,
+        541
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 65,
+      "mark": 1,
+      "changedBounds": [
+        296,
+        520,
+        300,
+        529
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 65,
+      "mark": 2,
+      "changedBounds": [
+        414,
+        507,
+        507,
+        530
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 65,
+      "mark": 3,
+      "changedBounds": [
+        296,
+        507,
+        507,
+        530
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 65,
+      "mark": 4,
+      "changedBounds": [
+        295,
+        514,
+        300,
+        532
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 65,
+      "mark": 5,
+      "changedBounds": [
+        295,
+        500,
+        511,
+        537
+      ]
+    },
+    {
+      "species": "Human",
+      "angle": 180,
+      "mark": 1,
+      "changedBounds": null
+    },
+    {
+      "species": "Human",
+      "angle": 180,
+      "mark": 2,
+      "changedBounds": null
+    },
+    {
+      "species": "Human",
+      "angle": 180,
+      "mark": 3,
+      "changedBounds": null
+    },
+    {
+      "species": "Human",
+      "angle": 180,
+      "mark": 4,
+      "changedBounds": null
+    },
+    {
+      "species": "Human",
+      "angle": 180,
+      "mark": 5,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 0,
+      "mark": 1,
+      "changedBounds": [
+        425,
+        598,
+        469,
+        609
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 0,
+      "mark": 2,
+      "changedBounds": [
+        577,
+        593,
+        615,
+        606
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 0,
+      "mark": 3,
+      "changedBounds": [
+        425,
+        593,
+        615,
+        609
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 0,
+      "mark": 4,
+      "changedBounds": [
+        424,
+        592,
+        469,
+        615
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 0,
+      "mark": 5,
+      "changedBounds": [
+        424,
+        587,
+        616,
+        615
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 65,
+      "mark": 1,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 65,
+      "mark": 2,
+      "changedBounds": [
+        432,
+        592,
+        465,
+        602
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 65,
+      "mark": 3,
+      "changedBounds": [
+        432,
+        592,
+        465,
+        602
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 65,
+      "mark": 4,
+      "changedBounds": [
+        368,
+        599,
+        378,
+        605
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 65,
+      "mark": 5,
+      "changedBounds": [
+        369,
+        586,
+        467,
+        608
+      ]
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 180,
+      "mark": 1,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 180,
+      "mark": 2,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 180,
+      "mark": 3,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 180,
+      "mark": 4,
+      "changedBounds": null
+    },
+    {
+      "species": "StandingAlien",
+      "angle": 180,
+      "mark": 5,
+      "changedBounds": null
+    }
+  ]
+}

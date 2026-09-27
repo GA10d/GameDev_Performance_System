@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-27",
+  "h2_sections": 12,
+  "local_link_targets": 12,
+  "missing_links": [],
+  "network_dependencies": 0,
+  "duplicate_ids": 0,
+  "example_dialogue_end_seconds": [
+    2.75,
+    6.333
+  ],
+  "markdown_characters": 12951
+}

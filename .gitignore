@@ -1,4 +1,4 @@
-# Unity-generated state for Demo/V1, Demo/V2, and Demo/V3.
+# Unity-generated state for Demo and Tool projects.
 **/UnityProject/[Ll]ibrary/
 **/UnityProject/[Tt]emp/
 **/UnityProject/[Oo]bj/
@@ -51,3 +51,22 @@ __pycache__/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Tool players / Unity distribution packages can be reproduced from source.
+/Tool/*/[Bb]uild/
+/Tool/*/[Bb]uilds/
+/Tool/*/Export/*.unitypackage
+/Tool/*/QA/BuildCandidate/
+/Tool/*/QA/Diagnostics/
+
+# Keep the extracted source meshes and licences; omit duplicate download archives.
+/Tool/*/Source/Downloads/*.zip
+/Tool/*/Source/Downloads/*.7z
+/Tool/*/Source/Downloads/*.rar
+
+# Keep review contact sheets, native UI evidence and TXT/JSON reports.
+# Reproducible frame sequences stay local; no files are deleted by these rules.
+/Tool/V2/QA/Runtime/*.png
+/Tool/V2/QA/HairFinal/*.png
+/Tool/V2/QA/AlienFinal/*.png
+/Tool/V2/QA/OutfitFinal/*.png

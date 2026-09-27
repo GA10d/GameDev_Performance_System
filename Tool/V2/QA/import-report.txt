@@ -1,0 +1,48 @@
+DemoCast/Lin: avatar=LinAvatar valid=True human=True
+DemoCast/Echo: avatar=EchoAvatar valid=True human=True
+DemoCast/Ruk: avatar=RukAvatar valid=True human=True
+DemoCast/Voss: avatar=VossAvatar valid=True human=True
+ModularCast: avatar=ModularCastAvatar valid=True human=True
+Jog_Fwd_Loop 0.9333334s human=True
+Hit_Head 0.4333334s human=True
+Crouch_Idle_Loop 2.933333s human=True
+Idle_Torch_Loop 1.266667s human=True
+Punch_Jab 0.8666667s human=True
+Walk_Loop 1.333333s human=True
+Sitting_Idle_Loop 1.666667s human=True
+Driving_Loop 1.666667s human=True
+Spell_Simple_Enter 0.5333334s human=True
+Spell_Simple_Shoot 0.5s human=True
+Pistol_Aim_Down 0.1666667s human=True
+Sprint_Loop 0.6666667s human=True
+Pistol_Idle_Loop 1.666667s human=True
+Spell_Simple_Exit 0.4333334s human=True
+Pistol_Reload 1.666667s human=True
+Jump_Loop 2.5s human=True
+Pistol_Aim_Up 0.1666667s human=True
+Sword_Attack 1.533333s human=True
+Interact 2s human=True
+Jump_Start 1.333333s human=True
+Pistol_Aim_Neutral 0.1666667s human=True
+Hit_Chest 0.3333333s human=True
+Sitting_Exit 1.033333s human=True
+Swim_Idle_Loop 3.333333s human=True
+Punch_Cross 1s human=True
+Pistol_Shoot 0.6333334s human=True
+PickUp_Table 0.8333334s human=True
+Push_Loop 2.666667s human=True
+Roll 1.466667s human=True
+Death01 2.4s human=True
+Fixing_Kneeling 5.2s human=True
+Spell_Simple_Idle_Loop 2.1s human=True
+Crouch_Fwd_Loop 2s human=True
+Sitting_Talking_Loop 2.933333s human=True
+Jump_Land 1.266667s human=True
+A_TPose 2.5s human=True
+Swim_Fwd_Loop 1.333333s human=True
+Walk_Formal_Loop 1.333333s human=True
+Idle_Talking_Loop 2.933333s human=True
+Sitting_Enter 1.3s human=True
+Idle_Loop 2.5s human=True
+Sword_Idle 1.666667s human=True
+Dance_Loop 1s human=True

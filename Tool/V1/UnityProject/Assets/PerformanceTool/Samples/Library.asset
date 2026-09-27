@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbd0ad906f81a54ebc9c866e1c2ccf4, type: 3}
+  m_Name: Library
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 11400000, guid: bcb337bd26e40d04082152692704ce49, type: 2}
+  - {fileID: 11400000, guid: 187236770121f5e4db22602f3ce89a6b, type: 2}
+  - {fileID: 11400000, guid: b6a8c45b37cd36a44a76d5a1bbc0835f, type: 2}
+  - {fileID: 11400000, guid: 5f52bbb682e05354dbb6fbcab81447c2, type: 2}
+  - {fileID: 11400000, guid: 22345894066ebcf4492086fc03084984, type: 2}
+  - {fileID: 11400000, guid: f0d328a7fbfd6ed4a8f1c8c2cc5bec9d, type: 2}
+  - {fileID: 11400000, guid: 590eb85de6768b94d8d39930b3b5f4d9, type: 2}
+  - {fileID: 11400000, guid: 7d90c12aca637c343be295f21ee32478, type: 2}
+  - {fileID: 11400000, guid: 5b87f542d28f76d4f9b50278d389d9d5, type: 2}
+  - {fileID: 11400000, guid: aadb2524115ac894da1a4a2ad0c40f51, type: 2}
+  - {fileID: 11400000, guid: 5106042cc46c92f40a85a5d66608bac9, type: 2}
+  - {fileID: 11400000, guid: 50788c15bf634b94ca20a17fccaea3de, type: 2}
+  - {fileID: 11400000, guid: d50a73837e2f3b648834fffe501a8cb1, type: 2}
+  - {fileID: 11400000, guid: 8b9c2f0bb53df8a409967aada9410835, type: 2}
+  - {fileID: 11400000, guid: 24a992ba8e06af1418680f0f74c1a698, type: 2}
+  - {fileID: 11400000, guid: 9691f3f01ae1c7d42adf174baf062db4, type: 2}
+  - {fileID: 11400000, guid: 7ddebbc77edc09847b5c1c1f807da1c4, type: 2}
+  - {fileID: 11400000, guid: da4c2dbcec1c5f047b09c7d4c6acb2ec, type: 2}
+  - {fileID: 11400000, guid: cc15ec8fc15df774ca4a99951461ea59, type: 2}
+  - {fileID: 11400000, guid: 2155e7ee2c653e54dbe025852b306da2, type: 2}
+  - {fileID: 11400000, guid: 6b921e3b10656bf48a8a48342f5cb06d, type: 2}
+  - {fileID: 11400000, guid: 9d99563794f33ef41830704d9e4737b5, type: 2}
+  - {fileID: 11400000, guid: 1304f4bc397a6684688d34e9bf850536, type: 2}
+  - {fileID: 11400000, guid: 7a47a4c8885a72e4c8c4983dfdbfe57f, type: 2}
+  - {fileID: 11400000, guid: 6be9207efcd7ee0498d208770a637e5d, type: 2}
+  - {fileID: 11400000, guid: 112887b28cae54542bb0f90ea54158c3, type: 2}
+  - {fileID: 11400000, guid: 8a54cd714a6b6ff4e92836a2e9218667, type: 2}
+  - {fileID: 11400000, guid: 9ab79d6a30833fc408d921f887d5ce47, type: 2}
+  - {fileID: 11400000, guid: 678b4edfad1ffd740ba75f843f11bbd6, type: 2}
+  - {fileID: 11400000, guid: 57fc516c45b55c04094e1e19e1c221d0, type: 2}
+  - {fileID: 11400000, guid: ed8a5fbad89649941a16d7860297b867, type: 2}
+  - {fileID: 11400000, guid: 0b292d13570cf434796a99a89b102977, type: 2}
+  - {fileID: 11400000, guid: 5fdf6ec3bb58d974395eacadceebe603, type: 2}
+  - {fileID: 11400000, guid: 671db860e6cfad5468fe861696fc2e46, type: 2}
+  - {fileID: 11400000, guid: 69ea02f96b481444ebe08d29b1b5d580, type: 2}
+  - {fileID: 11400000, guid: e3f7897f0f0fd9943ae472fa0fe6496e, type: 2}
+  - {fileID: 11400000, guid: 0d7eff9bd09ea3f4f98da942ab8beb09, type: 2}
+  - {fileID: 11400000, guid: 720062b901c1ee54eaee141cce9f78e0, type: 2}
+  actions:
+  - id: Idle_Loop
+    displayName: "\u5F85\u673A"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: Idle_Talking_Loop
+    displayName: "\u8BF4\u8BDD"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: Walk_Loop
+    displayName: "\u884C\u8D70"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: Walk_Formal_Loop
+    displayName: "\u6B63\u5F0F\u884C\u8D70"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: PickUp_Table
+    displayName: "\u53D6\u7269"
+    length: 2.4
+    loop: 0
+    crawlerAllowed: 0
+  - id: Interact
+    displayName: "\u64CD\u4F5C\u8BBE\u5907"
+    length: 2
+    loop: 0
+    crawlerAllowed: 1
+  - id: Fixing_Kneeling
+    displayName: "\u8DEA\u59FF\u7EF4\u4FEE"
+    length: 2.4
+    loop: 0
+    crawlerAllowed: 0
+  - id: Sitting_Enter
+    displayName: "\u5750\u4E0B"
+    length: 1.2
+    loop: 0
+    crawlerAllowed: 0
+  - id: Sitting_Idle_Loop
+    displayName: "\u5750\u59FF\u5F85\u673A"
+    length: 2
+    loop: 1
+    crawlerAllowed: 0
+  - id: Sitting_Talking_Loop
+    displayName: "\u5750\u59FF\u8BF4\u8BDD"
+    length: 2
+    loop: 1
+    crawlerAllowed: 0
+  - id: Sitting_Exit
+    displayName: "\u8D77\u8EAB"
+    length: 1.2
+    loop: 0
+    crawlerAllowed: 0
+  - id: Push_Loop
+    displayName: "\u63A8\u538B"
+    length: 2
+    loop: 1
+    crawlerAllowed: 0
+  - id: Crouch_Idle_Loop
+    displayName: "\u8E72\u4F0F"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: Hit_Chest
+    displayName: "\u62CD\u80F8"
+    length: 2
+    loop: 0
+    crawlerAllowed: 0
+  - id: Hit_Head
+    displayName: "\u89E6\u5934"
+    length: 2
+    loop: 0
+    crawlerAllowed: 0
+  - id: Jog_Fwd_Loop
+    displayName: "\u6162\u8DD1"
+    length: 2
+    loop: 1
+    crawlerAllowed: 1
+  - id: Dance_Loop
+    displayName: "\u821E\u52A8"
+    length: 2
+    loop: 1
+    crawlerAllowed: 0
+  cameras:
+  - shot: 0
+    displayName: "\u5168\u666F"
+    moving: 0
+    fov: 36
+  - shot: 1
+    displayName: "\u4E2D\u666F"
+    moving: 0
+    fov: 36
+  - shot: 2
+    displayName: "\u8FD1\u666F"
+    moving: 0
+    fov: 36
+  - shot: 3
+    displayName: "\u53CC\u4EBA"
+    moving: 0
+    fov: 42
+  - shot: 4
+    displayName: "\u8FC7\u80A9"
+    moving: 0
+    fov: 36
+  - shot: 5
+    displayName: "\u4FA7\u9762"
+    moving: 0
+    fov: 36
+  - shot: 6
+    displayName: "\u4F4E\u673A\u4F4D"
+    moving: 0
+    fov: 36
+  - shot: 7
+    displayName: "\u8BBE\u5907\u63D2\u5165"
+    moving: 0
+    fov: 36
+  - shot: 8
+    displayName: "\u8DDF\u62CD"
+    moving: 1
+    fov: 36
+  - shot: 9
+    displayName: "\u81EA\u5B9A\u4E49"
+    moving: 1
+    fov: 36
+  scenes:
+  - id: archive
+    displayName: "\u6863\u6848\u8231"
+    wall: {r: 0.28, g: 0.31, b: 0.26, a: 1}
+    floor: {r: 0.13, g: 0.15, b: 0.12, a: 1}
+    light: {r: 1, g: 0.82, b: 0.59, a: 1}
+  - id: relay
+    displayName: "\u65E7\u4E2D\u7EE7\u7AD9"
+    wall: {r: 0.23, g: 0.29, b: 0.29, a: 1}
+    floor: {r: 0.12, g: 0.15, b: 0.17, a: 1}
+    light: {r: 0.75, g: 0.83, b: 1, a: 1}
+  - id: alarm
+    displayName: "\u6545\u969C\u8B66\u62A5"
+    wall: {r: 0.25, g: 0.19, b: 0.17, a: 1}
+    floor: {r: 0.16, g: 0.11, b: 0.1, a: 1}
+    light: {r: 1, g: 0.35, b: 0.24, a: 1}

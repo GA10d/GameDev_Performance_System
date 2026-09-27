@@ -1,0 +1,4 @@
+Runtime errors: 0
+Screenshots: 87
+Face/width/paint states: 132
+Runtime seek: 10 / 30 / 120.5 / 3599 seconds; late subtitle at 120.5 seconds

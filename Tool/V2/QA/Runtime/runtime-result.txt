@@ -1,0 +1,3 @@
+Runtime errors: 0
+32 presets × face/sitting views; 12 UI states; 34 action views; 9 cameras; player pay/silence branches; JSON save/load
+Hidden-window whole-screen capture can be black. UI reviewed separately with native window capture.

@@ -1,0 +1,56 @@
+[
+  {
+    "head": "Head_Alien",
+    "faces": 11,
+    "sharedEdges": 34,
+    "attached": true
+  },
+  {
+    "head": "Broad muzzle",
+    "faces": 4,
+    "sharedEdges": 15,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 4,
+    "sharedEdges": 14,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 6,
+    "sharedEdges": 20,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 4,
+    "sharedEdges": 15,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 2,
+    "sharedEdges": 9,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 2,
+    "sharedEdges": 9,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 4,
+    "sharedEdges": 15,
+    "attached": true
+  },
+  {
+    "head": "Continuous cranium",
+    "faces": 2,
+    "sharedEdges": 9,
+    "attached": true
+  }
+]

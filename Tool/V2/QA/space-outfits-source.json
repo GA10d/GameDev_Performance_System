@@ -1,0 +1,110 @@
+[
+  {
+    "id": 10,
+    "name": "舱外加压服",
+    "source": [
+      "SpaceSuit",
+      "SpaceSuit",
+      "SpaceSuit"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "轨道驾驶服",
+    "source": [
+      "SpaceSuit",
+      "Suit",
+      "Suit"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "星表测绘服",
+    "source": [
+      "Adventurer",
+      "Worker",
+      "Worker"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "采矿动力服",
+    "source": [
+      "SpaceSuit",
+      "Swat",
+      "Worker"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "废船拆解服",
+    "source": [
+      "Worker",
+      "Worker",
+      "Worker"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "生化隔离服",
+    "source": [
+      "SpaceSuit",
+      "SpaceSuit",
+      "SpaceSuit"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "低温勘探服",
+    "source": [
+      "SpaceSuit",
+      "SpaceSuit",
+      "SpaceSuit"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "热区防护服",
+    "source": [
+      "SpaceSuit",
+      "SpaceSuit",
+      "SpaceSuit"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "舰队安保服",
+    "source": [
+      "Swat",
+      "Swat",
+      "Swat"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "轨道医疗服",
+    "source": [
+      "Suit",
+      "Worker",
+      "Suit"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "舰桥礼勤服",
+    "source": [
+      "Suit",
+      "Suit",
+      "Suit"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "远航行商服",
+    "source": [
+      "King",
+      "Worker",
+      "Worker"
+    ]
+  }
+]

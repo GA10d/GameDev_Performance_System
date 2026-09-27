@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddce116d1b03da419e92b5c5c8d7df4, type: 3}
+  m_Name: Character_creator_h08
+  m_EditorClassIdentifier: 
+  id: creator_h08
+  displayName: "\u710A\u63A5\u5E08"
+  species: 0
+  sourceModel: {fileID: 919132149155446097, guid: c0017fb6406aaa64d91da87d85377353, type: 3}
+  v3Materials:
+  - {fileID: 2100000, guid: 1cca790d5680eb24288b016c3f43993e, type: 2}
+  - {fileID: 2100000, guid: 398850ca08bfd6349ae31e579d8d29cf, type: 2}
+  - {fileID: 2100000, guid: c81029183eb30ad418992e2c9da581b8, type: 2}
+  - {fileID: 2100000, guid: 4db8e944a33c1964c87e24b5c7bb38a8, type: 2}
+  - {fileID: 2100000, guid: 1622ed0b58d28a54ba9efb4f8c572a52, type: 2}
+  - {fileID: 2100000, guid: cbf6f62e9322dbf47a6cd6653d80243d, type: 2}
+  - {fileID: 2100000, guid: aae57ce8891b3d74b9f4ec0522b1cc46, type: 2}
+  - {fileID: 2100000, guid: 178112d651aa1534fa7dbbc1f5f59810, type: 2}
+  - {fileID: 2100000, guid: 82259b9f31dd4f942acc663189a03edf, type: 2}
+  - {fileID: 2100000, guid: 4d1a9259da9a3fe45a3c90b1696e5135, type: 2}
+  - {fileID: 2100000, guid: 86b08f7acd9b62d43b8ab35292014882, type: 2}
+  - {fileID: 2100000, guid: 988c652e32006934e868876a5cdfa21b, type: 2}
+  - {fileID: 2100000, guid: 315d52dd022a6864e8572ff5ee9339c0, type: 2}
+  - {fileID: 2100000, guid: a4deed9abba73834196053b220232794, type: 2}
+  - {fileID: 2100000, guid: 5abec3f2661eb1c4b909773543283216, type: 2}
+  accessoryMaterial: {fileID: 2100000, guid: 39f17dec7b766914b84779ba4ee01f39, type: 2}
+  creatorResources: {fileID: 11400000, guid: 216732d8206e8fb43a2a90582ee9f12b, type: 2}
+  look:
+    creatorEnabled: 1
+    faceShape: 7
+    eyeShape: 7
+    browShape: 3
+    noseShape: 7
+    mouthShape: 3
+    hairStyle: 7
+    bodyType: 7
+    outfitStyle: 7
+    faceAccessory: 7
+    gearAccessory: 0
+    facialMark: 7
+    faceWidth: 1
+    bodyScale: 1
+    hairOrHeadgear: 0
+    accessory: 0
+    skin: {r: 0.52, g: 0.4, b: 0.34, a: 1}
+    suit: {r: 0.32, g: 0.33, b: 0.31, a: 1}
+    hair: {r: 0.67, g: 0.65, b: 0.56, a: 1}
+    eyes: {r: 0.26, g: 0.39, b: 0.4, a: 1}
+    accent: {r: 0.6, g: 0.37, b: 0.28, a: 1}

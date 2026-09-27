@@ -1,0 +1,56 @@
+[
+  {
+    "id": 22,
+    "source": "Hair_Long.fbx",
+    "sourceVertices": 1521,
+    "sourceTriangles": 2906,
+    "vertices": 1521,
+    "triangles": 2906,
+    "topologyPreserved": true
+  },
+  {
+    "id": 23,
+    "source": "Hair_Long.fbx",
+    "sourceVertices": 1521,
+    "sourceTriangles": 2906,
+    "vertices": 1521,
+    "triangles": 2906,
+    "topologyPreserved": true
+  },
+  {
+    "id": 27,
+    "source": "Hair_Buns.fbx",
+    "sourceVertices": 1699,
+    "sourceTriangles": 3284,
+    "vertices": 1699,
+    "triangles": 3284,
+    "topologyPreserved": true
+  },
+  {
+    "id": 30,
+    "source": "Hair_SimpleParted.fbx",
+    "sourceVertices": 695,
+    "sourceTriangles": 1301,
+    "vertices": 695,
+    "triangles": 1301,
+    "topologyPreserved": true
+  },
+  {
+    "id": 31,
+    "source": "Hair_Buzzed.fbx",
+    "sourceVertices": 466,
+    "sourceTriangles": 830,
+    "vertices": 466,
+    "triangles": 830,
+    "topologyPreserved": true
+  },
+  {
+    "id": 32,
+    "source": "Hair_BuzzedFemale.fbx",
+    "sourceVertices": 466,
+    "sourceTriangles": 830,
+    "vertices": 466,
+    "triangles": 830,
+    "topologyPreserved": true
+  }
+]

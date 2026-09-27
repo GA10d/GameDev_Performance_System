@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "modules": [
+    {
+      "texture": "Human_01.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Human_02.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Human_03.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Human_04.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Human_05.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Alien_01.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Alien_02.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Alien_03.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Alien_04.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Alien_05.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Female_01.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Female_02.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Female_03.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Female_04.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    },
+    {
+      "texture": "Female_05.png",
+      "size": 512,
+      "geometryVertices": 0,
+      "uvChannel": 1
+    }
+  ]
+}

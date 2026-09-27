@@ -1,3 +1,0 @@
-Succeeded
-Bytes 71944251
-Errors 0

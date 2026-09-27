@@ -1,0 +1,62 @@
+[
+  {
+    "source": "Adventurer.gltf",
+    "outfitId": 22,
+    "hairId": 1,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Casual.gltf",
+    "outfitId": 23,
+    "hairId": 2,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Formal.gltf",
+    "outfitId": 24,
+    "hairId": 3,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Medieval.gltf",
+    "outfitId": 25,
+    "hairId": 4,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Punk.gltf",
+    "outfitId": 26,
+    "hairId": 5,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "SciFi.gltf",
+    "outfitId": 27,
+    "hairId": 6,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Soldier.gltf",
+    "outfitId": 28,
+    "hairId": 7,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Suit.gltf",
+    "outfitId": 29,
+    "hairId": 8,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Witch.gltf",
+    "outfitId": 30,
+    "hairId": 9,
+    "rig": "shared Humanoid"
+  },
+  {
+    "source": "Worker.gltf",
+    "outfitId": 31,
+    "hairId": 10,
+    "rig": "shared Humanoid"
+  }
+]

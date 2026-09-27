@@ -1,0 +1,1 @@
+PASS: 288 chin/extreme/action poses; male, female, ten alien anatomies; legacy JSON default and new JSON roundtrip; no mouth texture shader/resources.

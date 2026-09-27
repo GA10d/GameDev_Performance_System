@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "heads": [
+    {
+      "head": "Head_Alien",
+      "jawVertexCount": 666,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.012243990277885839
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.022857016224245096
+        }
+      },
+      "triangleChecks": 5860,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_01",
+      "jawVertexCount": 182,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.01797331328560063
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.032319542667960194
+        }
+      },
+      "triangleChecks": 1632,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_02",
+      "jawVertexCount": 188,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.019256928498774965
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.0342090627142346
+        }
+      },
+      "triangleChecks": 1792,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_03",
+      "jawVertexCount": 120,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.010451542805483431
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.018758946562448114
+        }
+      },
+      "triangleChecks": 1156,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_04",
+      "jawVertexCount": 115,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.008014727350016928
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.01474353355451592
+        }
+      },
+      "triangleChecks": 1096,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_05",
+      "jawVertexCount": 138,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.007613732415638665
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.014114472978516873
+        }
+      },
+      "triangleChecks": 1300,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_06",
+      "jawVertexCount": 67,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.0091140919033804
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.0164443796202677
+        }
+      },
+      "triangleChecks": 668,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_07",
+      "jawVertexCount": 48,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.008349301567760085
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.015258624485737657
+        }
+      },
+      "triangleChecks": 500,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_08",
+      "jawVertexCount": 147,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.008575178655638196
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.015608959470328587
+        }
+      },
+      "triangleChecks": 1336,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Alien_09",
+      "jawVertexCount": 128,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.007098565158151729
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.013229905916516729
+        }
+      },
+      "triangleChecks": 1212,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Female",
+      "jawVertexCount": 100,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.012329977142912962
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.023065698173062994
+        }
+      },
+      "triangleChecks": 972,
+      "flippedTriangles": 0
+    },
+    {
+      "head": "Head_Human",
+      "jawVertexCount": 76,
+      "variants": {
+        "ChinRound": {
+          "maximumDisplacementMeters": 0.012082526864266068
+        },
+        "ChinSquare": {
+          "maximumDisplacementMeters": 0.02242517267008278
+        }
+      },
+      "triangleChecks": 776,
+      "flippedTriangles": 0
+    }
+  ]
+}

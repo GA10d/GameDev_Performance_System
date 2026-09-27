@@ -1,0 +1,2 @@
+PASS: 41 checks
+Duration: 30 / 120 / 3600 / 86400 s; serialization; all five tracks auto-extend; safe shrink; finite input; bounded tick density; no Mark meshes; UV2; 10 textures; hat removal restores hair after JSON roundtrip; compact headsets.

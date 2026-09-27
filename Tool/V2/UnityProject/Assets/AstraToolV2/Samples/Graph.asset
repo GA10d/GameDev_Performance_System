@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a2f8e4a58fbb458cabfa0b14f630f, type: 3}
+  m_Name: Graph
+  m_EditorClassIdentifier: 
+  entryNode: A
+  nodes:
+  - id: A
+    kind: 0
+    position: {x: 40, y: 120}
+    unit: {fileID: 11400000, guid: 8817d87b2f458804f9957bd03d747542, type: 2}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges:
+    - slot: pay
+      target: funds
+    - slot: inspect
+      target: C
+    - slot: silence
+      target: C
+  - id: funds
+    kind: 1
+    position: {x: 370, y: 65}
+    unit: {fileID: 0}
+    condition:
+      key: power
+      compare: 3
+      value: 1
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges:
+    - slot: yes
+      target: B
+    - slot: no
+      target: C
+  - id: B
+    kind: 0
+    position: {x: 670, y: 35}
+    unit: {fileID: 11400000, guid: 47868c637993d7b4ab2ebfa5e82afd83, type: 2}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges:
+    - slot: next
+      target: final_choice
+  - id: C
+    kind: 0
+    position: {x: 665, y: 260}
+    unit: {fileID: 11400000, guid: 787d417a9d315c6459df135502ee9fb0, type: 2}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges:
+    - slot: next
+      target: final_choice
+  - id: final_choice
+    kind: 2
+    position: {x: 980, y: 155}
+    unit: {fileID: 0}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u5982\u4F55\u4FDD\u5B58\u8FD9\u4EFD\u8BB0\u5F55\uFF1F"
+    patienceSeconds: 5
+    choices:
+    - id: publish
+      text: "\u516C\u5F00\u8BB0\u5F55"
+      condition:
+        key: credits
+        compare: 3
+        value: 0
+      hasCondition: 0
+      effects:
+      - key: trust
+        delta: 1
+    - id: seal
+      text: "\u5C01\u5B58\u8BB0\u5F55"
+      condition:
+        key: credits
+        compare: 3
+        value: 0
+      hasCondition: 0
+      effects: []
+    edges:
+    - slot: publish
+      target: end
+    - slot: seal
+      target: end
+    - slot: silence
+      target: end
+  - id: end
+    kind: 3
+    position: {x: 1280, y: 155}
+    unit: {fileID: 0}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges: []

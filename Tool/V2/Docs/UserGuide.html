@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ASTRA 演出工具 V2 中文说明书：捏人、太空服搭配、正式角色保存、五轨时间轴与分支演出。">
+<title>ASTRA 演出工具 V2 · 使用说明书</title><style>
+:root{color-scheme:light;--ink:#1f2924;--muted:#58635b;--line:#d5ddd3;--green:#274834;--paper:#fffefa;--soft:#edf2e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}
+body{margin:0;background:#e8ece5;color:var(--ink);font:16px/1.85 'Microsoft YaHei','PingFang SC',sans-serif}
+a{color:#19513e;text-underline-offset:4px}a:hover{color:#082e20}a:focus-visible,button:focus-visible{outline:3px solid #b66c13;outline-offset:4px}
+.skip{position:absolute;top:-70px;left:20px;z-index:5;padding:8px 18px;background:white}.skip:focus{top:10px}
+.layout{max-width:1480px;margin:auto;display:grid;grid-template-columns:274px minmax(0,1fr);gap:30px;padding:32px}
+aside{position:sticky;top:24px;align-self:start;max-height:calc(100vh - 48px);overflow-y:auto;padding:25px 21px;background:#203c2d;color:#f5f4e9;border-radius:10px}
+.brand{font-size:26px;letter-spacing:8px;font-weight:700}.edition{font-size:13px;color:#d4decf;margin:5px 0 23px}
+aside h2{font-size:15px;font-weight:600;margin:0 0 9px;border-bottom:1px solid #677968;padding-bottom:10px}
+.toc ul{padding:0;margin:0;list-style:none}.toc li{margin:0 0 5px}.toc a{display:block;font-size:14px;color:#f1f3e9;padding:7px 5px;text-decoration:none;line-height:1.7;border-radius:4px}.toc a:hover{background:#34543e}
+.rail-note{font-size:12px;color:#d4decf;border-top:1px solid #677968;margin-top:18px;padding-top:17px}.print{width:100%;padding:9px;border:1px solid #adc29d;border-radius:5px;background:#edf3e6;color:#203c2d;font:inherit;font-size:14px;cursor:pointer;margin-top:12px}
+main{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:44px 48px 52px;box-shadow:0 6px 28px #26362a08}
+.kicker{font-size:12px;letter-spacing:3px;color:var(--green);font-weight:700;margin-bottom:8px}
+h1{font-size:32px;line-height:1.4;margin:0 0 14px;letter-spacing:-.3px}h1+p{font-size:14px;color:var(--muted);padding-bottom:23px;border-bottom:2px solid #b2bea5}
+h2{font-size:24px;line-height:1.5;margin:51px 0 21px;padding-top:12px;border-top:1px solid var(--line);color:#23462f;scroll-margin-top:20px}h3{font-size:18px;margin:30px 0 12px;color:#294332}
+p{margin:13px 0}li{margin:8px 0}ol,ul{padding-left:1.65em}strong{font-weight:700;color:#142d1d}li>p{margin:0}
+code{font:14px/1.7 Consolas,'Microsoft YaHei',monospace;background:#eef0e9;color:#253728;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:#edf1e8;border-left:4px solid #718c53;border-radius:4px;padding:15px 18px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}pre code{padding:0;background:none;font-size:13px}
+.table-scroll{overflow-x:auto;margin:20px 0 25px;border:1px solid var(--line);border-radius:5px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.75}th,td{padding:12px 13px;vertical-align:top;text-align:left;border-bottom:1px solid var(--line);min-width:85px}th{background:#e3ebdc;font-weight:700;color:#223728}tr:last-child td{border-bottom:none}tbody tr:nth-child(even){background:#f5f7f0}td code{font-size:12px}th:first-child{min-width:115px}td:first-child{font-weight:500}
+img{display:block;width:100%;height:auto;border:1px solid #bcc5b7;border-radius:5px;margin:24px 0 12px}em{font-size:14px;color:var(--muted)}footer{font-size:13px;color:var(--muted);padding-top:25px;border-top:1px solid var(--line);margin-top:35px}.back-top{float:right}
+@media(max-width:1050px){.layout{grid-template-columns:232px minmax(0,1fr);gap:20px;padding:20px}main{padding:32px 27px}aside{padding:20px 16px}h1{font-size:28px}}
+@media(max-width:760px){.layout{display:block;padding:12px}aside{position:static;max-height:none;margin-bottom:15px;padding:19px 21px}.brand{font-size:23px}.edition{margin-bottom:12px}.toc ul{display:grid;grid-template-columns:1fr 1fr;gap:3px 13px}.toc a{font-size:13px}.rail-note{display:none}.print{width:auto;margin-top:10px;padding:6px 14px}main{padding:25px 19px}h1{font-size:25px}h2{font-size:22px;margin-top:39px}body{font-size:15px}table{min-width:530px}pre code{font-size:12px}}
+@media print{@page{size:A4;margin:18mm 15mm}html{scroll-behavior:auto}body{background:white;font-size:10.5pt;line-height:1.65}.layout{display:block;max-width:none;padding:0}aside,.skip,.back-top{display:none}main{padding:0;border:0;box-shadow:none;border-radius:0}h1{font-size:23pt}h2{font-size:17pt;break-after:avoid;page-break-after:avoid;margin-top:24pt}h3{font-size:12pt;break-after:avoid;page-break-after:avoid}table{font-size:9pt;min-width:0}.table-scroll{overflow:visible}tr,pre,img{break-inside:avoid}th,td{padding:7px 8px}thead{display:table-header-group}a{color:inherit}img{max-height:145mm;width:auto;max-width:100%;margin:12px auto}pre code{font-size:8.5pt}footer{font-size:9pt}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head>
+<body id="top"><a class="skip" href="#content">跳到正文</a><div class="layout">
+<aside aria-label="说明书目录"><div class="brand">ASTRA</div><div class="edition">PERFORMANCE TOOL / V2<br>策划使用说明 · 2026.09</div><h2>按工作步骤阅读</h2>
+<div class="toc">
+<ul>
+<li><a href="#section-1">1. 从哪里打开：先选你的工作目标</a></li>
+<li><a href="#section-2">2. 五分钟捏出一个角色</a></li>
+<li><a href="#section-3">3. 太空服装怎么搭配</a></li>
+<li><a href="#section-4">4. 在 Unity 中保存正式角色</a></li>
+<li><a href="#section-5">5. 照着做：制作一段 8 秒对话</a></li>
+<li><a href="#section-6">6. 多人、动作和镜头的常用操作</a></li>
+<li><a href="#section-7">7. 给演出加选择和分支</a></li>
+<li><a href="#section-8">8. 保存、导出与更新程序</a></li>
+<li><a href="#section-9">9. 常见问题：按现象查</a></li>
+<li><a href="#section-10">10. 每次交付前，按这个顺序检查</a></li>
+<li><a href="#section-11">11. 进一步查阅</a></li>
+<li><a href="#section-12">12. 女性角色与灰裔头部更新</a></li>
+<li><a href="#section-13">13. 圆下巴、方下巴与发际线修复</a></li>
+</ul>
+</div>
+<button class="print" type="button" onclick="window.print()">打印 / 保存为 PDF</button><div class="rail-note">本页可离线阅读。<br>查找功能或报错：Ctrl + F<br>截图可点击打开原图。</div></aside>
+<main id="content"><div class="kicker">USER GUIDE / 中文使用说明</div><h1 id="manual">ASTRA 演出工具 V2 使用说明书</h1>
+<p>适用：<code>Tool/V2</code>，包含外星人重设计、原包长发、22 套男性／外星人服装与 10 套女性服装的当前版本。核对日期：2026-09-27。面向策划与角色设计人员。</p>
+<p><strong>第一次使用建议：先完成第 2 章的捏人练习，再按第 5 章做出一段 8 秒演出。</strong></p>
+<h2 id="section-1">1. 从哪里打开：先选你的工作目标</h2>
+<p>工具根目录：</p>
+<pre><code class="language-text">F:\Documents\GitHub\GameDev_Performance_System\Tool\V2
+</code></pre>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>你要做什么</th>
+<th>打开什么</th>
+<th>最后保存什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速搭配形象、试服装、看动作</td>
+<td>双击 <code>RunToolV2.cmd</code></td>
+<td>外观 JSON</td>
+</tr>
+<tr>
+<td>创建能放进演出里的正式角色</td>
+<td>双击 <code>OpenUnityV2.cmd</code> → 新建角色</td>
+<td>角色资产与 Prefab</td>
+</tr>
+<tr>
+<td>编排人物、动作、台词和镜头</td>
+<td>Unity → <code>Astra Performance Tool V2 → Open timeline</code></td>
+<td>演出单元</td>
+</tr>
+<tr>
+<td>做选择、条件和剧情分支</td>
+<td>Unity → <code>Astra Performance Tool V2 → Open graph</code></td>
+<td>演出树与演出包</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>独立程序保存的 JSON 暂时没有直接导入 Unity 捏人编辑器的按钮。</strong> 如果形象要用于正式演出，建议直接从 Unity 新建角色。独立程序适合先试搭配；可以记录选项名称及截图，之后在 Unity 中复现。</p>
+<p>Unity 工程位于根目录的 <code>UnityProject</code>，对应版本为 <strong>2022.3.62f1</strong>。用 Unity Hub 打开时，选择这个文件夹，不要选择 <code>Tool/V2</code> 或 <code>Build</code>。首次导入完成、界面不再编译后，再打开工具菜单。</p>
+<h2 id="section-2">2. 五分钟捏出一个角色</h2>
+<h3 id="section-2-1">2.1 新建与选择预设</h3>
+<ol>
+<li>双击 <code>RunToolV2.cmd</code>。</li>
+<li>顶部点击 <strong>＋ 新建人类 ▾ → 男性／女性</strong>，或 <strong>＋ 新建外星人</strong>。</li>
+<li>左侧进入 <strong>身份 → 基本资料</strong>，填写角色名字。也可以进入 <strong>身份 → 预设角色</strong>，选择现成形象作为起点。</li>
+<li>按“面容 → 头部 → 身形 → 装扮 → 配色”的顺序调整，最后检查动作。</li>
+</ol>
+<p>在 <strong>身份 → 基本资料 → 人类底模</strong> 中也可切换男性／女性；切换会重置头发和衣服为对应底模默认款，脸型与配色仍可继续调整。<strong>身份 → 预设角色</strong> 只列出当前底模的预设。</p>
+<p>当前支持新建人类和站立外星人。原有半兽人仍可以作为成品角色用于演出；这里没有新建半兽人或四肢爬行角色的菜单。</p>
+<h3 id="section-2-2">2.2 每一层菜单负责什么</h3>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>一级菜单</th>
+<th>子级内容</th>
+<th>推荐操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>身份</td>
+<td>基本资料、预设角色</td>
+<td>先起名或选预设，再细调</td>
+</tr>
+<tr>
+<td>面容</td>
+<td>脸型／生物头型、眼睛、眉骨、鼻部／嗅觉器官、口部／口器</td>
+<td>先选大轮廓，再调五官和宽度</td>
+</tr>
+<tr>
+<td>头部：人类</td>
+<td>短发、分缝刘海、长发束发、帽饰</td>
+<td>先选类别，再选具体样式</td>
+</tr>
+<tr>
+<td>头部：外星人</td>
+<td>鳍膜叶瓣、角环骨板、触须感官</td>
+<td>配合头型检查正面、侧面和背面</td>
+</tr>
+<tr>
+<td>身形</td>
+<td>体型、整体比例</td>
+<td>先选 8 种体型之一，再调身高比例</td>
+</tr>
+<tr>
+<td>装扮</td>
+<td>上装、下装、鞋靴、面饰、装备、纹样</td>
+<td>先定服装，再加配件</td>
+</tr>
+<tr>
+<td>配色</td>
+<td>肤色、发色／颅冠基色、服装色、眼色、强调色</td>
+<td>服装色负责主色，强调色负责识别部件</td>
+</tr>
+</tbody>
+</table></div>
+<p>人类有 10 种脸型；男性有 33 个、女性有 14 个发型／头饰选项；外星人有 10 种解剖头型、12 个颅冠选项。数量包含“无发／无冠”以及人类帽饰。身高范围为基础模型的 0.90–1.10 倍。</p>
+<p><strong>摘帽：进入“头部 → 帽饰 → 无”。</strong> 会恢复戴帽前的发型，切换不同帽子也会保留这个记录；如果本来是无发，摘帽后仍是无发。发型和帽饰仍采用互斥显示，以避免长发穿过帽体。</p>
+<p><strong>面部纹样已改为皮肤贴图。</strong> 在“装扮 → 纹样”选择无、左颊、右颊、双颊等款式，在“配色 → 强调色”调整颜色。纹样不会增加脸部厚度，也不会改变轮廓；既有角色和 JSON 的纹样编号继续有效。“装扮 → 面饰”中的额灯、眼镜、呼吸器、面罩属于实体配件，想去掉它们请选择面饰“无”。</p>
+<p>部分外星人头型没有人类式眉骨，或不适配人类眼镜等面饰，对应选项会隐藏或显示说明。九种特殊头型目前支持“无面饰／护颈”；这属于适配范围，不是选项丢失。</p>
+<h3 id="section-2-3">2.3 检查形象，避免只看正面</h3>
+<p>右侧点击 <strong>全身检查</strong> 看衣服和鞋靴，点击 <strong>面部特写</strong> 看五官、头发和颅冠。拖动 <strong>转向</strong> 滑条，依次查看正面、侧面、背面。</p>
+<p>打开右侧 <strong>动作·…</strong> 菜单，至少试一次“说话”“坐姿待机”“跪姿维修”。用 <strong>暂停</strong> 停在弯腰或抬手的位置，观察衣领、肩部、腰袋、头发是否相互遮挡。选长外套、大颅冠、厚重装备时尤其要看侧面和背面。</p>
+<p><a aria-label="打开原始截图" href="../QA/OutfitUI/exploration.png" rel="noopener" target="_blank"><img alt="独立工作台：装扮 → 上装 → 舱外探索，右侧为全身检查" height="932" loading="lazy" src="../QA/OutfitUI/exploration.png" width="1442"/></a></p>
+<p><em>上图是现有工作台的实际截图。左侧逐层选部件，右侧试动作与转向，底部保存外观。</em></p>
+<h3 id="section-2-4">2.4 保存与下次继续</h3>
+<p>点击底部 <strong>保存外观 JSON</strong>。当前 Windows 账户的保存目录是：</p>
+<pre><code class="language-text">C:\Users\32881\AppData\LocalLow\Project Astra\ASTRA Performance Tool V2\Characters
+</code></pre>
+<p>在资源管理器地址栏也可以输入：</p>
+<pre><code class="language-text">%USERPROFILE%\AppData\LocalLow\Project Astra\ASTRA Performance Tool V2\Characters
+</code></pre>
+<p>文件名类似 <code>custom_abc123.json</code>，文件中记录名字、种族和外观选项。<strong>载入已存外观目前只载入这个目录中最近修改的一个 JSON</strong>，没有角色列表或文件选择器。需要保留多个方案时，可以把 JSON 分别备份到按角色命名的文件夹；程序界面尚不支持点选任意历史方案。</p>
+<p>继续保存同一草稿会更新它的文件；载入外观后会生成新的草稿 ID，再保存可能产生新文件。不要仅凭文件数量判断是否保存成功，可结合文件修改时间与 JSON 内的名字确认。</p>
+<p><strong>新建角色、载入预设、随机组合都会替换当前草稿；关闭前请主动保存。</strong> “随机组合”会改变多项外观，不是只随机当前子菜单。</p>
+<p>顶部 <strong>演出试播</strong> 播放演出包里已经配置的角色和剧情，不会把当前捏人草稿自动替换进去。按 <code>Esc</code> 或点击“返回捏人”回到工作台。</p>
+<h2 id="section-3">3. 太空服装怎么搭配</h2>
+<p>进入 <strong>装扮 → 上装／下装／鞋靴 → 用途分类 → 具体款式</strong>。上下装和鞋靴可以分别选择，男性／外星人的三个部件各有 22 款，女性各有 10 款。两种底模使用各自适配的服装列表，避免身体与头部错配。</p>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>用途分类</th>
+<th>可选服装</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原有服装</td>
+<td>航行服、工程服、维修服、休闲服、夹克、正装、安保服、探索服、拼接服、长外套</td>
+</tr>
+<tr>
+<td>舰内勤务</td>
+<td>轨道驾驶服、轨道医疗服、舰桥礼勤服、远航行商服</td>
+</tr>
+<tr>
+<td>舱外探索</td>
+<td>舱外加压服、星表测绘服、生化隔离服、低温勘探服、热区防护服</td>
+</tr>
+<tr>
+<td>工业安保</td>
+<td>采矿动力服、废船拆解服、舰队安保服</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>最快换一整套的步骤：</strong></p>
+<ol>
+<li>进入 <strong>装扮 → 上装 → 舱外探索</strong>。</li>
+<li>选择 <strong>低温勘探服</strong>。</li>
+<li>点击 <strong>整套应用</strong>，让上装、下装、鞋靴一起使用低温勘探款。</li>
+<li>点击 <strong>使用推荐配色</strong>，套用该款的服装主色与强调色。</li>
+<li>切到 <strong>装备</strong> 添加需要的配件，再用全身检查转向并试动作。</li>
+</ol>
+<p>“整套应用”以<strong>当前正在编辑的部件所选款式</strong>为准；也可以从下装或鞋靴应用整套。它不会重置脸型、发型或装备。“使用推荐配色”只改服装色和强调色，不会改肤色。只切换用途分类，不会自动换衣服。</p>
+<p>想混搭时，先整套应用，再单独换上装、下装或鞋靴。例如用轨道驾驶上装、星表测绘下装与舱外加压靴构成探索员；混搭后需要重新检查腰部和裤脚接缝。</p>
+<p>按形象用途选起点：舰桥人员用驾驶／礼勤，工业人员用采矿／拆解，医疗隔离用医疗／生化，外勤用加压／测绘／低温／热区，安保用舰队安保，商旅角色用行商。服装是美术资产，不会自动附带防护数值或职业能力。</p>
+<p>查看实际模型：<a href="../QA/OutfitSheets/Human_000.jpg" rel="noopener" target="_blank">人类 12 套新服装总览</a> · <a href="../QA/OutfitSheets/StandingAlien_000.jpg" rel="noopener" target="_blank">外星人 12 套新服装总览</a> · <a href="../QA/OutfitSheets/mixed_outfits.jpg" rel="noopener" target="_blank">混搭检查</a>。</p>
+<h2 id="section-4">4. 在 Unity 中保存正式角色</h2>
+<h3 id="section-4-1">4.1 新建正式资产</h3>
+<ol>
+<li>双击 <code>OpenUnityV2.cmd</code>，等 Unity 导入完成。</li>
+<li>顶部菜单点击 <strong>Astra Performance Tool V2 → Open timeline</strong>。</li>
+<li>左侧素材库切到 <strong>人物</strong>，点击 <strong>＋ 新建角色 → 人类／外星人</strong>。也可以直接用顶部菜单 <strong>Astra Performance Tool V2 → New character → Human／Alien</strong>。</li>
+<li>捏人窗口填写 <strong>名字</strong> 与 <strong>唯一 ID</strong>，按第 2、3 章的菜单调整外观。</li>
+<li>检查右侧动作、转向和面部特写，点击 <strong>保存角色与 Prefab</strong>。</li>
+<li>回到时间轴的人物素材库，展开对应种族的 <strong>自建角色</strong>，找到刚保存的名字；可用搜索框按名字或 ID 查找。</li>
+</ol>
+<p>名字可以写中文。唯一 ID 使用英文字母、数字、下划线或短横线，长度为 1–64，且不能与现有角色重复。例如：<code>engineer_chen_01</code>。保留工具自动生成的 ID 也可以；角色投入使用后，尽量保持 ID 不变。</p>
+<p>保存位置相对于 <code>UnityProject</code>：</p>
+<pre><code class="language-text">Assets/AstraToolV2/Characters/&lt;角色 ID&gt;.asset
+Assets/AstraToolV2/Characters/Prefabs/&lt;角色 ID&gt;.prefab
+</code></pre>
+<p>新角色会同时注册到人物素材库。正式角色的 <code>.asset</code> 保存外观配置，<code>.prefab</code> 用于实例化人物，两者都应保留。</p>
+<h3 id="section-4-2">4.2 修改现有角色</h3>
+<p>在人物素材库点选角色，右侧点击 <strong>打开捏人编辑器</strong>，改完再次点击 <strong>保存角色与 Prefab</strong>。</p>
+<p><strong>这会修改这个角色本身，引用它的演出也会使用更新后的外观。</strong> 想做另一名角色，应从“＋ 新建角色”开始，不要把修改现有角色当成“另存为”。关闭捏人窗口前请主动保存草稿。</p>
+<p>素材库分为 <strong>Demo V2 原角色／捏人预设／自建角色</strong>。四个 Demo 原角色保留原模型，不通过这套捏人编辑器改造；需要自由搭配时，新建一个模块化角色。Unity 版配色还支持自定义颜色。</p>
+<h2 id="section-5">5. 照着做：制作一段 8 秒对话</h2>
+<p>目标：一名工程师在档案舱说两句话，前 4 秒中景，后 4 秒近景。建议先完成这一段，再加多人和分支。</p>
+<h3 id="section-5-1">5.1 创建演出单元并放进演出树</h3>
+<ol>
+<li>在 Unity 的 <strong>Project</strong> 资源窗口找到 <code>Assets/AstraToolV2/Exports</code>。在文件夹空白处右键，选择 <strong>Create → Astra → Performance Tool V2 → Unit</strong>。</li>
+<li>将新文件命名为 <code>Unit_Manual_Intro</code>。选中它，在 Unity 的 <strong>Inspector</strong> 中把 <strong>Id</strong> 设为 <code>manual_intro</code>，<strong>Duration</strong> 设为 <code>8</code>。</li>
+<li>打开 <strong>Astra Performance Tool V2 → Open graph</strong>。先记下原来入口节点的 ID，方便练习后恢复。</li>
+<li>点击 <strong>＋ 演出单元</strong>，选中新节点，在右侧 <strong>演出单元</strong> 字段拖入刚才创建的 <code>Unit_Manual_Intro</code> 资产，然后点击 <strong>设为入口</strong>。</li>
+<li>点击 <strong>＋ 结束</strong> 创建结束节点。单击演出单元右侧的 <strong>next</strong> 小端口，再单击结束节点的主体，即完成连接。</li>
+<li>回到 <strong>Open timeline</strong>，在顶部单元下拉框选择 <code>manual_intro</code>。</li>
+</ol>
+<p>“＋ 演出单元”只创建演出树上的节点，<strong>不会自动创建 Unit 资产</strong>，所以第 1、2、4 步都需要做。时间轴顶部下拉框列出演出树已经引用的单元；找不到新单元时，先检查节点是否绑定了资产。</p>
+<h3 id="section-5-2">5.2 按顺序填写五条轨道</h3>
+<p>左侧素材库的 <strong>人物／动作／台词／镜头／场景</strong> 分别对应下方同名轨道。先拖入素材，再点选片段，在右侧填写准确时间。普通台词拖入 <strong>纯文本 · 打字机</strong>，选择台词拖入 <strong>选择 · 含沉默</strong>。时间单位都是秒；“时长”是持续多久，不是结束时刻。</p>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>轨道与素材</th>
+<th>开始</th>
+<th>时长或文字设置</th>
+<th>关键字段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>人物：刚保存的工程师</td>
+<td>0</td>
+<td>时长 8</td>
+<td>轨 ID = <code>actor0</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>动作：说话</td>
+<td>0</td>
+<td>时长 8，倍速 1</td>
+<td>人物轨 = <code>actor0</code>；动作 ID = <code>Idle_Talking_Loop</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>台词：普通文字</td>
+<td>0.5</td>
+<td><code>中继站已经恢复，准备发送信号。</code>；字/秒 12，停留 1</td>
+<td>形式 = <code>Text</code>；人物轨 = <code>actor0</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>台词：普通文字</td>
+<td>4</td>
+<td><code>如果没有回应，我们就前往下一站。</code>；字/秒 12，停留 1</td>
+<td>形式 = <code>Text</code>；人物轨 = <code>actor0</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>镜头：中景</td>
+<td>0</td>
+<td>时长 4</td>
+<td>镜头 = <code>Medium</code>；主体 = <code>actor0</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>镜头：近景</td>
+<td>4</td>
+<td>时长 4</td>
+<td>镜头 = <code>Close</code>；主体 = <code>actor0</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td>场景：档案舱</td>
+<td>0</td>
+<td>时长 8</td>
+<td>场景 ID = <code>archive</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>台词时长按“文字长度 ÷ 字/秒 ＋ 停留”自动计算，可在属性底部看 <strong>自动时长</strong>。上述两句互不重叠，均在 8 秒内结束。</p>
+<p>拖动片段主体可移动开始时间；拖动右边缘可改一般片段的持续时间。做精确演出时，以右侧数值为准。普通台词用字速和停留控制长度，选择台词用耐心秒数控制长度。</p>
+<p>五条轨道上的片段均有黑色边框，即使相邻片段颜色相同也能辨认接缝；选中的片段另有浅金色顶部高亮。拖动边缘时仍以原片段时间位置为准，边框不额外占用演出时间。</p>
+<p><strong>演出单元没有 9 秒上限。</strong> 时间轴上方常驻“单元时长（秒）”，可直接输入 <code>120</code>、<code>600</code>、<code>3600</code> 等；“＋30秒”用于快速延长。将片段拖过末尾、修改开始／时长，或把素材放到末尾之后，单元会自动延长。人物出场仍要覆盖它的动作时间；自动延长单元不会擅自延长人物出场或已有动作。</p>
+<p>长演出可用“全览”显示完整单元、用“缩放”看细节，或在“定位秒”直接输入目标时刻。底部可横向滚动。点击“匹配内容”将时长收至最后一个片段的末尾；手动缩短不会截掉现有片段，需要先缩短或删除末尾片段。</p>
+<h3 id="section-5-3">5.3 分两次检查播放</h3>
+<ol>
+<li>点击时间轴顶部 <strong>播放</strong>，观察人物、动作、场景和两次镜头构图。点击时间尺可以跳到指定时刻。</li>
+<li>点击 <strong>验证</strong>，处理弹窗列出的问题。</li>
+<li>完成编辑后用 Unity 的 <strong>File → Save Project</strong> 保存工程资产。</li>
+<li>点击工具的 <strong>运行预览</strong>。进入 Unity 的 <strong>Game</strong> 窗口后，点击工作台顶部 <strong>演出试播</strong>，观看文字和剧情流程。</li>
+<li>播放时 <code>Space</code> 用于暂停／继续；选择项用鼠标点击。回到工作台用 <code>Esc</code>，结束 Unity 运行则点击编辑器顶部的 Play 按钮。</li>
+</ol>
+<p>时间轴“播放”用于检查画面，不运行完整的台词选择逻辑。完整试播从<strong>演出树入口</strong>开始，不从时间轴当前选择的单元或播放头开始。此练习使用工程默认的 <code>AstraSample.asset</code> 演出包；不要在练习中更换顶部演出包字段。</p>
+<p>练习结束后，如果要恢复原演出，回到演出树，选中之前记下的入口节点，再点击 <strong>设为入口</strong> 并保存。</p>
+<h2 id="section-6">6. 多人、动作和镜头的常用操作</h2>
+<h3 id="section-6-1">6.1 三种 ID 不要混用</h3>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>示例</th>
+<th>谁引用它</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>角色唯一 ID</td>
+<td><code>engineer_chen_01</code></td>
+<td>人物素材库中的正式角色资产</td>
+</tr>
+<tr>
+<td>人物轨 ID</td>
+<td><code>actor0</code>、<code>actor1</code></td>
+<td>动作的“人物轨”、台词的“人物轨”、镜头的“主体／陪体”</td>
+</tr>
+<tr>
+<td>演出树节点 ID</td>
+<td><code>Unit_4</code> 等</td>
+<td>演出树连接和入口</td>
+</tr>
+</tbody>
+</table></div>
+<p>同一单元中每个人物片段使用不同的轨 ID。增加第二个人物后，检查新动作、台词和镜头引用了谁；它们可能默认引用第一个人物。改人物轨 ID 后，也要手动更新相关片段里的引用。</p>
+<p>动作必须完全落在对应人物的出场时间内。例如动作是 2–6 秒，则人物至少应覆盖这整个区间。先放人物再拖动作；如果动作拖不进去，先检查落点时刻有没有人物。</p>
+<p>人物站位由现有演出系统安排，时间轴没有自由拖拽人物站位的界面。先用预设镜头建立构图，再决定是否需要定制站位功能。</p>
+<h3 id="section-6-2">6.2 怎么选动作</h3>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>演出用途</th>
+<th>可用动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>站立交谈</td>
+<td>待机、说话、拍胸、触头</td>
+</tr>
+<tr>
+<td>设备与劳动</td>
+<td>操作设备、取物、跪姿维修、推压</td>
+</tr>
+<tr>
+<td>坐姿交谈</td>
+<td>坐下 → 坐姿待机／坐姿说话 → 起身</td>
+</tr>
+<tr>
+<td>移动与特殊情绪</td>
+<td>行走、正式行走、慢跑、蹲伏、舞动</td>
+</tr>
+</tbody>
+</table></div>
+<p>默认菜单提供 17 个演出动作。动作播放快慢用 <strong>倍速</strong> 调整，范围 0.25–3。循环动作适合填满一段对话；“坐下”“取物”等过渡动作要检查片段末尾，避免突然切回不匹配的姿势。行走类动作仍需实际检查角色在画面中的运动，不把它当成自动寻路。</p>
+<h3 id="section-6-3">6.3 怎么选镜头</h3>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>菜单中的枚举</th>
+<th>含义与用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Establishing</code></td>
+<td>全景，交代场景和人物关系</td>
+</tr>
+<tr>
+<td><code>Medium</code></td>
+<td>中景，常规对话起点</td>
+</tr>
+<tr>
+<td><code>Close</code></td>
+<td>近景，突出脸部反应</td>
+</tr>
+<tr>
+<td><code>TwoShot</code></td>
+<td>双人，主体与陪体都要填写</td>
+</tr>
+<tr>
+<td><code>OverShoulder</code></td>
+<td>过肩，填写主体与陪体，并检查遮挡</td>
+</tr>
+<tr>
+<td><code>Profile</code></td>
+<td>侧面，展示轮廓或疏离感</td>
+</tr>
+<tr>
+<td><code>LowAngle</code></td>
+<td>低机位，突出压迫感或体型</td>
+</tr>
+<tr>
+<td><code>Insert</code></td>
+<td>设备插入，检查设备是否落在画面内</td>
+</tr>
+<tr>
+<td><code>Tracking</code></td>
+<td>跟拍，配合动作检查构图</td>
+</tr>
+<tr>
+<td><code>Custom</code></td>
+<td>自定义，填写相对位置、旋转和视野</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>主体和陪体都填写人物轨 ID，例如 <code>actor0</code> 和 <code>actor1</code>。</strong> 默认先用无效果的中景完成演出，再加近景和特殊镜头。连续台词不要每句话都换机位；让重要动作或情绪变化成为切镜头的理由。</p>
+<p>画面效果可选 <code>None</code> 无、<code>SignalGlitch</code> 信号故障、<code>Disturbance</code> 干扰、<code>EmergencyLight</code> 警报。场景有档案舱 <code>archive</code>、旧中继站 <code>relay</code>、故障警报 <code>alarm</code>。</p>
+<p>自定义镜头的“相对位置”按角色位置计算。目前“保存当前 Scene 视图镜头”记录的是 Scene 相机坐标，角色不在原点时可能出现位置偏移。第一次制作优先用预设镜头；使用自定义时手动校正相对位置，并在实际运行中复核。</p>
+<h2 id="section-7">7. 给演出加选择和分支</h2>
+<h3 id="section-7-1">7.1 把 8 秒练习改成一个选择</h3>
+<p>保留第 5 章的第一句台词，删除第 4 秒的第二句普通台词，在同一位置放入一条选择台词：</p>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>填写内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>形式</td>
+<td><code>Choice</code></td>
+</tr>
+<tr>
+<td>人物轨</td>
+<td><code>actor0</code></td>
+</tr>
+<tr>
+<td>开始</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>提示文字</td>
+<td><code>是否消耗 2 点补给发送信号？</code></td>
+</tr>
+<tr>
+<td>耐心秒数</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>选项 1：出口／文字</td>
+<td><code>send</code> ／ <code>发送信号</code></td>
+</tr>
+<tr>
+<td>选项 2：出口／文字</td>
+<td><code>leave</code> ／ <code>先离开这里</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>点击 <strong>添加选项</strong> 创建第二项。出口 ID 用英文简短词，不能重复，也不要命名为 <code>silence</code>。一个单元中的选择台词放在最后；不要把下一句普通台词安排在选择之后。</p>
+<h3 id="section-7-2">7.2 加入资源条件</h3>
+<ol>
+<li>打开演出树，在右侧 <strong>全局资源初值</strong> 中添加资源：键名 <code>supplies</code>，初值 <code>3</code>。</li>
+<li>回到选择台词，给“发送信号”勾选 <strong>有条件</strong>，资源填 <code>supplies</code>，判断选 <code>GreaterOrEqual</code>，阈值填 <code>2</code>。</li>
+<li>在这个选项下点击 <strong>＋ 资源增减</strong>，资源键填 <code>supplies</code>，数值填 <code>-2</code>。</li>
+<li>“先离开这里”不加条件，也不增减资源。</li>
+</ol>
+<p>资源键必须前后一致，包括大小写。条件不满足的选项会显示为不可点击。选项效果在选择时执行；初值为 3 时发送后剩 1，但需要后续条件或剧情体现变化，界面不会自动生成资源面板。</p>
+<h3 id="section-7-3">7.3 接好每个出口</h3>
+<p>回到演出树，这个单元现在应有 <strong>send／leave／silence</strong> 三个出口。先点击 <strong>清除该节点连接</strong> 去掉练习中旧的 <code>next</code> 连接，再逐一连接新的出口。</p>
+<p>第一次可以把三个出口都连到结束节点，用来验证选择和超时流程。然后按第 5 章的方法另建不同的后续单元，让 <code>send</code> 进入发送成功剧情、<code>leave</code> 进入离开剧情、<code>silence</code> 进入超时剧情。</p>
+<p><strong>连线操作是“点出口 → 点目标节点主体”，不是按住拖一根线。</strong> 一个出口重新连到别处，会替换该出口原来的目标。</p>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>节点类型</th>
+<th>必须处理的出口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通台词演出单元</td>
+<td><code>next</code></td>
+</tr>
+<tr>
+<td>带末尾选择的演出单元</td>
+<td>每个选项出口，以及自动存在的 <code>silence</code></td>
+</tr>
+<tr>
+<td>判断节点</td>
+<td><code>yes</code> 与 <code>no</code></td>
+</tr>
+<tr>
+<td>全局选择节点</td>
+<td>每个选项出口，以及 <code>silence</code></td>
+</tr>
+<tr>
+<td>结束节点</td>
+<td>无</td>
+</tr>
+</tbody>
+</table></div>
+<p>“判断”节点直接按全局变量分流，不显示给玩家；“全局选择”在单元之外显示选择。希望保留当前角色、动作和镜头作为选择背景时，优先使用单元里的 <code>Choice</code> 台词。</p>
+<p>单元内选择的时限由该条台词的“耐心秒数”控制；全局选择还会受剩余全局耐心限制。选择时消耗的等待时间会扣减全局耐心，二者不是同一个设置。需要固定倒计时的入门练习先使用单元内选择。</p>
+<p>最后点击 <strong>校验／验证</strong>，再运行三次：选发送、选离开、完全不操作等待超时。将 <code>supplies</code> 初值临时改为 <code>1</code>，再确认“发送信号”不可点击，检查完恢复为 <code>3</code>。</p>
+<h2 id="section-8">8. 保存、导出与更新程序</h2>
+<h3 id="section-8-1">8.1 这些保存操作有什么区别</h3>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>结果</th>
+<th>用在哪里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独立程序“保存外观 JSON”</td>
+<td>外观数据，位于用户的 LocalLow 目录</td>
+<td>独立程序继续试形象</td>
+</tr>
+<tr>
+<td>捏人编辑器“保存角色与 Prefab”</td>
+<td>正式角色资产及 Prefab，注册到人物库</td>
+<td>时间轴与 Unity 游戏</td>
+</tr>
+<tr>
+<td>Unity“File → Save Project”</td>
+<td>保存编辑过的工程资产</td>
+<td>日常保存单元、演出树与配置</td>
+</tr>
+<tr>
+<td>“导出演出单元”</td>
+<td>在所选工程目录创建一个 Unit <code>.asset</code> 副本</td>
+<td>复用当前时间轴配置</td>
+</tr>
+<tr>
+<td>“导出人物 Prefab”</td>
+<td>在所选工程目录创建人物 Prefab</td>
+<td>在工程内放置或复用人物</td>
+</tr>
+<tr>
+<td>“导出 Unity 包”</td>
+<td>生成 <code>Tool/V2/Export/ASTRA_Performance_Tool_V2.unitypackage</code></td>
+<td>带工具资产迁移到其他 Unity 工程</td>
+</tr>
+</tbody>
+</table></div>
+<p>单独的 Unit <code>.asset</code> 或人物 <code>.prefab</code> 仍引用其他资源；不能只发这一个文件就认为对方能完整运行。迁移时优先用 Unity 包，并同时保留第三方素材许可说明。导出演出单元不是导出视频；当前工具没有录像导出按钮。</p>
+<p>备份正式工作时保留 Unity 工程的 <code>Assets</code>、<code>Packages</code>、<code>ProjectSettings</code>，以及资产对应的 <code>.meta</code> 文件。独立程序的 JSON 在工程外，需要另行备份。不要把 <code>Library</code>、<code>Temp</code> 等缓存当作唯一备份。</p>
+<h3 id="section-8-2">8.2 Unity 改完后，为什么独立程序没变</h3>
+<p><code>Build</code> 里的程序是上次构建的版本。只保存 Unity 资产不会更新这个可执行程序，需要重新构建。</p>
+<p>退出 Unity 播放模式，保存并关闭该工程的 Unity 编辑器，然后在 <code>Tool/V2</code> 文件夹打开 PowerShell，执行：</p>
+<pre><code class="language-powershell">.\Rebuild.ps1
+</code></pre>
+<p>完成后再双击 <code>RunToolV2.cmd</code>。日常改角色、台词、镜头和演出树只需要这个命令；只有修改 Blender 模型来源后才使用 <code>-Models</code>。</p>
+<p>如果只是正常使用工具，不要执行 <code>ToolV2Build.Initialize</code>：它用于初次创建／重建示例，会重设示例演出树和示例单元。执行重建前应备份自己的工作。</p>
+<p>如果启动脚本找不到 Unity，请在 Hub 中打开 <code>UnityProject</code>，或按实际安装位置修改脚本中的编辑器路径。如果 Unity 报许可证错误，在 Unity Hub 的许可证设置中确认当前账户已有有效许可证，再重新启动编辑器。</p>
+<h2 id="section-9">9. 常见问题：按现象查</h2>
+<div aria-label="参考表，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>现象</th>
+<th>优先检查与处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>点击演出试播，出现的不是刚捏的人</td>
+<td>工作台草稿没有进入演出。到 Unity 保存正式角色，再把它放进人物轨</td>
+</tr>
+<tr>
+<td>时间轴播放没有台词和选项</td>
+<td>这是画面预览。使用“运行预览”，在 Game 中点击“演出试播”</td>
+</tr>
+<tr>
+<td>播放了另一段剧情</td>
+<td>运行从演出树入口开始。选目标节点并“设为入口”；时间轴选中单元不会改变入口</td>
+</tr>
+<tr>
+<td>新建 Unit 在顶部列表找不到</td>
+<td>演出树中新增单元节点，并给“演出单元”字段绑定这个资产</td>
+</tr>
+<tr>
+<td>刚选了角色，画面一直只显示它</td>
+<td>素材库选中角色会进入单人检查。点击时间尺或时间轴片段，退出素材检查</td>
+</tr>
+<tr>
+<td>动作拖不上去／动作报覆盖错误</td>
+<td>先放人物；动作开始与结束都必须位于对应人物片段之内</td>
+</tr>
+<tr>
+<td>台词被提示重叠或越界</td>
+<td>看“自动时长”。缩短文字、提高字速、缩短停留，或移动下一句和延长单元</td>
+</tr>
+<tr>
+<td>镜头看错人／台词说话者不对</td>
+<td>核对人物轨 ID。主体、陪体、台词人物轨应填 <code>actor0</code> 等轨 ID，不是角色唯一 ID</td>
+</tr>
+<tr>
+<td>上衣换了，裤子和鞋没换</td>
+<td>这是分部件编辑。选好款式后点击“整套应用”</td>
+</tr>
+<tr>
+<td>外星人看不到某些眉骨、眼镜、纹样选项</td>
+<td>特殊解剖头型只显示已适配的部件；可换回灰裔检查通用面饰</td>
+</tr>
+<tr>
+<td>明明当前单元正确，验证仍不通过</td>
+<td>验证会检查演出树中的全部节点，包括暂时未连接到入口的草稿；补齐这些节点，或从图中删除不需要的草稿节点</td>
+</tr>
+<tr>
+<td>选择结束后卡住／超时没有后续</td>
+<td>检查每个选项出口和 <code>silence</code> 都已连接，目标节点绑定了有效单元，终点使用结束节点</td>
+</tr>
+<tr>
+<td>载入外观不是我想要的角色</td>
+<td>独立程序只能载入最近修改的 JSON。正式管理多个角色使用 Unity 人物素材库</td>
+</tr>
+<tr>
+<td>改了顶部演出包，但 Game 仍播默认内容</td>
+<td>当前预览场景引用默认包，不会自动同步顶部字段；自定义包需要同步配置场景中的 ToolWorkbench 与 ToolPlayer 的 package 引用</td>
+</tr>
+</tbody>
+</table></div>
+<p>遇到模型遮挡时，先暂停动作并记下：种族、头型、体型、服装、配件、动作名、发生时刻和镜头，最好同时截正面与侧面。这样可以区分部件组合问题、动画姿势问题和镜头构图问题。</p>
+<h2 id="section-10">10. 每次交付前，按这个顺序检查</h2>
+<ol>
+<li><strong>角色</strong>：正面、侧面、背面各看一次；再看说话、坐姿、维修动作，检查长发、颅冠、衣领和配件。</li>
+<li><strong>画面</strong>：逐个镜头播放，检查脸部是否清楚、角色是否被前景遮挡、字幕背景是否影响阅读。</li>
+<li><strong>时间轴</strong>：动作被人物时间完整覆盖，台词不重叠且不超出单元长度，人物轨引用一致。</li>
+<li><strong>分支</strong>：每个可点击选项各走一次；测试条件不足和沉默超时；确认结束节点可到达。</li>
+<li><strong>保存</strong>：保存正式角色和工程资产；需要独立程序交付时重新构建，再用新程序复查。</li>
+</ol>
+<p>当前服装采用骨骼蒙皮，没有布料物理；宽衣摆在大幅度动作下可能出现硬折面。对话动作也不等于语音口型同步。实际组合与演出应以上述运行检查为准。</p>
+<h2 id="section-11">11. 进一步查阅</h2>
+<ul>
+<li>增加衣服、头发、颅冠或动作：<a href="资产扩充与目录指南.md" rel="noopener" target="_blank">资产扩充与目录指南</a>。</li>
+<li>理解新服装的设计与来源：<a href="太空服装扩充与调研.md" rel="noopener" target="_blank">太空服装扩充与调研</a>。</li>
+<li>查看实际检查范围与图片：<a href="太空服装验收.md" rel="noopener" target="_blank">太空服装验收</a>。</li>
+<li>理解系统结构：<a href="技术架构.md" rel="noopener" target="_blank">技术架构</a>、<a href="捏人与演出设计.md" rel="noopener" target="_blank">捏人与演出设计</a>。</li>
+<li>启动、构建与第三方许可：<a href="../README.md" rel="noopener" target="_blank">工具 README</a>、<a href="../THIRD_PARTY_NOTICES.md" rel="noopener" target="_blank">THIRD_PARTY_NOTICES</a>。</li>
+</ul>
+<p>本说明依据当前 <code>ToolWorkbench</code>、<code>ToolV2CharacterCreatorWindow</code>、<code>ToolV2TimelineWindow</code>、<code>ToolV2GraphWindow</code>、<code>ToolPlayer</code> 及构建脚本核对；文中按钮与功能边界以这一版实现为准。</p>
+<h2 id="section-12">12. 女性角色与灰裔头部更新</h2>
+<p>女性预制角色共 10 个，涵盖探索、日常、正装、工程、科幻勤务、安保等原包造型。头部菜单分短发束发／长发／帽饰；服装分日常正装／科幻勤务／旅行长装。帽饰中选“无”会恢复戴帽前的发型。女性仍可改脸型、眼睛、眉骨、鼻部、口部、脸宽、下颌、体型、肤色、面饰、装备与纹样。</p>
+<p>嘴部已恢复几何方案：男性保留原有嘴型，女性使用贴合嘴唇的小型几何口缝，灰裔与其他有口缝的外星人直接把口缝接入皮肤网格。鸟喙保留原有上下喙。后脑已融合，保留整体低模轮廓与分段光照。女性头皮也已补全，去掉头发后可以正常检查背面。</p>
+<p><a href="女性角色与灰裔修复.md" rel="noopener" target="_blank">女性素材接入说明</a>。</p>
+<h2 id="section-13">13. 圆下巴、方下巴与发际线修复</h2>
+<p>选中角色后打开 <strong>面容 → 下巴</strong>，选择 <strong>原型 / 圆下巴 / 方下巴</strong>。男性、女性及全部 10 种外星人头型均支持；先选生物头型，再选下巴，也可以继续微调脸宽与下颌。方下巴加宽下颌与颏部，保留圆角和脸颊过渡。</p>
+<p>已有存档会保留“原型”，不会自动换下巴。新选择随外观 JSON、正式角色资产和 Prefab 保存。女性长发的额头发根、鬓角和短发底层已重新适配；头发继续随共享骨架运动。</p>
+<p><a href="下巴与发际线修复.md" rel="noopener" target="_blank">模型修复说明与实机对照</a>。</p>
+<footer><a class="back-top" href="#top">返回顶部 ↑</a>离线网页与 Markdown 内容一致。需保持本文件与 Tool/V2 中的 QA、Docs 目录关系，以显示截图和打开相关文档。</footer></main></div></body></html>

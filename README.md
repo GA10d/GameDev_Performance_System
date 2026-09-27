@@ -1,4 +1,4 @@
-# ASTRA · 人物演出 Demo
+# ASTRA · 人物演出 Demo 与工具
 
 三个可独立运行和编辑的版本都在 [Demo](Demo) 目录下。每个版本都有自己的 Unity 工程、构建脚本、播放器、源模型和验收资料。Git 克隆版不包含播放器，需要先在对应版本目录运行 `Rebuild.ps1`。
 
@@ -19,3 +19,15 @@ cd .\Demo\V3
 ```
 
 播放器和 Unity 缓存仅保存在本地。Git 文件范围见 [文件管理](Demo/V1/Docs/06_Git文件管理.md)。
+
+
+## 策划工具
+
+| 目录 | 内容 | 入口 |
+|---|---|---|
+| `Tool/V1` | V3 风格角色的第一版演出 / 捏人工具 | [说明](Tool/V1/README.md)、[启动](Tool/V1/Launch.cmd) |
+| `Tool/V2` | Quaternius 模块化捏人、UAL 动作、时间轴与分支树；22 套服装 | [说明](Tool/V2/README.md)、[启动](Tool/V2/RunToolV2.cmd) |
+
+Tool/V2 的新增服装支持人类和外星人，按用途分组。见[太空服装调研与实现](Tool/V2/Docs/太空服装扩充与调研.md)和[资产扩充目录指南](Tool/V2/Docs/资产扩充与目录指南.md)。
+
+Git 克隆后在 `Tool/V2` 执行 `./Rebuild.ps1` 生成播放器和 Unity 包，`./Rebuild.ps1 -Models` 同时重建 Blender 模型。各版本的 Assets、Packages、ProjectSettings、源模型和许可证纳入追踪；Build、Export 包、Unity 缓存、下载压缩包与连续截图留在本地。具体范围见 [Git 追踪说明](Git追踪说明.md)。

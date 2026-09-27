@@ -1,0 +1,686 @@
+[
+  {
+    "name": "Adventurer_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Adventurer_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Adventurer_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Adventurer_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Backpack",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Beach_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Beach_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Beach_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Beach_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Casual2_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual2_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual2_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual2_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Casual_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Farmer_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Farmer_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Farmer_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Farmer_Pants",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Horse_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "King_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "King_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "King_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "King_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Pistol",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Punk_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Punk_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Punk_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Punk_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "SpaceSuit_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "SpaceSuit_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "SpaceSuit_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "SpaceSuit_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Suit_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Suit_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Suit_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Suit_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Swat_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Swat_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Swat_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Swat_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Sword",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      }
+    ]
+  },
+  {
+    "name": "Worker_Body",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Worker_Feet",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Worker_Head",
+    "modifiers": [
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  },
+  {
+    "name": "Worker_Legs",
+    "modifiers": [
+      {
+        "name": "Mirror",
+        "type": "MIRROR"
+      },
+      {
+        "name": "Armature",
+        "type": "ARMATURE"
+      },
+      {
+        "name": "Auto Smooth",
+        "type": "NODES"
+      }
+    ]
+  }
+]

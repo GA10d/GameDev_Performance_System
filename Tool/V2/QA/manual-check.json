@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-27",
+  "h2_sections": 11,
+  "local_link_targets": 11,
+  "missing_links": [],
+  "network_dependencies": 0,
+  "duplicate_ids": 0,
+  "example_dialogue_end_seconds": [
+    2.75,
+    6.333
+  ],
+  "markdown_characters": 11954,
+  "browser_visual_preview": "Not completed: the browser security policy blocks file:// previews. No bypass attempted.",
+  "verification_scope": "Documentation only: implementation review, local links/anchors, self-contained HTML dependencies, example dialogue timing. No new Unity runtime test."
+}

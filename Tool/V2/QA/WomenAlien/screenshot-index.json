@@ -1,0 +1,13 @@
+{
+  "pngFiles": 113,
+  "contactSheets": 12,
+  "source": "FinalRuntime camera renders, final candidate Player",
+  "status": "VISUALLY_REVIEWED",
+  "validCameraFrames": 112,
+  "blackHiddenWindowUiFrames": 1,
+  "nativeUiChecked": [
+    "New human submenu",
+    "Female creation",
+    "Female hair categories"
+  ]
+}
