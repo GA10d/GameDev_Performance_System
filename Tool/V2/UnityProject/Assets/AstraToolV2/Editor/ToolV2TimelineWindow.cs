@@ -38,11 +38,13 @@ public sealed class ToolV2TimelineWindow : EditorWindow
     void OnEnable()
     {
         wantsMouseMove=true;
-        package=AssetDatabase.LoadAssetAtPath<ToolPackage>(ToolV2Build.PackagePath);
-        if(package&&package.graph&&package.graph.nodes.Count>0)unit=package.graph.nodes.FirstOrDefault(n=>n.unit!=null)?.unit;
+        ToolV2Authoring.Changed+=SessionChanged;
+        SessionChanged();
         EditorApplication.update+=Tick;
     }
-    void OnDisable(){EditorApplication.update-=Tick;DisposePreview();}
+    void OnDisable(){ToolV2Authoring.Changed-=SessionChanged;EditorApplication.update-=Tick;DisposePreview();}
+    void SessionChanged()
+    {package=ToolV2Authoring.Current;unit=ToolV2Authoring.Unit;playhead=0;playing=false;selectedCharacter=null;selectedIndex=-1;selectedTrack=-1;ResetPreview();Repaint();}
     void OnFocus(){ResetPreview();}
     void Tick()
     {
@@ -53,10 +55,10 @@ public sealed class ToolV2TimelineWindow : EditorWindow
     }
     void OnGUI()
     {
-        if(!package){if(GUILayout.Button("创建示例工程",GUILayout.Height(45))){package=ToolV2Build.CreateSample();unit=package.graph.nodes[0].unit;}return;}
         Toolbar();
+        if(!package||!package.library||!package.graph){EditorGUILayout.HelpBox("点击新建演出开始配置，或者选择一个现有演出包。",MessageType.Info);return;}
         float upper=Mathf.Max(300,position.height-330);
-        Rect lib=new Rect(0,32,Left,upper-32),viewer=new Rect(Left,32,position.width-Left-Right,upper-32),inspect=new Rect(position.width-Right,32,Right,upper-32);
+        Rect lib=new Rect(0,54,Left,upper-54),viewer=new Rect(Left,54,position.width-Left-Right,upper-54),inspect=new Rect(position.width-Right,54,Right,upper-54);
         GUI.Box(lib,GUIContent.none);GUI.Box(viewer,GUIContent.none);GUI.Box(inspect,GUIContent.none);
         GUILayout.BeginArea(lib);Library();GUILayout.EndArea();
         GUILayout.BeginArea(viewer);DrawPreview(new Rect(8,8,viewer.width-16,viewer.height-40));
@@ -67,21 +69,21 @@ public sealed class ToolV2TimelineWindow : EditorWindow
     }
     void Toolbar()
     {
+        ToolV2Authoring.Toolbar();
         GUILayout.BeginHorizontal(EditorStyles.toolbar);
-        package=(ToolPackage)EditorGUILayout.ObjectField(package,typeof(ToolPackage),false,GUILayout.Width(230));
-        if(package&&package.graph)
+        using(new EditorGUI.DisabledScope(!package||!package.graph))
         {
-            var units=package.graph.nodes.Where(n=>n.unit).Select(n=>n.unit).Distinct().ToArray();
-            int current=Mathf.Max(0,Array.IndexOf(units,unit));
-            int next=EditorGUILayout.Popup(current,units.Select(u=>u.id).ToArray(),GUILayout.Width(160));
-            if(next>=0&&next<units.Length&&unit!=units[next]){unit=units[next];playhead=0;selectedIndex=-1;ResetPreview();}
+            GUILayout.Label("当前单元",GUILayout.Width(54));
+            var units=ToolV2Authoring.Units(package);
+            int next=EditorGUILayout.Popup(Array.IndexOf(units,unit),units.Select(u=>u.id).ToArray(),GUILayout.Width(170));
+            if(next>=0&&next<units.Length&&unit!=units[next])ToolV2Authoring.SelectUnit(units[next]);
+            if(GUILayout.Button("+ 新增单元",EditorStyles.toolbarButton,GUILayout.Width(85)))ToolV2Authoring.AddCurrentUnit();
+            if(GUILayout.Button(playing?"暂停":"播放",EditorStyles.toolbarButton,GUILayout.Width(55)))playing=!playing;
+            if(GUILayout.Button("演出树",EditorStyles.toolbarButton,GUILayout.Width(65)))ToolV2GraphWindow.Open();
+            if(GUILayout.Button("验证",EditorStyles.toolbarButton,GUILayout.Width(55)))ShowValidation();
+            if(GUILayout.Button("导出演出单元",EditorStyles.toolbarButton,GUILayout.Width(96)))ExportUnit();
+            if(GUILayout.Button("运行预览",EditorStyles.toolbarButton,GUILayout.Width(75)))OpenGamePreview();
         }
-        if(GUILayout.Button(playing?"暂停":"播放",EditorStyles.toolbarButton,GUILayout.Width(55)))playing=!playing;
-        if(GUILayout.Button("演出树",EditorStyles.toolbarButton,GUILayout.Width(65)))ToolV2GraphWindow.Open();
-        if(GUILayout.Button("验证",EditorStyles.toolbarButton,GUILayout.Width(55)))ShowValidation();
-        if(GUILayout.Button("导出演出单元",EditorStyles.toolbarButton,GUILayout.Width(96)))ExportUnit();
-        if(GUILayout.Button("运行预览",EditorStyles.toolbarButton,GUILayout.Width(75)))OpenGamePreview();
-        if(GUILayout.Button("导出 Unity 包",EditorStyles.toolbarButton,GUILayout.Width(100))){ToolV2Build.VerifyAndExport();EditorUtility.DisplayDialog("导出完成","Tool/Export/ASTRA_Performance_Tool_V2.unitypackage 已生成。","确定");}
         GUILayout.FlexibleSpace();GUILayout.Label(unit?playhead.ToString("F2")+" / "+unit.duration.ToString("F2")+" s":"",GUILayout.Width(100));
         GUILayout.EndHorizontal();
     }
@@ -415,7 +417,7 @@ public sealed class ToolV2TimelineWindow : EditorWindow
         else if(unit&&selectedIndex>=0&&selectedIndex<Count(selectedTrack))ClipInspector();
         else
         {
-            unit=(ToolUnit)EditorGUILayout.ObjectField("演出单元",unit,typeof(ToolUnit),false);
+            using(new EditorGUI.DisabledScope(true))EditorGUILayout.ObjectField("演出单元",unit,typeof(ToolUnit),false);
             if(unit){Undo.RecordObject(unit,"Edit unit");unit.id=EditorGUILayout.TextField("ID",unit.id);EditorGUI.BeginChangeCheck();float duration=EditorGUILayout.DelayedFloatField("时长（秒）",unit.duration);if(EditorGUI.EndChangeCheck())SetUnitDuration(duration);EditorUtility.SetDirty(unit);}
             GUILayout.Label("拖拽左侧材料到下方对应轨道。选中片段可编辑属性；拖动右缘可改时长。",EditorStyles.wordWrappedMiniLabel);
         }
@@ -514,8 +516,7 @@ public sealed class ToolV2TimelineWindow : EditorWindow
     void OpenGamePreview()
     {
         if(ToolValidation.Package(package).Count>0){ShowValidation();return;}
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene(ToolV2Build.Root+"/Scenes/ToolPreview.unity");
-        EditorApplication.isPlaying=true;
+        ToolV2AuthoringPreview.Play(package);
     }
     void ShowValidation()
     {

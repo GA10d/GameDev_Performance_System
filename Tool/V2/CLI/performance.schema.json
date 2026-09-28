@@ -1,0 +1,543 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "library": {
+      "type": "string",
+      "pattern": "^Assets/[^\\\\]+\\.asset$"
+    },
+    "entryNode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "initialPatience": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "initialStats": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stat"
+      },
+      "maxItems": 512
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unit"
+      },
+      "maxItems": 512
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      },
+      "maxItems": 512
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "name",
+    "library",
+    "entryNode",
+    "initialPatience",
+    "initialStats",
+    "units",
+    "nodes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Astra Performance V2 / AI interchange v1",
+  "$defs": {
+    "vec2": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ],
+      "additionalProperties": false
+    },
+    "vec3": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "z": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "z"
+      ],
+      "additionalProperties": false
+    },
+    "condition": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "compare": {
+          "type": "string",
+          "enum": [
+            "Equal",
+            "NotEqual",
+            "Greater",
+            "GreaterOrEqual",
+            "Less",
+            "LessOrEqual"
+          ]
+        },
+        "value": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "key",
+        "compare",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "stat": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "key",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "effect": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "delta": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "key",
+        "delta"
+      ],
+      "additionalProperties": false
+    },
+    "choice": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "hasCondition": {
+          "type": "boolean"
+        },
+        "effects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/effect"
+          },
+          "maxItems": 512
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "condition",
+        "hasCondition",
+        "effects"
+      ],
+      "additionalProperties": false
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "character": {
+          "type": "string",
+          "pattern": "^Assets/[^\\\\]+\\.asset$"
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "character",
+        "start",
+        "duration"
+      ],
+      "additionalProperties": false
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.25,
+          "maximum": 3
+        }
+      },
+      "required": [
+        "actorId",
+        "actionId",
+        "start",
+        "duration",
+        "speed"
+      ],
+      "additionalProperties": false
+    },
+    "dialogue": {
+      "type": "object",
+      "properties": {
+        "actorId": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "Text",
+            "Choice"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "charactersPerSecond": {
+          "type": "number",
+          "minimum": 4,
+          "maximum": 60
+        },
+        "hold": {
+          "type": "number",
+          "minimum": 0
+        },
+        "patienceSeconds": {
+          "type": "number",
+          "minimum": 1
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/choice"
+          },
+          "maxItems": 512
+        }
+      },
+      "required": [
+        "actorId",
+        "kind",
+        "text",
+        "start",
+        "charactersPerSecond",
+        "hold",
+        "patienceSeconds",
+        "choices"
+      ],
+      "additionalProperties": false
+    },
+    "scene": {
+      "type": "object",
+      "properties": {
+        "sceneId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "sceneId",
+        "start",
+        "duration"
+      ],
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "shot": {
+          "type": "string",
+          "enum": [
+            "Establishing",
+            "Medium",
+            "Close",
+            "TwoShot",
+            "OverShoulder",
+            "Profile",
+            "LowAngle",
+            "Insert",
+            "Tracking",
+            "Custom"
+          ]
+        },
+        "fx": {
+          "type": "string",
+          "enum": [
+            "None",
+            "SignalGlitch",
+            "Disturbance",
+            "EmergencyLight"
+          ]
+        },
+        "actorId": {
+          "type": "string"
+        },
+        "partnerId": {
+          "type": "string"
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "customPosition": {
+          "$ref": "#/$defs/vec3"
+        },
+        "customEuler": {
+          "$ref": "#/$defs/vec3"
+        },
+        "customFov": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 75
+        }
+      },
+      "required": [
+        "shot",
+        "fx",
+        "actorId",
+        "partnerId",
+        "start",
+        "duration",
+        "customPosition",
+        "customEuler",
+        "customFov"
+      ],
+      "additionalProperties": false
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "actors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/actor"
+          },
+          "maxItems": 512
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          },
+          "maxItems": 512
+        },
+        "dialogue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dialogue"
+          },
+          "maxItems": 512
+        },
+        "scenes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/scene"
+          },
+          "maxItems": 512
+        },
+        "cameras": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/camera"
+          },
+          "maxItems": 512
+        }
+      },
+      "required": [
+        "id",
+        "duration",
+        "actors",
+        "actions",
+        "dialogue",
+        "scenes",
+        "cameras"
+      ],
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "properties": {
+        "slot": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "slot",
+        "target"
+      ],
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "Unit",
+            "Condition",
+            "GlobalChoice",
+            "End"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "position": {
+          "$ref": "#/$defs/vec2"
+        },
+        "condition": {
+          "$ref": "#/$defs/condition"
+        },
+        "patienceSeconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "choices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/choice"
+          },
+          "maxItems": 512
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/edge"
+          },
+          "maxItems": 512
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "unit",
+        "prompt",
+        "position",
+        "condition",
+        "patienceSeconds",
+        "choices",
+        "edges"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

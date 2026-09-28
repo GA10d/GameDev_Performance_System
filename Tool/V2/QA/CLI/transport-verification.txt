@@ -1,0 +1,16 @@
+PASS catalog: OK
+PASS template: OK
+PASS validate: OK
+PASS simulate: OK
+PASS simulate: OK
+PASS simulate: OK
+PASS validate: VALIDATION_FAILED
+PASS apply: OK
+PASS inspect: OK
+PASS apply: INVALID_ARGUMENT
+PASS export: OK
+PASS export: INVALID_ARGUMENT
+PASS apply: OK
+PASS inspect: OK
+PASS inspect: OK
+PASS live editor: Chinese params, references, versioned edit and original preservation

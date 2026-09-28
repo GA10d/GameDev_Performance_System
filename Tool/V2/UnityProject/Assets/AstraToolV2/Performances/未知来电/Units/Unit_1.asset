@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265bc44c617cace4d90063e750f496a4, type: 3}
+  m_Name: Unit_1
+  m_EditorClassIdentifier: 
+  id: opening
+  duration: 19.096127
+  actors:
+  - id: actor0
+    character: {fileID: 11400000, guid: 5fc93f54a067a1b43b6773b0d89d1441, type: 2}
+    start: 0
+    duration: 19.096127
+  actions:
+  - actorId: actor0
+    actionId: Idle_Talking_Loop
+    start: 0
+    duration: 3.788889
+    speed: 1
+  - actorId: actor0
+    actionId: Idle_Loop
+    start: 3.788889
+    duration: 15.200001
+    speed: 1
+  dialogue:
+  - actorId: speaker
+    kind: 0
+    text: "\u63A2\u6D4B\u823104\uFF0C\u8FD9\u91CC\u662F\u524D\u54E8\u7AD9\u3002\u6211\u4EEC\u5DF2\u63A5\u901A\u89C6\u9891\u94FE\u8DEF\uFF0C\u51C6\u5907\u53D1\u9001\u672C\u6B21\u4EFB\u52A1\u7B80\u62A5\u3002"
+    start: 0.4
+    charactersPerSecond: 18
+    hold: 1.2
+    patienceSeconds: 6
+    choices: []
+  - actorId: speaker
+    kind: 1
+    text: "\u662F\u5426\u63A5\u6536\u524D\u54E8\u7AD9\u7B80\u62A5\uFF1F"
+    start: 3.788889
+    charactersPerSecond: 18
+    hold: 0.7
+    patienceSeconds: 15
+    choices:
+    - id: accept
+      text: "\u63A5\u6536\u7B80\u62A5"
+      condition:
+        key: credits
+        compare: 3
+        value: 0
+      hasCondition: 0
+      effects: []
+    - id: decline
+      text: "\u6682\u4E0D\u63A5\u6536"
+      condition:
+        key: credits
+        compare: 3
+        value: 0
+      hasCondition: 0
+      effects: []
+  scenes:
+  - sceneId: archive
+    start: 0
+    duration: 18.98889
+  cameras:
+  - shot: 1
+    fx: 0
+    actorId: speaker
+    partnerId: 
+    start: 0
+    duration: 18.98889
+    customPosition: {x: 0.2, y: 1.6, z: -2.6}
+    customEuler: {x: 3, y: 0, z: 0}
+    customFov: 36

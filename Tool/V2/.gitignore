@@ -11,3 +11,5 @@ Build/
 Export/*.unitypackage
 QA/*.log
 QA/Runtime/player.log
+
+Export/Meeting*/

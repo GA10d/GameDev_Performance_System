@@ -1,0 +1,53 @@
+PASS catalog: Completed
+PASS template: Completed
+PASS validate: Completed
+PASS SingleCall lossless JSON roundtrip
+PASS template: Completed
+PASS validate: Completed
+PASS Conversation lossless JSON roundtrip
+PASS template: Completed
+PASS validate: Completed
+PASS Question lossless JSON roundtrip
+PASS template: Completed
+PASS validate: Completed
+PASS Broadcast lossless JSON roundtrip
+PASS template: Completed
+PASS validate: Completed
+PASS Blank lossless JSON roundtrip
+PASS template: Completed
+PASS simulate: Completed
+PASS correct ending: accept
+PASS simulate: Completed
+PASS correct ending: decline
+PASS simulate: Completed
+PASS correct ending: silence
+PASS screenshot actor0/speaker mismatch gives exact path
+PASS actor timing coverage distinct from missing ID
+PASS dangling edge rejected
+PASS dead cycle rejected
+PASS unreachable node warning
+PASS disabled choice rejected
+PASS simulate: Completed
+PASS choice resource effects applied
+PASS unused route rejected
+PASS late choice rejected
+PASS simulate: Completed
+PASS condition yes and global selection route
+PASS simulate: Completed
+PASS global timeout route
+PASS simulate: Completed
+PASS condition no route
+PASS apply: Completed
+PASS apply does not save unrelated dirty assets
+PASS existing destination cannot be overwritten
+PASS asset path escape rejected
+PASS inspect: Completed
+PASS saved package JSON matches original including Chinese text
+PASS export: Completed
+PASS export does not save unrelated dirty assets
+PASS export alias and meta exist
+PASS export includes graph dependencies
+PASS nonempty export destination rejected
+PASS export into project rejected
+PASS template: Completed
+PASS CLI does not switch active authoring session

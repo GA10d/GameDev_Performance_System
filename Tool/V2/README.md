@@ -1,91 +1,334 @@
 # ASTRA Performance Tool V2
 
-基于 Demo/V2 的 Quaternius CC0 角色和真实 UAL Humanoid 动作，提供模块化捏人、五轨演出时间轴和分支演出树。独立目录、独立命名空间 `Astra.PerformanceToolV2`，不覆盖 Tool/V1。
+### 像剪视频一样，编辑游戏里的角色演出<br>
+### Edit in-game performances like a video timeline
 
-## 快速使用
+<p align="center">
+  <img src="QA/NativeUI/01_human_workbench.png" alt="ASTRA 角色工作台 / ASTRA Character Workbench" width="100%">
+</p>
 
-1. 双击 `RunToolV2.cmd` 或 `Build/ASTRA Performance Tool V2.exe`：无需 Unity，先选择“新建人类 / 新建外星人”，按左侧类别编辑，右侧试演动作。外观可存为 JSON，再载入最近保存的外观。
-2. 双击 `OpenUnityV2.cmd`，或在 Unity Hub 中打开 `UnityProject`，使用 Unity **2022.3.62f1**。启动脚本使用本机已安装的 Unity 路径。
-3. 菜单 `Astra Performance Tool V2 → Open timeline` 打开策划工具。
-4. 素材库“＋ 新建角色 → 人类 / 外星人”，或者选择捏人预设，再点“打开捏人编辑器”。修改草稿后点“保存角色与 Prefab”。
-5. 保存的角色出现在人物素材库的“自建角色”下，可拖入人物轨，再添加动作、台词、镜头与场景。
-6. `Open graph` 编辑演出树，连接选项及沉默出口。时间轴中点“验证”，再“运行预览”。
+**ASTRA Performance Tool V2** 是一套面向游戏策划、叙事设计与小型开发团队的 Unity 演出创作系统。它把角色、动作、台词、镜头和场景变成可拖放、可裁切、可预览的时间轴片段，再用演出树组织选择、条件与结局——让一段游戏内对话或过场的制作方式，更接近大家熟悉的视频剪辑软件。
 
-独立程序的 JSON 用于外观演示；Unity 工程内以 Character ScriptableObject 与 Prefab 为正式交付资产。独立程序不代替 Unity 演出编辑器。
+**ASTRA Performance Tool V2** is a Unity authoring system for game designers, narrative designers, and small development teams. It turns characters, animation, dialogue, cameras, and scenes into draggable, trimmable, previewable timeline clips, then connects choices, conditions, and endings in a performance graph—bringing game performance authoring closer to the familiar workflow of a non-linear video editor.
 
-## 本版内容
+> 从“写一段逻辑、摆一个角色、调一个镜头”，变成“选择素材、编排时间、预览结果、交付演出”。<br>
+> Move from scripting every beat by hand to selecting assets, arranging time, previewing results, and shipping a performance.
 
-- 4 个 Demo/V2 原角色：林、回声、砾、沃斯，保持原模型。
-- 42 个可编辑预设：16 男性、10 女性、16 外星人。
-- 人类 10 脸型；外星人 10 个独立解剖头型，包含独眼、四目、裂颚、鸟喙、菌伞、晶面、花萼等。新增独立的原型／圆下巴／方下巴，保留眼睛、眉骨、嗅觉器官、口器及宽度微调；无独立眉骨的原型会显示说明。
-- 男性 33 个发型 / 头饰选项（包含“无发”及 3 个帽盔）；外星人 12 个颅冠选项（包含“无冠”）。人类头部分为“短发 / 分缝刘海 / 长发束发 / 帽饰”；外星人分为“鳍膜叶瓣 / 角环骨板 / 触须感官”。
-- 女性新增 14 个头部选项（含无发、10 个原包发型／头饰组合和 3 个适配帽盔），按短发束发 / 长发 / 帽饰分组；10 套原包服装，按日常正装 / 科幻勤务 / 旅行长装分组。
-- 8 体型，整体身高 0.90–1.10 倍；22 上装、22 下装、22 鞋靴可独立组合，按原有服装 / 舰内勤务 / 舱外探索 / 工业安保分组，支持整套应用与推荐配色。
-- 原人类 / 灰裔保留 10 面饰、10 装备、6 面部纹样（含“无”）。九种新外星人头型暂支持无面饰 / 护颈，使用自身鳃纹、甲板或花瓣；菜单隐藏未适配面饰。
-- 人类 / 外星人各 16 肤色，16 发色、16 服装色、12 眼色、12 强调色。Unity 编辑器另支持自定义颜色。
-- 默认呈现 17 个演出动作；资源库包含免费 Standard 包的 42 个实际动画，另有 T Pose 仅用于导入，不列为动作。
-- 9 个预设镜头及自定义镜头；3 个场景；保留五轨与条件分支结构。
+[中文介绍](#项目做了什么--what-this-project-does) · [English overview](#english-overview) · [快速开始 / Quick start](#快速开始--quick-start) · [技术架构 / Architecture](#技术原理--under-the-hood) · [AI 协作 / Human--AI](#人与-ai-共同创作--human--ai-co-creation)
 
-半兽人使用 Demo/V2 原成品角色，本版“新建角色”只开放用户要求的人类与外星人。脸部是低模风格的有限形变，不是写实扫描头或任意拓扑编辑器。
+---
 
-## 目录
+## 项目做了什么 / What this project does
 
-| 目录 | 内容 |
-| --- | --- |
-| `UnityProject/Assets/AstraToolV2` | 独立工具源码、模型、动作、角色、示例与场景 |
-| `Source/Downloads` | Quaternius 原始 Blend、Universal Base Characters 免费包与 CC0 许可证 |
-| `Source/Quaternius_Astra_Modular.blend` | 可继续编辑的模块化模型，共享骨架 |
-| `Source/modular_manifest.json` | 每个模块的顶点、三角面和形态键清单 |
-| `Tools/build_modular.py` | 从 CC0 原始文件重建 FBX / Blend |
-| `Build` | Windows 可运行工作台 |
-| `Export` | 可导入其他 Unity 工程的 unitypackage |
-| `QA` | 编译、结构验证、运行日志与截图 |
-| `Docs` | 策划使用与技术说明 |
+ASTRA 不是单纯的捏人工具，也不只是一个动画播放器。它覆盖了一段游戏演出从“角色准备”到“交互分支”，再到“导出进游戏”的完整制作链路：
 
-## 可复现构建
+ASTRA is more than a character creator or animation viewer. It covers the practical pipeline from preparing a cast, through interactive staging, to game-ready export:
 
-Git 克隆不含 `Build` 和 `Export`。在本目录运行 `.\Rebuild.ps1` 即可验证、构建；需要重建 Blender 模型时用 `.\Rebuild.ps1 -Models`。工具路径不同可传 `-EditorPath` / `-BlenderPath`。
+- **创建演出角色 / Build a cast**：组合人类、女性与直立外星人的脸型、发型、颅冠、体型、服装、配件和配色，保存为正式 Unity 角色资产与 Prefab。
+- **编排时间 / Arrange time**：在五轨时间轴上拖放人物、动作、台词、镜头和场景，移动或拉伸片段，并在同一窗口实时查看画面。
+- **设计互动 / Design interaction**：用演出树连接普通演出、条件判断、全局选择和结束节点，支持选择超时、资源条件与不同结局。
+- **从模板起步 / Start from templates**：一键生成单人来电、双人对话、交互问答、纯播报或空白演出，再继续自由编辑。
+- **验证并交付 / Validate and deliver**：检查引用、覆盖时长、节点出口和结束路径；保存成套 Unity 资产，或把完整依赖导出到游戏工程。
+- **让 AI 参与 / Bring in AI**：通过稳定的 JSON Schema 与本地 CLI，让 GPT / Codex 查询真实素材、生成或修改演出、校验分支、模拟结局，再由人类完成审美判断与最终验收。
 
-完整命令参考：
+## 像视频剪辑软件一样编辑演出 / A video-editor workflow for game performances
 
-```powershell
-& 'F:\Blender\blender.exe' -b --python '.\Tools\build_modular.py'
-& 'F:\Unity\Installs\2022.3.62f1\Editor\Unity.exe' -batchmode -nographics -quit -projectPath "$PWD\UnityProject" -executeMethod ToolV2Build.Initialize -logFile "$PWD\QA\initialize.log"
-& 'F:\Unity\Installs\2022.3.62f1\Editor\Unity.exe' -batchmode -nographics -quit -projectPath "$PWD\UnityProject" -executeMethod ToolV2Build.BuildPlayer -logFile "$PWD\QA\build.log"
+时间轴是 ASTRA 的核心工作界面。素材库在左、实时预览在中、参数检查器在右、轨道区在下；策划可以直接拖入素材，拖动片段改变出场时间，拉伸边缘改变时长，并用播放头定位任意时刻。长演出可以缩放全览与快速定位，动作切换会做短时混合，随机拖动播放头也能得到可复现的姿态。
+
+The timeline is ASTRA's primary workspace: asset library on the left, live preview in the center, inspector on the right, and tracks below. Designers drag assets in, move clips to retime events, trim clip edges to change duration, and scrub to any moment. Long sequences can be zoomed and navigated; adjacent animations blend briefly, while manual sampling keeps scrubbing deterministic.
+
+```mermaid
+flowchart TB
+    L[素材库 / Asset Library] --> T
+    I[属性检查 / Inspector] <--> T[五轨时间轴 / Five-track Timeline]
+    T <--> P[实时预览 / Live Preview]
+    T <--> G[分支演出树 / Branch Graph]
+    G --> R[运行预览 / Playable Preview]
+    R --> E[保存与导出 / Save & Export]
 ```
 
-`Initialize` 是初次导入 / 重建示例用，会重设示例演出树和示例单元。日常修改角色无需执行。它保留已保存的自建角色。构建验证、生成 Prefab、导出包后才生成 Player。
+| 轨道 / Track | 编辑的内容 / What it controls | 典型用途 / Typical use |
+| --- | --- | --- |
+| 人物 / Cast | 角色、出场时段、演员 ID | 单人、双人或多人同场 |
+| 动作 / Action | Humanoid 动画、起止时间、角色绑定 | 待机、说话、坐姿、维修、舞动等 |
+| 台词 / Dialogue | 文本、说话人、选项、等待时间 | 字幕、问答、沉默出口 |
+| 镜头 / Camera | 景别、目标角色、陪体、画面特效 | 中景、近景、双人、过肩、低机位等 |
+| 场景 / Scene | 背景与覆盖区间 | 房间、终端、档案舱等演出空间 |
 
-出处与边界见 `THIRD_PARTY_NOTICES.md`。检查范围和已知限制见 `Docs/验收记录.md`。
+传统视频的时间轴通常只有一个固定结尾，游戏演出还需要响应玩家。ASTRA 因而把时间轴与**分支演出树**并列：每个时间轴单元都可以通向下一段、一个条件判断、一次全局选择，或明确的结束节点。时间负责“这一段如何演”，图负责“接下来演哪一段”。
 
-## 发型更新（2026-09-25）
+A video timeline usually ends in one fixed result; a game performance must react to the player. ASTRA therefore pairs its timeline with a **branch graph**. A timeline unit can lead to another unit, a condition, a global choice, or an explicit ending. The timeline describes *how a beat plays*; the graph decides *which beat plays next*.
 
-首轮新增 18 款：圆寸、平头、短碎发、前刺短发、后梳短发、左侧分、右侧分、中分短发、齐刘海、斜刘海、短波波头、齐颈直发、低马尾、高马尾、盘发、双髻、短卷发、宽莫西干。首轮选项增加到 30，模型模块总数为 109；最新重设计后为 33 个选项、121 个模块。
+## 从角色到可播放演出 / From character to playable scene
 
-短寸改为从原头皮表面派生的发帽，修复旧版向下压缩头发造成的头顶露皮。发型仍使用相同材质、Head 骨骼和脸型形态键。原有 0–11 编号不变，旧 JSON / 角色资产无需迁移；首轮新发型使用 12–29。首轮截图及验证见 `QA/HairSheets` 和 `Docs/发型更新验收.md`。
+<table>
+  <tr>
+    <td width="50%"><img src="QA/OutfitUI/exploration.png" alt="服装搭配与全身预览 / Outfit authoring and full-body preview"></td>
+    <td width="50%"><img src="QA/NativeUI/03_alien_crest.png" alt="外星人颅冠编辑 / Alien crest editing"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>按用途选择、整套应用、推荐配色与动作检查<br>Category selection, full-set application, palette suggestions, and motion checks</sub></td>
+    <td align="center"><sub>独立外星头型、颅冠和实时面部取景<br>Distinct alien heads, crests, and live portrait framing</sub></td>
+  </tr>
+</table>
 
+项目包含一个可独立运行的角色工作台，也包含 Unity 内用于正式生产的角色编辑器。独立程序适合快速试搭配和保存外观 JSON；Unity 编辑器会把确认后的角色保存为 `ScriptableObject + Prefab`，直接进入人物素材库并拖入演出时间轴。
 
-## 外星人与原包长发重设计（2026-09-25）
+The project includes both a standalone character workbench and a Unity editor for production assets. The standalone build is ideal for quick visual exploration and appearance JSON; the Unity editor saves approved characters as `ScriptableObject + Prefab`, registers them in the asset library, and makes them immediately available to the performance timeline.
 
-将外星人 1–9 号轻微脸型变形替换为九个不同解剖结构的头部，保留 0 号灰裔。重做 11 款实体颅冠，每个头型有对应适配。人类 22、23 长发与 27 双髻改用 Quaternius Universal Base Characters 的真实发束；追加原包分缝、圆寸、贴头短发（30–32）。免费原包的五款头发形成六个适配选项，没有使用付费资源。
+当前素材规模 / Current content:
 
-已修正大型颅冠在背面镜头中被墙面遮挡的问题，捏人预览使用可环绕布景与考虑深度的自动取景；原演出场景保持原布置。共享 Humanoid / UAL / Playables 动作管线不变。
+- **42 个可编辑预设 / 42 editable presets**：16 男性、10 女性、16 外星人。
+- **10 种人类脸型 + 10 种外星解剖头型 / 10 human faces + 10 distinct alien anatomies**。
+- **33 个男性头部选项、14 个女性头部选项、12 个外星颅冠 / 33 male head options, 14 female head options, 12 alien crests**。
+- **模块化服装 / Modular outfits**：人类男性与直立外星人各有 22 套上装、下装和鞋靴选项；女性底模有 10 套原包服装，可整套使用或自由混搭。
+- **42 个实际动画片段 / 42 real animation clips**，默认素材栏展示 17 个高频语义动作。
+- **9 个预设镜头 + 自定义镜头、3 个场景 / 9 preset shots plus custom shots, and 3 scenes**。
 
-完整设计、官方调研来源、资源映射和兼容边界见 [外星人重设计与原包发型](Docs/外星人重设计与原包发型.md)。新截图位于 `QA/AlienSheets`；原始实拍图位于 `QA/AlienFinal`。
+<p align="center">
+  <img src="QA/WomenAlien/women-fronts.jpg" alt="女性角色预设 / Female character presets" width="100%">
+  <br><sub>女性角色发型、帽饰与肤色预设 / Female hair, headwear, and skin-tone presets</sub>
+</p>
 
-后续增加衣服、发型、颅冠、配件和动作，请先阅读 [资产扩充与目录指南](Docs/资产扩充与目录指南.md)，其中包含目录位置、编号注册、两个完整示例和构建检查步骤。
+<p align="center">
+  <img src="QA/AlienSheets/全部头型颅冠组合.jpg" alt="外星人头型与颅冠组合 / Alien head and crest combinations" width="100%">
+  <br><sub>十种解剖头型与十二种颅冠的组合检查 / Combination review across ten anatomies and twelve crest options</sub>
+</p>
 
-## 太空服装扩充（2026-09-25）
+<p align="center">
+  <img src="QA/OutfitSheets/mixed_outfits.jpg" alt="模块化服装混搭 / Modular outfit combinations" width="100%">
+  <br><sub>上装、下装和鞋靴可独立组合 / Tops, bottoms, and footwear can be mixed independently</sub>
+</p>
 
-新增 12 套服装 / 36 个蒙皮模块：驾驶、舱外加压、测绘、采矿、拆解、隔离、低温、热区、安保、医疗、舰桥、行商。总模型 157 模块、51 骨骼。见[设计与实现](Docs/太空服装扩充与调研.md)、[验收](Docs/太空服装验收.md)、[人类总览](QA/OutfitSheets/Human_000.jpg)、[外星人总览](QA/OutfitSheets/StandingAlien_000.jpg)。
+## 模板不是终点，而是第一版剪辑 / Templates are a first cut, not a cage
 
-## 面部贴图与时间轴修复（2026-09-27）
+新建演出时，可以从四种常用结构或空白项目开始。模板会自动填充角色引用、动作、镜头、背景、台词时长和分支连线；生成后得到的仍然是普通演出数据，所有片段和节点都能继续编辑。
 
-脸颊纹样改为真正的皮肤贴图，重做贴耳通讯器与面罩，修正莫西干头皮重叠。帽饰增加“无”，摘帽恢复原发型；时间轴增加黑色片段边框、常驻时长编辑和长演出全览／定位。该次修复后为 147 模块、51 骨骼。见 [修复说明与验收](Docs/面部贴图与时间轴修复.md)。
+New performances can start from four production-ready structures or a blank project. Templates prefill cast references, animation, cameras, backgrounds, dialogue timing, and graph connections. The result remains ordinary editable performance data—every clip and node is still yours to change.
 
+| 模板 / Template | 自动准备的内容 / Generated first cut |
+| --- | --- |
+| 单人来电 / Single Call | 开场、结束语、说话动作、单人中景与结束节点 |
+| 双人对话 / Conversation | 两人站位、轮流台词、双人及过肩镜头 |
+| 交互问答 / Interactive Question | 提问、两个选择、沉默超时、三种回应与结局 |
+| 纯播报 / Broadcast | 单人播报、镜头、动作与自动结束 |
+| 空白 / Blank | 空单元、入口和结束节点 |
 
-## 女性角色与灰裔修复（2026-09-27）
+<table>
+  <tr>
+    <td width="50%"><img src="QA/Templates/TemplateFrames/Conversation_1.png" alt="双人对话正向镜头 / Conversation shot"></td>
+    <td width="50%"><img src="QA/Templates/TemplateFrames/Conversation_second_speaker.png" alt="双人对话反向镜头 / Reverse conversation shot"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><sub>同一模板自动准备双人站位与正反打镜头 / One template prepares two-person blocking and shot–reverse-shot coverage</sub></td>
+  </tr>
+</table>
 
-“新建角色 → 人类 → 女性”接入 Ultimate Modular Women。独立程序点击“＋新建人类 ▾ → 女性”；身份中也能切换人类底模。女性原包的服装、头发、脸型形变、肤色、配饰、外观 JSON、角色资产与 Prefab 均走现有共享 Humanoid / UAL 管线。当前共 200 模块、51 骨骼。
+<table>
+  <tr>
+    <td width="33%"><img src="QA/Templates/TemplateFrames/Question_2.png" alt="交互问答开场 / Interactive question opening"></td>
+    <td width="33%"><img src="QA/Templates/TemplateFrames/Question_3.png" alt="交互问答回应 / Interactive question response"></td>
+    <td width="33%"><img src="QA/Templates/TemplateFrames/Question_4.png" alt="交互问答结局 / Interactive question outcome"></td>
+  </tr>
+  <tr>
+    <td colspan="3" align="center"><sub>交互问答可连接选择、沉默超时、不同回应与结局 / Interactive questions connect explicit choices, silence timeouts, responses, and outcomes</sub></td>
+  </tr>
+</table>
 
-灰裔皮肤在 Blender 内融合为一张连续网格，嘴部使用与皮肤共享边的几何口缝；女性底模补全原包省略的后脑。详细范围、使用方式与实机截图见 [女性角色与灰裔修复](Docs/女性角色与灰裔修复.md)。
+## 一条完整的生产路径 / One continuous production path
+
+```mermaid
+flowchart LR
+    A[捏人或选择预设<br>Build or choose cast] --> B[选择模板<br>Choose template]
+    B --> C[五轨时间轴精调<br>Edit five tracks]
+    C --> D[演出树连接分支<br>Connect branches]
+    D --> E[校验与运行预览<br>Validate & preview]
+    E --> F[保存 Unity 资产<br>Save Unity assets]
+    F --> G[导出到游戏<br>Export to game]
+```
+
+- **草稿 / Draft**：约每 3 秒自动保存到工程 `Library`，脚本重载或重开窗口后可恢复。
+- **保存 / Save**：自动生成 Package、Graph 和 Units，无需在 Project 窗口逐个创建资产。
+- **复制版本 / Version copy**：从已有演出复制出独立版本，公共角色和素材继续复用。
+- **导出 / Export**：收集当前演出及依赖，生成可合并到目标游戏 Unity 工程的 `Assets` 目录。
+
+## 人与 AI 共同创作 / Human × AI co-creation
+
+ASTRA 也在探索一种更实用的人机协作方式：**AI 不绕过工具直接伪造 Unity 资产，而是使用与人类相同的素材目录、模板规则、校验逻辑和版本流程。**
+
+ASTRA also explores a more practical model of human–AI collaboration: **the AI does not bypass the tool and fabricate Unity assets. It works through the same catalog, templates, validation rules, and versioned workflow used by human creators.**
+
+```mermaid
+flowchart LR
+    H[人类给出创意、节奏与审美目标<br>Human intent, pacing & taste] --> AI[AI 查询素材并生成演出 JSON<br>AI catalogs & drafts performance JSON]
+    AI --> V[校验引用、时间与分支<br>Validate references, timing & branches]
+    V --> S[模拟选择和结局<br>Simulate routes & outcomes]
+    S --> U[Unity 生成版本化资产<br>Unity creates versioned assets]
+    U --> P[人类运行预览并调整画面<br>Human visual review & direction]
+    P -->|继续迭代 / iterate| H
+    P -->|通过 / approve| E[导出游戏 / Export]
+```
+
+本地 CLI 提供 `doctor`、`catalog`、`template`、`inspect`、`validate`、`simulate`、`apply` 和 `export`。AI 可以先查询真实角色、动作、场景、镜头和特效，再生成版本化 JSON；之后复用 Unity 内的模板与逻辑进行精确校验和分支模拟。它不会覆盖既有演出，也不会偷偷修改策划正在编辑的草稿。
+
+The local CLI exposes `doctor`, `catalog`, `template`, `inspect`, `validate`, `simulate`, `apply`, and `export`. An AI can query real characters, motions, scenes, shots, and effects before drafting versioned JSON, then reuse Unity's own templates and logic for validation and deterministic branch simulation. It does not overwrite existing performances or silently alter a designer's active draft.
+
+这是一种明确分工的协作：
+
+- **人类负责 / Humans own**：创意意图、角色表演、镜头语言、节奏、情感、最终画面判断。
+- **AI 擅长 / AI assists with**：素材检索、初稿生成、批量改写、一致性检查、分支覆盖、版本化重复劳动。
+- **工具守住边界 / The tool enforces**：真实资产引用、数据结构、可达性、时长覆盖、非破坏式写入和可追溯输出。
+
+它的目标不是让 AI 取代游戏策划或动画师，而是把机械的查找、搭架子、校验和反复录入交给机器，让创作者把更多时间放在“这一幕为什么成立”上。
+
+The goal is not to replace game designers or animators. It is to hand repetitive catalog lookup, scaffolding, validation, and data entry to machines, leaving creators more time to answer the question that matters: *why does this scene work?*
+
+## English overview
+
+ASTRA Performance Tool V2 is an end-to-end prototype for authoring interactive in-game performances in Unity. Its central idea is simple: narrative content should be editable with the immediacy of a video editor, without losing the branching logic that makes games interactive.
+
+Designers can assemble modular characters, drag cast/action/dialogue/camera/scene clips onto a five-track timeline, scrub a live preview, connect units in a branching graph, start from reusable templates, validate the result, and export a self-contained dependency set into another Unity project. A schema-driven CLI gives AI assistants a safe way to inspect real project assets, draft or revise performances, simulate every response route, and create new versioned Unity assets. Humans remain in control of intent, staging, pacing, and visual approval.
+
+The project is both a usable tool and a research direction: how can human judgment and machine assistance share one authoring system, and how much friction can be removed from game development without hiding or weakening creative control?
+
+## 技术原理 / Under the hood
+
+```text
+Blender modular source
+        ↓
+ModularCast.fbx + shared 51-bone Humanoid rig
+        ↓
+Unity character assets / prefabs / motion catalog
+        ↓
+Five-track ToolUnit ── Branching ToolGraph ── ToolPackage
+        ↓
+Manual Playables sampling + live preview + ToolPlayer runtime
+        ↓
+Versioned assets / dependency export / game integration
+```
+
+### 角色与资产 / Characters and assets
+
+- 模块在 Blender 中建模和绑定，导出后共享 51 骨骼 Humanoid；运行时只切换网格、BlendShape 与材质属性，不临时生成角色网格。
+- 人类脸型形变会同步到头发、面饰和相关部件；外星人使用十种独立解剖头型，不是对同一灰裔头部做简单缩放。
+- 正式角色由 `ToolCharacter`、外观配方与 Prefab 组成；`MaterialPropertyBlock` 避免为了换色复制整套材质。
+
+### 动作与预览 / Motion and preview
+
+- `ToolMotion` 使用手动更新的 Unity `PlayableGraph` 与两路 `AnimationMixer`。
+- 时间轴采样会直接设置 clip time 并 `Evaluate(0)`，因此拖动播放头不依赖从头重放，结果可复现。
+- 相邻动作在约 0.22 秒内混合；根运动关闭，场景走位由演出层控制。
+- 角色编辑器、时间轴预览和运行时播放器复用同一套角色实例化、动作采样、站位与镜头逻辑。
+
+### 数据、分支与交付 / Data, branching, and delivery
+
+- `ToolUnit` 保存五轨片段，`ToolGraph` 保存 Unit、Condition、GlobalChoice 与 End 节点，`ToolPackage` 聚合演出和素材库。
+- 校验覆盖素材引用、角色绑定、片段边界、出口目标、不可达节点与结束路径；逻辑模拟复用真实 `ToolLogic`。
+- 正式资产使用 Unity `ScriptableObject`；AI 交换格式使用版本化 JSON Schema，避免直接维护 Unity YAML 或伪造 GUID。
+- CLI 优先连接已打开的 Unity Editor，也可启动 batch；本地文件桥接不开放网络端口。
+
+更详细的设计见 [技术架构](Docs/技术架构.md)、[捏人与演出设计](Docs/捏人与演出设计.md) 与 [演出 CLI 与代码调研](Docs/演出CLI与代码调研.md)。
+
+## 快速开始 / Quick start
+
+### 1. 先体验角色工作台 / Try the character workbench
+
+在 Windows 上双击：
+
+```text
+RunToolV2.cmd
+```
+
+或直接运行：
+
+```text
+Build/ASTRA Performance Tool V2.exe
+```
+
+选择“新建人类”或“新建外星人”，在左侧编辑角色，在右侧转向、切换面部/全身视图并试演动作。独立程序可保存外观 JSON，适合快速探索；正式演出角色请在 Unity 编辑器中保存。
+
+### 2. 在 Unity 中制作演出 / Author a performance in Unity
+
+1. 双击 `OpenUnityV2.cmd`，或用 **Unity 2022.3.62f1** 打开 `UnityProject`。
+2. 选择菜单 `Astra Performance Tool V2 → Open timeline`。
+3. 点击“新建演出”，选择模板与角色；也可以从空白演出开始。
+4. 把人物、动作、台词、镜头和场景拖入对应轨道，拖动播放头检查实时预览。
+5. 打开“演出树”，连接选择、条件和结束节点。
+6. 点击“验证”与“运行预览”，最后“保存”或“导出到游戏”。
+
+完整操作见 [使用说明书](Docs/使用说明书.md)、[演出模板](Docs/演出模板使用说明.md) 和 [演出草稿与一键导出](Docs/演出草稿与一键导出.md)。
+
+### 3. 让 AI / CLI 参与 / Add an AI or CLI workflow
+
+CLI 使用 Python 3.9+ 标准库，无第三方 Python 依赖：
+
+```powershell
+python .\CLI\astra.py doctor
+python .\CLI\astra.py catalog --out .\catalog.json
+python .\CLI\astra.py template --kind Question --name "Outpost Help" --speaker "Assets/AstraToolV2/Characters/Original_Echo.asset" --params .\CLI\examples\question.params.json --out .\outpost.performance.json
+python .\CLI\astra.py validate --input .\outpost.performance.json
+python .\CLI\astra.py simulate --input .\outpost.performance.json --route accept
+```
+
+在让 GPT / Codex 修改演出前，请先让它阅读 [CLI 调用指南](CLI/agent-guide.md) 和 [JSON Schema](CLI/performance.schema.json)。CLI 不创建新模型、动画或配音，也不自动修改游戏星图、任务奖励或构建产物。
+
+## 可复现构建 / Reproducible build
+
+Git 克隆默认不包含 `Build` 和 `Export`。在本目录运行：
+
+```powershell
+.\Rebuild.ps1
+```
+
+需要从 Blender 源重新生成模块化模型时：
+
+```powershell
+.\Rebuild.ps1 -Models
+```
+
+可用 `-EditorPath` 和 `-BlenderPath` 指定本机工具位置。`Initialize` 用于首次导入或重建示例，会重设示例演出树与示例单元；日常角色和演出编辑不需要执行。
+
+## 项目结构 / Repository map
+
+| 路径 / Path | 内容 / Purpose |
+| --- | --- |
+| `UnityProject/Assets/AstraToolV2` | Runtime、Editor、角色、动作、示例、场景与演出资产 |
+| `CLI` | 面向自动化与 AI 的 Python CLI、JSON Schema 和示例 |
+| `Source` | Blender 源、原始资源、生成清单与来源记录 |
+| `Tools` | 模块化模型与资产重建脚本 |
+| `Build` | 可独立运行的 Windows 角色工作台 |
+| `Export` | 可导入其他 Unity 工程的交付内容 |
+| `QA` | 结构验证、运行日志、截图与视觉回归材料 |
+| `Docs` | 使用说明、设计决策、技术架构与验收记录 |
+
+## 当前边界 / Current boundaries
+
+- 这是低多边形、模块化角色与演出系统，不是写实扫描头或任意拓扑编辑器。
+- 当前新建角色面向人类与直立外星人；半兽人作为成品角色可用于演出，四足角色需按适用动作手动编排。
+- 走路、慢跑等动画默认原地播放；精确走位、道具接触、IK、口型、配音与注视系统仍需由上层游戏或后续轨道实现。
+- 分支模拟验证数据和逻辑，不等于画面验收；镜头构图、穿插、节奏和情感仍应在 Unity“运行预览”中由人检查。
+- 导出会收集演出依赖，但不会替项目绑定星图事件、修改任务状态或自动构建游戏。
+
+## 为什么做这个项目 / Why this project exists
+
+游戏开发中，很多“看起来只是一段对话”的内容，实际横跨角色、美术、动画、镜头、文本、条件逻辑、资源管理与工程交付。若每次修改都需要多人来回传递、手写引用和重新验证，创作成本会迅速超过内容本身。
+
+ASTRA 的探索，是把这些分散步骤收束成一个可视化、可验证、可自动化的创作系统：让策划像剪片一样直接组织演出，让程序提供稳定的运行与交付边界，也让 AI 在清晰的 Schema、真实素材和非破坏式版本控制之内承担重复劳动。
+
+In game development, even “a simple conversation” crosses character art, animation, cameras, writing, conditions, asset management, and engineering delivery. When every revision requires manual references, cross-discipline handoffs, and repeated checks, coordination quickly costs more than the scene itself.
+
+ASTRA explores a different workflow: bring those steps into one visual, verifiable, automatable authoring system. Designers edit performances with the directness of video; engineers define reliable runtime and delivery boundaries; AI handles repetitive work inside a real schema, real asset catalog, and non-destructive version process. The broader goal is not automation for its own sake, but **more creative iterations, lower coordination cost, and a more accessible path from an idea to a playable scene**.
+
+## 文档与来源 / Documentation and attribution
+
+- [完整使用说明 / User manual](Docs/使用说明书.md)
+- [技术架构 / Technical architecture](Docs/技术架构.md)
+- [资产扩充指南 / Asset extension guide](Docs/资产扩充与目录指南.md)
+- [演出草稿与导出 / Drafting and export](Docs/演出草稿与一键导出.md)
+- [终端会议接入 / In-game meeting integration](Docs/终端会议接入.md)
+- [验收记录 / QA record](Docs/验收记录.md)
+- [第三方来源与许可 / Third-party notices](THIRD_PARTY_NOTICES.md)
+
+角色与动作素材的具体来源、许可和修改范围以 `THIRD_PARTY_NOTICES.md` 为准。
+
+See `THIRD_PARTY_NOTICES.md` for the authoritative list of third-party assets, licenses, and modifications.

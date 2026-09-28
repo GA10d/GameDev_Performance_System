@@ -1,0 +1,1 @@
+PASS cold Unity batch restart: full saved spec equals original Chinese Question template JSON.

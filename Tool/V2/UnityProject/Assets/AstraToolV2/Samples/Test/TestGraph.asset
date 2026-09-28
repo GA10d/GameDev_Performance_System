@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8a2f8e4a58fbb458cabfa0b14f630f, type: 3}
+  m_Name: TestGraph
+  m_EditorClassIdentifier: 
+  entryNode: 
+  nodes:
+  - id: unit_0
+    kind: 0
+    position: {x: 45, y: 114}
+    unit: {fileID: 11400000, guid: 7a3d21aba11bd3f4a9acac690b30c909, type: 2}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges: []
+  - id: globalchoice_1
+    kind: 2
+    position: {x: 368, y: 92}
+    unit: {fileID: 0}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices:
+    - id: option0
+      text: "\u786E\u8BA4"
+      condition:
+        key: credits
+        compare: 3
+        value: 0
+      hasCondition: 0
+      effects: []
+    edges: []

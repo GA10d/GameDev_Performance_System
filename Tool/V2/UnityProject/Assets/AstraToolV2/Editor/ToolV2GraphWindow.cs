@@ -15,19 +15,28 @@ public sealed class ToolV2GraphWindow : EditorWindow
     const float NodeWidth=215,NodeTop=54,NodePort=23,InspectorWidth=300;
     [MenuItem("Astra Performance Tool V2/Open graph %#g")]
     public static void Open(){var w=GetWindow<ToolV2GraphWindow>("ASTRA 演出树");w.minSize=new Vector2(1050,650);w.Show();}
-    void OnEnable(){package=AssetDatabase.LoadAssetAtPath<ToolPackage>(ToolV2Build.PackagePath);graph=package?package.graph:null;}
+    void OnEnable(){ToolV2Authoring.Changed+=SessionChanged;SessionChanged();}
+    void OnDisable(){ToolV2Authoring.Changed-=SessionChanged;}
+    void SessionChanged()
+    {
+        var next=ToolV2Authoring.Current;
+        if(package!=next){selected=null;pending=null;dragging=null;scroll=Vector2.zero;}
+        package=next;graph=package?package.graph:null;
+        if(graph&&ToolV2Authoring.Unit){var n=graph.nodes.FirstOrDefault(x=>x.unit==ToolV2Authoring.Unit);if(n!=null)selected=n;}
+        Repaint();
+    }
     void OnGUI()
     {
         Toolbar();if(!graph)return;
-        Rect canvas=new Rect(0,30,position.width-InspectorWidth,position.height-30);
-        Rect panel=new Rect(position.width-InspectorWidth,30,InspectorWidth,position.height-30);
+        Rect canvas=new Rect(0,50,position.width-InspectorWidth,position.height-50);
+        Rect panel=new Rect(position.width-InspectorWidth,50,InspectorWidth,position.height-50);
         GUI.Box(canvas,GUIContent.none);GUI.Box(panel,GUIContent.none);
         DrawCanvas(canvas);GUILayout.BeginArea(panel);Inspector();GUILayout.EndArea();
     }
     void Toolbar()
     {
+        ToolV2Authoring.Toolbar();
         GUILayout.BeginHorizontal(EditorStyles.toolbar);
-        package=(ToolPackage)EditorGUILayout.ObjectField(package,typeof(ToolPackage),false,GUILayout.Width(230));
         graph=package?package.graph:null;
         if(GUILayout.Button("+ 演出单元",EditorStyles.toolbarButton))Add(ToolNodeKind.Unit);
         if(GUILayout.Button("+ 判断",EditorStyles.toolbarButton))Add(ToolNodeKind.Condition);
@@ -43,8 +52,10 @@ public sealed class ToolV2GraphWindow : EditorWindow
     }
     void Add(ToolNodeKind kind)
     {
-        if(!graph)return;Undo.RecordObject(graph,"Add performance node");
-        var node=new ToolGraphNode{id=kind.ToString().ToLower()+"_"+graph.nodes.Count,kind=kind,position=new Vector2(scroll.x+70,scroll.y+80+graph.nodes.Count*25)};
+        if(!graph)return;
+        if(kind==ToolNodeKind.Unit){selected=ToolV2Authoring.AddCurrentUnit(selected);return;}
+        Undo.RecordObject(graph,"Add performance node");
+        var node=new ToolGraphNode{id=ToolV2Authoring.UniqueNodeId(graph,kind.ToString().ToLower()),kind=kind,position=new Vector2(scroll.x+70,scroll.y+80+graph.nodes.Count*25)};
         if(kind==ToolNodeKind.GlobalChoice)node.choices=new[]{new ToolChoice{id="option0",text="确认"}};
         graph.nodes.Add(node);selected=node;EditorUtility.SetDirty(graph);
     }
@@ -69,7 +80,7 @@ public sealed class ToolV2GraphWindow : EditorWindow
         if(Event.current.type==EventType.DragPerform)
         {
             var unit=DragAndDrop.objectReferences.OfType<ToolUnit>().FirstOrDefault();
-            if(unit!=null){DragAndDrop.AcceptDrag();Add(ToolNodeKind.Unit);selected.unit=unit;selected.position=Event.current.mousePosition;EditorUtility.SetDirty(graph);Event.current.Use();}
+            if(unit!=null){DragAndDrop.AcceptDrag();Undo.RecordObject(graph,"Add existing unit");selected=new ToolGraphNode{id=ToolV2Authoring.UniqueNodeId(graph,"unit"),kind=ToolNodeKind.Unit,unit=unit,position=Event.current.mousePosition};graph.nodes.Add(selected);ToolV2Authoring.SelectUnit(unit);EditorUtility.SetDirty(graph);Event.current.Use();}
         }
         GUI.EndScrollView();
         if(Event.current.type==EventType.MouseUp)dragging=null;
@@ -105,7 +116,7 @@ public sealed class ToolV2GraphWindow : EditorWindow
                 if(edge==null)pending.edges.Add(new ToolGraphEdge{slot=pendingSlot,target=n.id});else edge.target=n.id;
                 EditorUtility.SetDirty(graph);pending=null;pendingSlot=null;
             }
-            else {selected=n;dragging=n;}
+            else {selected=n;dragging=n;if(n.unit)ToolV2Authoring.SelectUnit(n.unit);}
             e.Use();Repaint();
         }
         if(e.type==EventType.MouseDrag&&dragging==n)
@@ -152,7 +163,11 @@ public sealed class ToolV2GraphWindow : EditorWindow
             foreach(var n in graph.nodes)foreach(var edge in n.edges)if(edge.target==oldId)edge.target=newId;
         }
         if(GUILayout.Button("设为入口"))graph.entryNode=selected.id;
-        if(selected.kind==ToolNodeKind.Unit)selected.unit=(ToolUnit)EditorGUILayout.ObjectField("演出单元",selected.unit,typeof(ToolUnit),false);
+        if(selected.kind==ToolNodeKind.Unit)
+        {
+            selected.unit=(ToolUnit)EditorGUILayout.ObjectField("演出单元",selected.unit,typeof(ToolUnit),false);
+            if(selected.unit&&GUILayout.Button("编辑此单元时间轴")){ToolV2Authoring.SelectUnit(selected.unit);ToolV2TimelineWindow.Open();}
+        }
         if(selected.kind==ToolNodeKind.Condition)
         {
             selected.condition.key=EditorGUILayout.TextField("全局变量",selected.condition.key);
@@ -185,7 +200,7 @@ public sealed class ToolV2GraphWindow : EditorWindow
         if(GUILayout.Button("删除节点"))
         {
             graph.nodes.Remove(selected);foreach(var n in graph.nodes)n.edges.RemoveAll(e=>e.target==selected.id);
-            selected=null;pending=null;
+            selected=null;pending=null;ToolV2Authoring.SelectUnit(ToolV2Authoring.Units(package).FirstOrDefault());
         }
         EditorUtility.SetDirty(graph);GUILayout.EndScrollView();
     }

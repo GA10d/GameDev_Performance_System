@@ -1,0 +1,47 @@
+PASS SingleCall: generated graph and timelines validate
+PASS SingleCall: creation remains an unsaved draft
+PASS SingleCall: all nodes reachable, no disconnected template content
+PASS SingleCall: actors and scene cover full dialogue
+PASS SingleCall: camera coverage reaches the end
+PASS SingleCall: template can be saved as editable assets
+PASS Conversation: generated graph and timelines validate
+PASS Conversation: creation remains an unsaved draft
+PASS Conversation: all nodes reachable, no disconnected template content
+PASS Conversation: actors and scene cover full dialogue
+PASS Conversation: camera coverage reaches the end
+PASS Conversation: template can be saved as editable assets
+PASS Question: generated graph and timelines validate
+PASS Question: creation remains an unsaved draft
+PASS Question: all nodes reachable, no disconnected template content
+PASS Question: actors and scene cover full dialogue
+PASS Question: camera coverage reaches the end
+PASS Question: template can be saved as editable assets
+PASS Broadcast: generated graph and timelines validate
+PASS Broadcast: creation remains an unsaved draft
+PASS Broadcast: all nodes reachable, no disconnected template content
+PASS Broadcast: actors and scene cover full dialogue
+PASS Broadcast: camera coverage reaches the end
+PASS Broadcast: template can be saved as editable assets
+PASS Blank: generated graph and timelines validate
+PASS Blank: creation remains an unsaved draft
+PASS Blank: all nodes reachable, no disconnected template content
+PASS Blank: template can be saved as editable assets
+PASS Configured reply time is not shortened by initial patience
+PASS Both replies and timeout are wired
+PASS Interactive branches have distinct endings
+PASS Speaker waits in idle while player chooses
+PASS Long dialogue extends all tracks without clipping
+PASS Selected character, scene and text are preserved
+PASS Two-person dialogue switches the actual speaker
+PASS Two-person staging keeps both actors and alternates camera targets
+PASS Duplicate conversation participants rejected
+PASS Blank required dialogue rejected before generation
+PASS Invalid reply duration rejected
+PASS Generated performances never share editable unit data
+PASS Existing library and source graph unchanged
+PASS Template uses the existing game export pipeline
+PASS Opening the template chooser does not replace the current performance
+PASS Cancelling the chooser preserves current work
+PASS Invalid form input cannot replace current work
+PASS Create action activates the configured template in the timeline
+RESULT PASS checks=46

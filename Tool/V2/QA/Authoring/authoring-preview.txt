@@ -1,0 +1,6 @@
+PASS Draft restored in a fresh Unity process
+PASS Actual player started the selected unsaved draft
+PASS Character workbench disabled without editing the source scene
+PASS Draft timeline, choice and End play to completion
+PASS Original editor scene restored
+RESULT PASS

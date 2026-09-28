@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad8a2f8e4a58fbb458cabfa0b14f630f, type: 3}
-  m_Name: Graph
+  m_Name: MeetingGraph
   m_EditorClassIdentifier: 
-  entryNode: A
+  entryNode: opening
   nodes:
-  - id: A
+  - id: opening
     kind: 0
-    position: {x: 6, y: 81}
-    unit: {fileID: 11400000, guid: 8817d87b2f458804f9957bd03d747542, type: 2}
+    position: {x: 30, y: 100}
+    unit: {fileID: 11400000, guid: 649f3ffd4fa9d6e44a5ad9fdbb6b4360, type: 2}
     condition:
       key: credits
       compare: 3
@@ -26,13 +26,15 @@ MonoBehaviour:
     patienceSeconds: 6
     choices: []
     edges:
-    - slot: pay
-      target: funds
+    - slot: repair
+      target: power
     - slot: inspect
-      target: C
-  - id: funds
+      target: contact
+    - slot: silence
+      target: contact
+  - id: power
     kind: 1
-    position: {x: 346, y: 75}
+    position: {x: 330, y: 20}
     unit: {fileID: 0}
     condition:
       key: power
@@ -43,13 +45,13 @@ MonoBehaviour:
     choices: []
     edges:
     - slot: yes
-      target: B
+      target: repair
     - slot: no
-      target: C
-  - id: B
+      target: contact
+  - id: repair
     kind: 0
-    position: {x: 670, y: 35}
-    unit: {fileID: 11400000, guid: 47868c637993d7b4ab2ebfa5e82afd83, type: 2}
+    position: {x: 630, y: 20}
+    unit: {fileID: 11400000, guid: 01da7c49d10ced445868d30435aa6cca, type: 2}
     condition:
       key: credits
       compare: 3
@@ -59,11 +61,11 @@ MonoBehaviour:
     choices: []
     edges:
     - slot: next
-      target: final_choice
-  - id: C
+      target: archive
+  - id: contact
     kind: 0
-    position: {x: 665, y: 260}
-    unit: {fileID: 11400000, guid: 787d417a9d315c6459df135502ee9fb0, type: 2}
+    position: {x: 630, y: 250}
+    unit: {fileID: 11400000, guid: 1ec5105df3713c64992874f3696b2f11, type: 2}
     condition:
       key: credits
       compare: 3
@@ -73,17 +75,17 @@ MonoBehaviour:
     choices: []
     edges:
     - slot: next
-      target: final_choice
-  - id: final_choice
+      target: archive
+  - id: archive
     kind: 2
-    position: {x: 1039, y: 39}
+    position: {x: 930, y: 100}
     unit: {fileID: 0}
     condition:
       key: credits
       compare: 3
       value: 0
-    prompt: "\u5982\u4F55\u4FDD\u5B58\u8FD9\u4EFD\u8BB0\u5F55\uFF1F"
-    patienceSeconds: 5
+    prompt: "\u6863\u6848\u4F20\u8F93\u5B8C\u6210\u3002\u5982\u4F55\u4FDD\u5B58\u8FD9\u4EFD\u8BB0\u5F55\uFF1F"
+    patienceSeconds: 18
     choices:
     - id: publish
       text: "\u516C\u5F00\u8BB0\u5F55"
@@ -92,9 +94,7 @@ MonoBehaviour:
         compare: 3
         value: 0
       hasCondition: 0
-      effects:
-      - key: trust
-        delta: 1
+      effects: []
     - id: seal
       text: "\u5C01\u5B58\u8BB0\u5F55"
       condition:
@@ -105,14 +105,38 @@ MonoBehaviour:
       effects: []
     edges:
     - slot: publish
-      target: end
+      target: published
     - slot: seal
-      target: end
+      target: sealed
     - slot: silence
-      target: end
-  - id: end
+      target: deferred
+  - id: published
     kind: 3
-    position: {x: 1319, y: 224}
+    position: {x: 1250, y: 20}
+    unit: {fileID: 0}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges: []
+  - id: sealed
+    kind: 3
+    position: {x: 1250, y: 160}
+    unit: {fileID: 0}
+    condition:
+      key: credits
+      compare: 3
+      value: 0
+    prompt: "\u8BF7\u9009\u62E9"
+    patienceSeconds: 6
+    choices: []
+    edges: []
+  - id: deferred
+    kind: 3
+    position: {x: 1250, y: 300}
     unit: {fileID: 0}
     condition:
       key: credits

@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "name": "前哨站求援",
+  "library": "Assets/AstraToolV2/Samples/Library.asset",
+  "entryNode": "opening",
+  "initialPatience": 21,
+  "initialStats": [],
+  "units": [
+    {
+      "id": "opening",
+      "duration": 23.600000381469727,
+      "actors": [
+        {
+          "id": "speaker",
+          "character": "Assets/AstraToolV2/Characters/Original_Echo.asset",
+          "start": 0.0,
+          "duration": 23.600000381469727
+        }
+      ],
+      "actions": [
+        {
+          "actorId": "speaker",
+          "actionId": "Idle_Talking_Loop",
+          "start": 0.0,
+          "duration": 3.4000000953674316,
+          "speed": 1.0
+        },
+        {
+          "actorId": "speaker",
+          "actionId": "Idle_Loop",
+          "start": 3.4000000953674316,
+          "duration": 20.200000762939453,
+          "speed": 1.0
+        }
+      ],
+      "dialogue": [
+        {
+          "actorId": "speaker",
+          "kind": "Text",
+          "text": "这里是前哨站。我们的通讯设备损坏了，需要有人协助维修。",
+          "start": 0.4000000059604645,
+          "charactersPerSecond": 18.0,
+          "hold": 1.2000000476837158,
+          "patienceSeconds": 6.0,
+          "choices": []
+        },
+        {
+          "actorId": "speaker",
+          "kind": "Choice",
+          "text": "你愿意帮助我们吗？",
+          "start": 3.4000000953674316,
+          "charactersPerSecond": 18.0,
+          "hold": 0.699999988079071,
+          "patienceSeconds": 20.0,
+          "choices": [
+            {
+              "id": "accept",
+              "text": "可以，我来帮忙。",
+              "condition": {
+                "key": "credits",
+                "compare": "GreaterOrEqual",
+                "value": 0
+              },
+              "hasCondition": false,
+              "effects": []
+            },
+            {
+              "id": "decline",
+              "text": "抱歉，我还有其他任务。",
+              "condition": {
+                "key": "credits",
+                "compare": "GreaterOrEqual",
+                "value": 0
+              },
+              "hasCondition": false,
+              "effects": []
+            }
+          ]
+        }
+      ],
+      "scenes": [
+        {
+          "sceneId": "archive",
+          "start": 0.0,
+          "duration": 23.600000381469727
+        }
+      ],
+      "cameras": [
+        {
+          "shot": "Medium",
+          "fx": "None",
+          "actorId": "speaker",
+          "partnerId": "",
+          "start": 0.0,
+          "duration": 23.600000381469727,
+          "customPosition": {
+            "x": 0.20000000298023224,
+            "y": 1.600000023841858,
+            "z": -2.5999999046325684
+          },
+          "customEuler": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "customFov": 36.0
+        }
+      ]
+    },
+    {
+      "id": "accept_reply",
+      "duration": 4.0,
+      "actors": [
+        {
+          "id": "speaker",
+          "character": "Assets/AstraToolV2/Characters/Original_Echo.asset",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "actions": [
+        {
+          "actorId": "speaker",
+          "actionId": "Idle_Talking_Loop",
+          "start": 0.0,
+          "duration": 4.0,
+          "speed": 1.0
+        }
+      ],
+      "dialogue": [
+        {
+          "actorId": "speaker",
+          "kind": "Text",
+          "text": "太好了！我现在把故障位置发送给你。",
+          "start": 0.4000000059604645,
+          "charactersPerSecond": 18.0,
+          "hold": 1.2000000476837158,
+          "patienceSeconds": 6.0,
+          "choices": []
+        }
+      ],
+      "scenes": [
+        {
+          "sceneId": "archive",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "cameras": [
+        {
+          "shot": "Medium",
+          "fx": "None",
+          "actorId": "speaker",
+          "partnerId": "",
+          "start": 0.0,
+          "duration": 4.0,
+          "customPosition": {
+            "x": 0.20000000298023224,
+            "y": 1.600000023841858,
+            "z": -2.5999999046325684
+          },
+          "customEuler": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "customFov": 36.0
+        }
+      ]
+    },
+    {
+      "id": "decline_reply",
+      "duration": 4.0,
+      "actors": [
+        {
+          "id": "speaker",
+          "character": "Assets/AstraToolV2/Characters/Original_Echo.asset",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "actions": [
+        {
+          "actorId": "speaker",
+          "actionId": "Idle_Talking_Loop",
+          "start": 0.0,
+          "duration": 4.0,
+          "speed": 1.0
+        }
+      ],
+      "dialogue": [
+        {
+          "actorId": "speaker",
+          "kind": "Text",
+          "text": "明白，我们会继续呼叫其他船只。",
+          "start": 0.4000000059604645,
+          "charactersPerSecond": 18.0,
+          "hold": 1.2000000476837158,
+          "patienceSeconds": 6.0,
+          "choices": []
+        }
+      ],
+      "scenes": [
+        {
+          "sceneId": "archive",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "cameras": [
+        {
+          "shot": "Medium",
+          "fx": "None",
+          "actorId": "speaker",
+          "partnerId": "",
+          "start": 0.0,
+          "duration": 4.0,
+          "customPosition": {
+            "x": 0.20000000298023224,
+            "y": 1.600000023841858,
+            "z": -2.5999999046325684
+          },
+          "customEuler": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "customFov": 36.0
+        }
+      ]
+    },
+    {
+      "id": "silence_reply",
+      "duration": 4.0,
+      "actors": [
+        {
+          "id": "speaker",
+          "character": "Assets/AstraToolV2/Characters/Original_Echo.asset",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "actions": [
+        {
+          "actorId": "speaker",
+          "actionId": "Idle_Talking_Loop",
+          "start": 0.0,
+          "duration": 4.0,
+          "speed": 1.0
+        }
+      ],
+      "dialogue": [
+        {
+          "actorId": "speaker",
+          "kind": "Text",
+          "text": "暂未收到你的回应，我们稍后再联系。",
+          "start": 0.4000000059604645,
+          "charactersPerSecond": 18.0,
+          "hold": 1.2000000476837158,
+          "patienceSeconds": 6.0,
+          "choices": []
+        }
+      ],
+      "scenes": [
+        {
+          "sceneId": "archive",
+          "start": 0.0,
+          "duration": 4.0
+        }
+      ],
+      "cameras": [
+        {
+          "shot": "Medium",
+          "fx": "None",
+          "actorId": "speaker",
+          "partnerId": "",
+          "start": 0.0,
+          "duration": 4.0,
+          "customPosition": {
+            "x": 0.20000000298023224,
+            "y": 1.600000023841858,
+            "z": -2.5999999046325684
+          },
+          "customEuler": {
+            "x": 3.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "customFov": 36.0
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "opening",
+      "unit": "opening",
+      "prompt": "请选择",
+      "kind": "Unit",
+      "position": {
+        "x": 40.0,
+        "y": 140.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": [
+        {
+          "slot": "accept",
+          "target": "accept_reply"
+        },
+        {
+          "slot": "decline",
+          "target": "decline_reply"
+        },
+        {
+          "slot": "silence",
+          "target": "silence_reply"
+        }
+      ]
+    },
+    {
+      "id": "accept_reply",
+      "unit": "accept_reply",
+      "prompt": "请选择",
+      "kind": "Unit",
+      "position": {
+        "x": 350.0,
+        "y": 50.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": [
+        {
+          "slot": "next",
+          "target": "accepted"
+        }
+      ]
+    },
+    {
+      "id": "decline_reply",
+      "unit": "decline_reply",
+      "prompt": "请选择",
+      "kind": "Unit",
+      "position": {
+        "x": 350.0,
+        "y": 250.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": [
+        {
+          "slot": "next",
+          "target": "declined"
+        }
+      ]
+    },
+    {
+      "id": "silence_reply",
+      "unit": "silence_reply",
+      "prompt": "请选择",
+      "kind": "Unit",
+      "position": {
+        "x": 350.0,
+        "y": 450.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": [
+        {
+          "slot": "next",
+          "target": "unanswered"
+        }
+      ]
+    },
+    {
+      "id": "accepted",
+      "unit": "",
+      "prompt": "请选择",
+      "kind": "End",
+      "position": {
+        "x": 670.0,
+        "y": 50.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": []
+    },
+    {
+      "id": "declined",
+      "unit": "",
+      "prompt": "请选择",
+      "kind": "End",
+      "position": {
+        "x": 670.0,
+        "y": 250.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": []
+    },
+    {
+      "id": "unanswered",
+      "unit": "",
+      "prompt": "请选择",
+      "kind": "End",
+      "position": {
+        "x": 670.0,
+        "y": 450.0
+      },
+      "condition": {
+        "key": "credits",
+        "compare": "GreaterOrEqual",
+        "value": 0
+      },
+      "patienceSeconds": 6.0,
+      "choices": [],
+      "edges": []
+    }
+  ]
+}

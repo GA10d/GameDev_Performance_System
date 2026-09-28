@@ -1,0 +1,23 @@
+PASS New performance creates no authored asset files
+PASS New draft has valid entry, unit and End connections
+PASS New unit automatically inserts into simple sequence
+PASS Each new unit is independent and uniquely named
+PASS Recovery rebuilds separate draft objects
+PASS Recovery preserves library and character asset references
+PASS Recovery preserves dialogue, timeline, variables and graph links
+PASS Adding a unit never overwrites authored choices
+PASS Save creates package, graph and every unit automatically
+PASS Save keeps the original draft intact
+PASS Saved package validates and shares the original resource library
+PASS Repeated name creates a new folder instead of overwriting
+PASS Save rejects destinations outside Assets
+PASS Copy as new performance isolates units and graph
+PASS Adding a unit to an existing package automatically saves its asset
+PASS Game export creates the ID-addressable package
+PASS Game export includes graph and reference GUIDs
+PASS Game export includes player and manifest
+PASS Original user graph and library remain untouched
+PASS Both editor windows use the selected performance
+PASS Selecting a unit synchronizes timeline and graph
+PASS Unsaved draft remains recoverable across an editor restart
+RESULT PASS checks=22

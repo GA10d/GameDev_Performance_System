@@ -9,6 +9,28 @@ namespace Astra.PerformanceToolV2
     {
         public ToolPackage package;
         public bool autoPlay = true;
+        // Hosts render their own UI and advance only while their application is visible.
+        public bool showGUI = true, externalClock;
+        public int presentationLayer = -1;
+        public bool IsFinished => finished;
+        public bool IsPaused => paused;
+        public string Failure { get; private set; }
+        public string CurrentSpeaker => speaker;
+        public float ChoiceSecondsRemaining => waiting;
+        public string[] Participants => live.Values.Where(v=>v).Select(v=>v.name).ToArray();
+        public ToolChoice[] CurrentChoices => finished || node == null ? Array.Empty<ToolChoice>() :
+            (node.kind == ToolNodeKind.GlobalChoice ? node.choices : activeDialogue != null && activeDialogue.kind == ToolDialogueKind.Choice ? activeDialogue.choices : null) ?? Array.Empty<ToolChoice>();
+        public bool IsChoosing => !finished && node != null && (node.kind == ToolNodeKind.GlobalChoice || activeDialogue != null && activeDialogue.kind == ToolDialogueKind.Choice);
+        public event Action<string> Completed;
+        public bool CanChoose(ToolChoice choice) => !choice.hasCondition || ToolLogic.Test(choice.condition,Stats);
+        public void SetPaused(bool value) { paused=value; }
+        void Fail(string reason) { Failure=reason; paused=true; }
+        void SetPresentationLayer(GameObject root)
+        {
+            if(presentationLayer<0)return;
+            foreach(var child in root.GetComponentsInChildren<Transform>(true))child.gameObject.layer=presentationLayer;
+            foreach(var light in root.GetComponentsInChildren<Light>(true))light.cullingMask=1<<presentationLayer;
+        }
         public Camera lens;
         public string CurrentNodeId => node==null?"":node.id;
         public float CurrentTime => clock;
@@ -25,12 +47,13 @@ namespace Astra.PerformanceToolV2
         void Start(){if(autoPlay)Begin();}
         public void Stop()
         {
-            paused=true;node=null;foreach(var actor in live.Values)if(actor)Destroy(actor);live.Clear();
+            paused=true;finished=false;Failure=null;subtitle="";activeDialogue=null;node=null;foreach(var actor in live.Values)if(actor)Destroy(actor);live.Clear();
             if(stage)Destroy(stage.gameObject);stage=null;
         }
         public void Begin()
         {
-            if(!package||!package.graph||!package.library){Debug.LogError("Tool package is missing");return;}
+            Stop();
+            if(!package||!package.graph||!package.library){Fail("演出包缺少演出树或资源库");return;}
             Stats.Clear();foreach(var stat in package.initialStats)Stats[stat.key]=stat.value;
             Stats["patience"]=package.initialPatience;
             if(!lens)lens=Camera.main;if(!lens)lens=new GameObject("Tool camera").AddComponent<Camera>();
@@ -39,34 +62,41 @@ namespace Astra.PerformanceToolV2
             lens.GetComponent<ToolScreenFx>().enabled=true;
             if(!stage){var root=new GameObject("Tool stage");stage=root.AddComponent<ToolStage>();}
             if(!stage.IsBuilt)stage.Build();
+            stage.transform.SetParent(transform,false);SetPresentationLayer(stage.gameObject);
             transitions=0;finished=false;paused=false;Enter(package.graph.entryNode);
         }
         void Enter(string id)
         {
-            if(++transitions>128){Debug.LogError("Tool graph exceeded transition limit");finished=true;return;}
-            foreach(var actor in live.Values)if(actor){actor.SetActive(false);Destroy(actor);}
-            live.Clear();
+            if(++transitions>128){Fail("演出树超过 128 次跳转，请检查循环");return;}
             node=package.graph.Node(id);clock=0;waiting=0;activeDialogue=null;subtitle="";speaker="";
-            if(node==null){finished=true;return;}
+            if(node==null){Fail("演出树出口未连接有效节点");return;}
             if(node.kind==ToolNodeKind.Condition)
             {
                 Enter(ToolLogic.Exit(node,ToolLogic.Test(node.condition,Stats)?"yes":"no"));return;
             }
-            if(node.kind==ToolNodeKind.End){finished=true;return;}
+            if(node.kind==ToolNodeKind.End){finished=true;Completed?.Invoke(node.id);return;}
             if(node.kind==ToolNodeKind.GlobalChoice){waiting=Mathf.Min(node.patienceSeconds,Mathf.Max(0,Stats["patience"]));patienceStart=waiting;subtitle=node.prompt;return;}
+            foreach(var actor in live.Values)if(actor){actor.SetActive(false);Destroy(actor);}
+            live.Clear();
+            if(!node.unit){Fail("演出节点缺少单元");return;}
             RenderUnit(0);
         }
         void Update()
         {
+            if(externalClock)return;
             if(Input.GetKeyDown(KeyCode.Space))paused=!paused;
-            if(node==null||finished||paused)return;
-            float dt=Time.deltaTime;
+            Tick(Time.deltaTime);
+        }
+        public void Tick(float dt)
+        {
+            if(node==null||finished||paused||Failure!=null)return;
+            dt=Mathf.Max(0,dt);
             if(node.kind==ToolNodeKind.GlobalChoice)
             {
                 waiting-=dt;if(waiting<=0)Choose("silence");return;
             }
-            if(node.unit==null){finished=true;return;}
-            clock+=dt;RenderUnit(clock);
+            if(node.unit==null){Fail("演出节点缺少单元");return;}
+            clock+=dt;RenderUnit(Mathf.Min(clock,Mathf.Max(0,node.unit.duration-.001f)));
             if(activeDialogue!=null&&activeDialogue.kind==ToolDialogueKind.Choice)
             {
                 float start=activeDialogue.start+activeDialogue.Duration;
@@ -78,7 +108,7 @@ namespace Astra.PerformanceToolV2
         public void Seek(float time) {if(node!=null&&node.kind==ToolNodeKind.Unit&&node.unit){clock=Mathf.Clamp(time,0,node.unit.duration);RenderUnit(clock);}}
         public void Choose(string slot)
         {
-            if(node==null||finished)return;
+            if(node==null||finished||paused||Failure!=null)return;
             ToolChoice choice=null;
             if(node.kind==ToolNodeKind.GlobalChoice)choice=ToolLogic.Choice(node.choices,slot);
             else if(activeDialogue!=null&&activeDialogue.kind==ToolDialogueKind.Choice)choice=ToolLogic.Choice(activeDialogue.choices,slot);
@@ -102,7 +132,7 @@ namespace Astra.PerformanceToolV2
             for(int i=0;i<activeActors.Length;i++)
             {
                 var a=activeActors[i];if(!a.character)continue;
-                if(!live.TryGetValue(a.id,out var go)||!go){go=ToolCharacterView.Create(a.character,stage.transform);live[a.id]=go;}
+                if(!live.TryGetValue(a.id,out var go)||!go){go=ToolCharacterView.Create(a.character,stage.transform);live[a.id]=go;SetPresentationLayer(go);}
                 go.transform.localPosition=new Vector3((i-(activeActors.Length-1)*.5f)*1.7f,0,0);
                 var action=unit.actions.LastOrDefault(x=>x.actorId==a.id&&x.start<=time&&x.start+x.duration>time);
                 go.GetComponent<ToolMotion>().SampleTimeline(unit,a.id,time);
@@ -132,7 +162,7 @@ namespace Astra.PerformanceToolV2
         }
         void OnGUI()
         {
-            if(!package||node==null)return;
+            if(!showGUI||!package||node==null)return;
             bool choosing=node.kind==ToolNodeKind.GlobalChoice||activeDialogue!=null&&activeDialogue.kind==ToolDialogueKind.Choice;
             var choices=choosing?(node.kind==ToolNodeKind.GlobalChoice?node.choices:activeDialogue.choices)??Array.Empty<ToolChoice>():Array.Empty<ToolChoice>();
             float width=Mathf.Max(200,Screen.width-40);

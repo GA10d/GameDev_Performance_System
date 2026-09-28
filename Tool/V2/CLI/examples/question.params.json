@@ -1,0 +1,11 @@
+{
+  "sceneId": "archive",
+  "opening": "这里是前哨站。我们的通讯设备损坏了，需要有人协助维修。",
+  "question": "你愿意帮助我们吗？",
+  "replySeconds": 20,
+  "acceptLabel": "可以，我来帮忙。",
+  "acceptReply": "太好了！我现在把故障位置发送给你。",
+  "declineLabel": "抱歉，我还有其他任务。",
+  "declineReply": "明白，我们会继续呼叫其他船只。",
+  "silenceReply": "暂未收到你的回应，我们稍后再联系。"
+}
